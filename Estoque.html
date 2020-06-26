@@ -3,88 +3,106 @@
 
   <head>
     <meta charset = "utf-8"\>
+    <title> Controle de Estoque</title>
     <link rel="stylesheet" href="style.css">
   </head>
   
 	<body>
 
 	  <header>
+      <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
        <div>
          <img id="logo" src="imagens/Logo2.png">
        </div>
 
-       <h1>Sistema de controle de estoque</h1>
+       <h1>Sistema de Controle de Estoque</h1>
 
        <div id="menuInteracao">
-        <div class="imagens"><img src="imagens/in-adicionar.png"><p>Adicionar</p></div>
-				<div class="imagens"><img src="imagens/in-historico.jpg"><p>Histórico</p></div>
-        <div class="imagens"><img src="imagens/in-planilha.png"><p>Planilha</p></div>
+        <div class="imagens"><a href=""><img src="imagens/in-adicionar3.png" height="50" width="50"></a><p>Adicionar</p></div>
+				<div class="imagens"><a href=""><img src="imagens/in-historico.png"height="50" width="50"></a><p>Histórico</p></div>
+        <div class="imagens"><a href=""><img src="imagens/in-planilha.png"height="50" width="50"></a><p>Planilha</p></div>
         
        </div>
 
-			<div id='S+Pesquisa'>
-				<p>Sair ...</p>
-      <input id="pesquisa" type="text" nome="pesquisar" placeholder="pesquise itens aqui!">
-      <input type="image"  src="#">
+        <div class="S+Pesquisa">
+          <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img src="imagens/in-voltar.png"height="15" width="15"></h5>
+          <span id="pesquisa">
+            <input id="inPesquisa" type="text" nome="pesquisar" placeholder="Pesquise itens aqui!">
+            <input id="botaoPesquisa" type=image src="imagens/in-buscar.png" width="29" height="28">
+          </span>
       <!--esse parágrafo serve apens para alinhar melhor esse conjunto -->
       <p></p>
         </div>
-
       </header>
   
   <main>
   
-  <div class="item"> 
-    <ul>
-      <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
-      <li class="nome">nome do produto</li>
-      <li><button>retitar</button> <span>contador</span><button>+</button></li>
-    </ul>
-  </div>
+      <div class="item"> 
+        <ul>
+          <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
+          <li class="nome">Nome do produto</li>
+          <li><b>Dado: </b>informação</li>
+          <li class="finalItem"><button class = "bt">Retirar</button> <span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+        </ul>
+      </div>
 
-  <div class="item"> 
-    <ul>
-      <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
-      <li class="nome">nome do produto</li>
-      <li><button>retitar</button> <span>contador</span><button>+</button></li>
-    </ul>
-  </div>
+      <div class="item"> 
+        <ul>
+          <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
+          <li class="nome">Nome do produto</li>
+          <li><b>Dado: </b>informação</li>
+          <li class="finalItem"><button class = "bt">Retirar</button><span>Contador</span> <button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+        </ul>
+      </div>
 
-  <div class="item"> 
-    <ul>
-      <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
-      <li class="nome">nome do produto</li>
-      <li><button>retitar</button> <span>contador</span><button>+</button></li>
-    </ul>
-  </div>
+      <div class="item"> 
+        <ul>
+          <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
+          <li class="nome">Nome do produto</li>
+          <li><b>Dado: </b>informação</li>
+          <li class="finalItem"><button  class = "bt" >Retirar</button> <span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+        </ul>
+      </div>
 
-  <div class="item"> 
-    <ul>
-      <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
-      <li class="nome">nome do produto</li>
-      <li><button>retitar</button> <span>contador</span><button>+</button></li>
-    </ul>
-  </div>
+      <div class="item"> 
+        <ul>
+          <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
+          <li class="nome">Nome do produto</li>
+          <li><b>Dado: </b>informação</li>
+          <li class="finalItem"><button class = "bt">Retirar</button> <span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+        </ul>
+      </div>
 
-  <div class="item"> 
-    <ul>
-      <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
-      <li class="nome">nome do produto</li>
-      <li><button>retitar</button> <span>contador</span><button>+</button></li>
-    </ul>
-  </div>
+      <div class="item"> 
+        <ul>
+          <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
+          <li class="nome">Nome do produto</li>
+          <li><b>Dado: </b>informação</li>
+          <li class="finalItem"><button  class = "bt">Retirar</button> <span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+        </ul>
+      </div>
 
-  <div class="item"> 
-    <ul>
-      <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
-      <li class="nome">nome do produto</li>
-      <li><button>retitar</button> <span>contador</span><button>+</button></li>
-    </ul>
-  </div>
+      <div class="item"> 
+        <ul>
+          <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
+          <li class="nome">Nome do produto</li>
+          <li><b>Dado: </b>informação</li>
+          <li class="finalItem"><button class = "bt">Retirar</button> <span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+        </ul>
+      </div>
   
    
-</main> 
+  </main> 
 
-<footer>fim</footer>
-</body>
+  <footer>
+      <div class = "foot" >
+        <div class="imagensFooter"><a href="#"><img src="imagens/footer1.png"height="30" width="30"></a></div>
+        <div class="imagensFooter"><a href="#"><img src="imagens/footer2.png"height="30" width="30"></a></div>
+      </div>
+
+  </footer>
+  </body>
 </html>
