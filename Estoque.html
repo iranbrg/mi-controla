@@ -43,8 +43,8 @@
       <div class="item"> 
         <ul>
           <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
-          <li class="nome">Nome do produto</li>
-          <li><b>Dado: </b>informação</li>
+          <li class="nome">Nome do produto que é grande e extenso</li>
+          <li class="dado"><b>Dado: </b>informação</li>
           <li class="finalItem"><button class = "bt">Retirar</button> <span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
@@ -53,7 +53,7 @@
         <ul>
           <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
           <li class="nome">Nome do produto</li>
-          <li><b>Dado: </b>informação</li>
+          <li class="dado"><b>Dado: </b>informação</li>
           <li class="finalItem"><button class = "bt">Retirar</button><span>Contador</span> <button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
@@ -62,7 +62,7 @@
         <ul>
           <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
           <li class="nome">Nome do produto</li>
-          <li><b>Dado: </b>informação</li>
+          <li class="dado"><b>Dado: </b>informação</li>
           <li class="finalItem"><button  class = "bt" >Retirar</button> <span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
@@ -71,8 +71,8 @@
         <ul>
           <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
           <li class="nome">Nome do produto</li>
-          <li><b>Dado: </b>informação</li>
-          <li class="finalItem"><button class = "bt">Retirar</button> <span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+          <li class="dado"><b>Dado: </b>informação</li>
+          <li class="finalItem"><button class = "bt">Retirar</button><span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
 
@@ -80,7 +80,7 @@
         <ul>
           <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
           <li class="nome">Nome do produto</li>
-          <li><b>Dado: </b>informação</li>
+          <li class="dado"><b>Dado: </b>informação</li>
           <li class="finalItem"><button  class = "bt">Retirar</button> <span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
@@ -89,7 +89,7 @@
         <ul>
           <li><img class="imagemProduto" src="imagens/produto1.jpg"></li>
           <li class="nome">Nome do produto</li>
-          <li><b>Dado: </b>informação</li>
+          <li class="dado"><b>Dado: </b>informação</li>
           <li class="finalItem"><button class = "bt">Retirar</button> <span>Contador</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
@@ -99,10 +99,53 @@
 
   <footer>
       <div class = "foot" >
-        <div class="imagensFooter"><a href="#"><img src="imagens/footer1.png"height="30" width="30"></a></div>
-        <div class="imagensFooter"><a href="#"><img src="imagens/footer2.png"height="30" width="30"></a></div>
+        <div class="imagensFooter"><a href="https://www.instagram.com/titan_ufba/"><img src="imagens/footer1.png"height="30" width="30"></a></div>
+        <div class="imagensFooter"><a href="https://www.linkedin.com/company/ufbatitan/"><img src="imagens/footer2.png"height="30" width="30"></a></div>
       </div>
 
   </footer>
+
+  <!--Essa parte constroi os popups que são utilizados como forma de dar mais informações sobre produto (1) e para retirar um item (2)-->
+
+  <!--(1)-->
+  <div id="popUpInfo">
+
+  <div><img class="imagemPop" src="imagens/produto1.jpg"></div>
+    <ul id="ulInfo">
+      <li><b>Nome: </b></li>
+      <li><b>Preço: </b></li>
+      <li><b>Código de Barras: </b></li>
+      <li><b>Fornecedor: </b></li>
+      <li><b>Tempo de Entrega: </b></li>
+  </ul>
+
+  <div id="descriçãoInfo"><p><b>Descrição:</b></p><span></span></div>
+
+  <button id="botaoCIn">Confirmar</button>
+
+  </div>
+
+  <!--(2)-->
+
+  <div id="popUpRetirada">
+    <div><img class="imagemPop" src="imagens/produto1.jpg"></div>
+    <ul id="ulRetirada">
+      <li><b>Nome: </b></li>
+      <li><b>Preço: </b></li>
+      <li><b>Código de Barras: </b></li>
+      <li><b>Fornecedor: </b></li>
+      <li><b>Tempo de Entrega: </b></li>
+    </ul>
+
+    <div id="detalhes">
+      <ul>
+        <li id="quantidade"><b>Quantidade a ser retirada: </b>2</li>
+        <li><b>Valor total a ser recebido: </b>8000</li>
+      </ul>
+    </div>
+
+    <button id="botaoCR">Confirmar</button>
+
+  </div>
   </body>
 </html>
