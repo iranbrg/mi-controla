@@ -30,7 +30,6 @@ h1{
 	font-size: 10px;
 }
 .linha{
-	border-left: 2px  black;
 	height: 100px;
 }
 .textoInicio {
@@ -253,6 +252,20 @@ height: 40px;
 
 /*(1)*/
 
+.fundoPop {
+	position: absolute;
+	margin: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #FFFAFA;
+	width: all;
+	height: 129%;
+	opacity: 0.8;
+	display: none;
+}
+
 #popUpInfo {
 	width: 700px;
 	height: 500px;
@@ -264,8 +277,14 @@ height: 40px;
 	background-color: #8c8c8c;	
 	font-family: 'Roboto', sans-serif;
 	border-radius: 20px;
-	margin: 20px;
-	
+	position: fixed;
+	margin-top: 10vh;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
 }
 
 #descriçãoInfo {
@@ -330,7 +349,14 @@ border-radius: 20px;
 	background-color: #8c8c8c;	
 	font-family: 'Roboto', sans-serif;
 	border-radius: 20px;
-	margin: 20px;
+	position: fixed;
+	margin-top: 10vh;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
 }
 
 #ulRetirada{
