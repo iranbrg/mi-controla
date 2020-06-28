@@ -67,6 +67,14 @@ input {
 	border: none;
 	color: white;
 }
+.tempoentrega{
+	height: 15px;
+	width: 15px;
+}
+.fornecedor{
+	height: 30px;
+	width: 100px;
+}
 /*  botão */
 .boton{
 	display: block;

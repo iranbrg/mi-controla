@@ -21,7 +21,7 @@
             <div class= "linha "></div>
 
           <div class="S+Pesquisa">
-              <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img src="imagens/in-voltar.png"height="15" width="15"></h5>
+              <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="estoque.html">Sair</a><img src="imagens/in-voltar.png"height="15" width="15"></h5>
               <span id="pesquisa">
                 <input id="inPesquisa" type="text" nome="pesquisar" placeholder="Pesquise itens aqui!">
                 <input id="botaoPesquisa" type=image src="imagens/in-buscar.png" >
@@ -36,7 +36,24 @@
                 <h2>Adicionar Novo Produto</h2>
                 <input type="text" name="nomeproduto" placeholder="Nome do Produto"> <br/>
                 <input type="text" name="estoque" placeholder="Estoque (unidades)"><br/>
+                <input type="text" name="codigodebarras" placeholder="Código de Barra"><br/>
                 <input type="text" name="Preço" placeholder="Preço (Reais)"><br/>
+                <label style="color: white;">Selecione o fornecedor do produto</label><br/>
+                <select class= "fornecedor" name="fornecedor"> 
+                  <option value="1"> Americanas </option>     
+                  <option value="2"> Amazon</option> 
+                  <option value="3"> Mercado Livre </option>                   
+                </select> 
+                <br/>
+                <br/>
+                <label style="color: white;">Tempo de Entrega</label>
+                <input  class= "tempoentrega"type="radio" name="tempoentrega" value="7">
+                    7 Dias 
+                <input class= "tempoentrega"type="radio" name="tempoentrega" value="14">
+                    14 Dias
+                <input class= "tempoentrega" type="radio" name="tempoentrega" value="30">
+                    30 Dias
+                <br/>
                 <input class= "descricao" type="text" name="Descrição" placeholder="Descrição do Produto"><br/>
                 <label style="color: white;">Foto Grande</label><br/>
                 <input class="fotogrande" type="file" name = "Foto Grande"><br/>
