@@ -35,80 +35,11 @@ h1{
     font-size: 10px;
 }
 h2{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	color: aliceblue;
 	display: flex;
-	justify-content: center;
-}
-/*  formulario */
-main{
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 auto;
-	max-width: 1300px;
-	font-family: 'Open Sans', sans-serif;
-	justify-content: center;
-	
-}
-input {
-	border: none;
-	margin-bottom: 20px;
-	border-radius: 5px;
-	height: 60px;
-	width: 700px;
-}
-.descricao{
-	height: 150px;
-	width: 700px;
-}
-.fotogrande{
-	border: none;
-	color: white;
-}
-.tempoentrega{
-	height: 15px;
-	width: 15px;
-}
-.fornecedor{
-	height: 30px;
-	width: 100px;
-}
-/*  botão */
-.boton{
-	display: flex;
-	color: white;
-	margin-bottom: 20px;
-	background-color: #25b1e0;
-	height: 50px;
-	width: 500px;
-	cursor: pointer;
-	font-size: large;
-	border-radius: 20px;
-	border:none;
-	font-family: 'Source Sans Pro', sans-serif;
-	justify-content: center;
-	margin-left: 100px;
-}
-.boton:hover{
-	background-color: #1cc6ff;
-	background-image: none;
-	border-color: none;
+    justify-content: center;
 
-}
-.branco{
-	color:white;
-}
-footer{
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 auto;
-	width: content;
-	border-bottom: 30px solid #144bb8c7;
-	justify-content: center;
-	
-}
-.imagens2{
-	padding-right: 2px;
 }
 /* negocio do pesquisar*/
 #pesquisa{
@@ -139,4 +70,70 @@ footer{
 	padding: 0;
 	width:28px; 
 	height:29px;
+}
+/*  formulario */
+main{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
+	justify-content: center;
+	
+}
+input {
+    display: block;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	height: 60px;
+    width: 300px;
+    border: none;
+}
+.login{
+    padding-left: 0px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    
+}
+.campo{
+    border-radius: 50px;
+}
+#logintitulo{
+    padding-left: 40px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*  botão */
+.boton{
+	display: flex;
+	color: white;
+	background-color: #25b1e0;
+	height: 50px;
+	width: 200px;
+	cursor: pointer;
+	font-size: large;
+	border-radius: 20px;
+	border:none;
+	font-family: 'Source Sans Pro', sans-serif;
+	justify-content: center;
+	margin-left: 50px;
+}
+.boton:hover{
+	background-color: #1cc6ff;
+	background-image: none;
+	border-color: none;
+
+}
+footer{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	width: content;
+	border-bottom: 30px solid #144bb8c7;
+	justify-content: center;
+}
+.imagens2{
+	padding-right: 2px;
 }
