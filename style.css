@@ -1,5 +1,5 @@
 body {
-	background-color:#666666;
+	background-color:#778899	;
 	margin: 0;
 }
 
@@ -11,8 +11,7 @@ header {
 	height: 100px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
-	background-color:#FFA500;
-	background-image: linear-gradient(to right, #FFA500, #FF8C00);
+	background-image: linear-gradient(to right, #144bb8c7, #29bbb4);
 	justify-content: space-between;
 	align-items: center;
 }
@@ -21,8 +20,9 @@ h1{
 	font-size: 27px;
 }
 #logo {
-	max-width: 150px;
+	max-width: 110px;
 	padding-top: 4px;
+	margin-left: 1.5vw;
 }
 
 #menuInteracao{
@@ -115,7 +115,7 @@ main{
 	font-family: 'Roboto', sans-serif;
 }
 .item{
-	background-color: #8c8c8c;
+	background-color:  #3358a12f;
 	padding:0;
 	margin-top: 10vh;
 	box-sizing: border-box;
@@ -124,9 +124,7 @@ main{
 	min-width: 180px;
 	min-height: 320px;
 	border-radius: 20px;
-	border-style: solid;
 	margin-left: 4vw;
-	border-width: 2px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
@@ -145,9 +143,20 @@ main{
 
 .imagemProduto{
 	border-radius: 20px;
-	max-width: 206px;
-	max-height: 206px;
+	max-width: 210px;
+	max-height: 210px;
 }
+
+.detalheItem{
+	width: 210px;
+	height: 200px;
+	padding: 0;
+	margin: 0;
+	border-radius: 20px;
+	background-color: transparent;
+	border-color: transparent;
+}
+
 
 .nome {
 text-align: right;
@@ -155,7 +164,7 @@ margin-right: 0.5vw;
 margin-top: 10%;
 margin-bottom: 10%;
 overflow-wrap: normal;
-width: inherit;
+max-width: 210px;
 height: 40px;
 
 }
@@ -175,20 +184,21 @@ height: 40px;
 
 .bt {
 	color: black;
-	font-weight: bold;
-	background-color: #FFA500;
-	background-image: linear-gradient(to right, #FFA500, #FF8C00);
-	border-radius: 5px;
+	letter-spacing: 2px;
+	font-weight: 600;
+	background-color: #25b1e0;
+	border-radius: 4px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 18px;
+	padding-right: 18px;
 	margin-right: 1vw;
 	margin-left: 0.5vw;
-	border-style: solid;
-	border-color: black;
-	box-shadow: 0.5px 0.5px 0px black;
+	border-style: none;
+	box-shadow: 2px 1px 4px 0 rgba(0,0,0,0.2);
 	cursor: pointer;
+	font-family: 'Source Sans Pro', sans-serif;
+    
 }
 
 .bt2{
@@ -202,19 +212,19 @@ height: 40px;
 
 .bt2 > img {
 	max-width: 20px;
-	background-color: #FFA500;
-	background-image: linear-gradient(to right, #FFA500, #FF8C00);
+	background-color: #25b1e0;
+	padding: 3px;
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 5px;
-	border-color: black;
-	box-shadow: 0.5px 0.5px 0px black;
+	box-shadow: 2px 1px 4px 0 rgba(0,0,0,0.2);
 	cursor: pointer;
+	border-style: none;
 
 }
 
 .bt:hover{
-	background-color: #ffda96;
+	background-color: #1cc6ff;
 	background-image: none;
 	border-color: none;
 }
@@ -222,11 +232,16 @@ height: 40px;
 
 
 .bt2 > img:hover {
-	background-color: #ffda96;
+	background-color: #1cc6ff;
 	background-image: none;
 	border-color: none;
 }
 
+
+#contador {
+	width: 3vw;
+	text-align: right;
+}
 /*Personalização do footer*/
 
 .foot{
@@ -234,7 +249,7 @@ height: 40px;
 	flex-wrap: wrap;
 	margin: 0 auto;
 	width: content;
-	border-bottom: 30px solid #f2a900;
+	border-bottom: 30px solid #144bb8c7;
 	justify-content: center;
 
 }
