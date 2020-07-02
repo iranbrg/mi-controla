@@ -267,7 +267,7 @@ height: 40px;
 
 /*(1)*/
 
-.fundoPop {
+#fundoPop {
 	position: absolute;
 	margin: 0;
 	top: 0;
@@ -286,7 +286,7 @@ height: 40px;
 	height: 500px;
     max-width: 700px;
     max-height: 500px;
-	display: grid;
+	display: none;
 	grid-template-columns: 250fr 450fr;
 	grid-template-rows: 250px 200px 50px;
 	background-color: #8c8c8c;	
@@ -299,7 +299,7 @@ height: 40px;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	display: none;
+
 }
 
 #descriçãoInfo {
@@ -320,13 +320,18 @@ height: 40px;
  padding: 0;
  font-weight: bold;
  margin-left: 17vw;
- border-radius: 8px;
- box-shadow: 0.5px 0.5px 0px black;
- border-color: black;
+ border-radius: 4px;
+ box-shadow: 2px 1px 4px 0 rgba(0,0,0,0.2);
+ border-color: none;
+ background-color: #25b1e0;
+ border-style: none;
+ cursor: pointer;
+ font-family: 'Source Sans Pro', sans-serif;
+ 
 }
 
 #botaoCIn:hover {
-	background-color: #ffda96;
+	background-color: #1cc6ff;
 	border-color: none;
 }
 
@@ -389,7 +394,7 @@ border-radius: 20px;
 }
 
 #botaoCR{
-	grid-column: 2/3;
+ grid-column: 2/3;
  grid-row: 3/4;
  width: 100px;
  height: 40px;
@@ -397,12 +402,17 @@ border-radius: 20px;
  font-weight: bold;
  margin-left: 17vw;
  border-radius: 8px;
- box-shadow: 0.5px 0.5px 0px black;
- border-color: black;
+ box-shadow: 2px 1px 4px 0 rgba(0,0,0,0.2);
+ border-color: none;
+ background-color: #25b1e0;
+ border-style: none;
+ cursor: pointer;
+ font-family: 'Source Sans Pro', sans-serif;
+ 
 }
 
 #botaoCR:hover{
-	background-color: #ffda96;
+	background-color: #1cc6ff;
 	border-color: none;
 }
 
@@ -421,4 +431,15 @@ grid-row: 2/3;
 #quantidade {
 	margin-bottom: 5vh;
 	margin-top: 60px;
+}
+
+#bQuantidadeR {
+	background-color: #25b1e0;
+	box-shadow: 2px 1px 4px 0 rgba(0,0,0,0.2);
+	border-radius: 10px;
+	cursor: pointer;
+	border-style: none;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin-left: 3px;
+	font-weight: bold;
 }

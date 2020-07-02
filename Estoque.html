@@ -5,6 +5,7 @@
     <meta charset = "utf-8"\>
     <title> Controle de Estoque</title>
     <link rel="stylesheet" href="style.css">
+    
   </head>
   
 	<body>
@@ -45,55 +46,55 @@
   
       <div class="item"> 
         <ul>
-          <li><button class="detalheItem"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
+          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
           <li class="nome">Nome do produto que é grande e extenso</li>
           <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button class = "bt">RETIRAR</button> <span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+          <li class="finalItem"><button class = "bt" onclick="exibirPopRetirada()">RETIRAR</button> <span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
 
       <div class="item"> 
         <ul>
-          <li><button class="detalheItem"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
+          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
           <li class="nome">Nome do produto</li>
           <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button class = "bt">RETIRAR</button><span id="contador">X</span> <button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+          <li class="finalItem"><button class = "bt" onclick="exibirPopRetirada()">RETIRAR</button><span id="contador">X</span> <button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
 
       <div class="item"> 
         <ul>
-          <li><button class="detalheItem"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
+          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
           <li class="nome">Nome do produto</li>
           <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button  class = "bt" >RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+          <li class="finalItem"><button  class = "bt" onclick="exibirPopRetirada()">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
 
       <div class="item"> 
         <ul>
-          <li><button class="detalheItem"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
+          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
           <li class="nome">Nome do produto</li>
           <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button class = "bt">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+          <li class="finalItem"><button class = "bt" onclick="exibirPopRetirada()">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
 
       <div class="item"> 
         <ul>
-          <li><button class="detalheItem"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
+          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
           <li class="nome">Nome do produto</li>
           <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button  class = "bt">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+          <li class="finalItem"><button  class = "bt" onclick="exibirPopRetirada()">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
 
       <div class="item"> 
         <ul>
-          <li><button class="detalheItem"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
+          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
           <li class="nome">Nome do produto</li>
           <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button class = "bt">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
+          <li class="finalItem"><button class = "bt" onclick="exibirPopRetirada()">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
         </ul>
       </div>
   
@@ -111,7 +112,7 @@
   <!--Essa parte constroi os popups que são utilizados como forma de dar mais informações sobre produto (1) e para retirar um item (2)-->
 
   <!--(1)-->
-  <div class="fundoPop"></div>
+  <div id="fundoPop"></div>
   
     <div id="popUpInfo">
 
@@ -126,7 +127,7 @@
 
   <div id="descriçãoInfo"><p><b>Descrição:</b></p><span></span></div>
 
-  <button id="botaoCIn">Confirmar</button>
+  <button id="botaoCIn" onclick="retirarPopInfo()">CONFIRMAR</button>
 
     </div>
 
@@ -144,13 +145,14 @@
 
     <div id="detalhes">
       <ul>
-        <li id="quantidade"><b>Quantidade a ser retirada: </b>2</li>
+        <li id="quantidade"><b>Quantidade a ser retirada: </b>Variável <button id="bQuantidadeR">+</button></li>
         <li><b>Valor total a ser recebido: </b>8000</li>
       </ul>
     </div>
 
-    <button id="botaoCR">Confirmar</button>
+    <button id="botaoCR" onclick="retirarPopRetirada()">CONFIRMAR</button>
 
   </div>
   </body>
+  <script type="text/javascript" src="script.js"></script>
 </html>

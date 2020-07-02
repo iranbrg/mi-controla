@@ -81,10 +81,6 @@ h1{
 
 /* personalização do bloco hitórico*/
 
-main{
-    font-family: 'Roboto', sans-serif;
-}
-
 #blocoHistórico {
     margin: 0 auto;
     list-style: none;
@@ -93,22 +89,36 @@ main{
 }
 
 .histAdd, .histRetirada {
-    width: 60em;
-    height: 6em;
+    width: 960px;
+    height: 96px;
     background-color: #FFFAFA;
-    margin-top: 1vh;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1vh;
 
 }
+
 
 .dataEHora {
     font-size: 12px;
     margin-bottom: 70px;
     margin-right: 20px;
 }
+
+/*.botao{
+    width:960px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    margin-top: 1vh;
+    font-size: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}*/
 
 /* bloco Add*/
 #nomeA{
