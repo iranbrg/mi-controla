@@ -1,7 +1,8 @@
 body {
-	background-color:#778899	;
+	background-color: #778899;
 	margin: 0;
 }
+
 header {
 	display: flex;
 	width: 100%;
@@ -12,15 +13,18 @@ header {
 	justify-content: space-between;
 	align-items: center;
 }
-h1{
+
+h1 {
 	font-family: 'Holtwood One SC', serif;
 	font-size: 30px;
 }
+
 .logo {
 	max-width: 110px;
 	padding-top: 4px;
 }
-.imagens{
+
+.imagens {
 	display: flex;
 	flex-direction: line;
 	align-items: center;
@@ -28,28 +32,32 @@ h1{
 	padding-top: 15px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 12px;
-	padding-right: 50px;	
+	padding-right: 50px;
 }
-.botaofoto{
+
+.botaofoto {
 	display: flex;
-    font-size: 10px;
+	font-size: 10px;
 }
-h2{
+
+h2 {
 	font-family: 'Poppins', sans-serif;
 	color: aliceblue;
 	display: flex;
 	justify-content: center;
 }
+
 /*  formulario */
-main{
+main {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 auto;
 	max-width: 1300px;
 	font-family: 'Open Sans', sans-serif;
 	justify-content: center;
-	
+
 }
+
 input {
 	border: none;
 	margin-bottom: 20px;
@@ -57,24 +65,29 @@ input {
 	height: 60px;
 	width: 700px;
 }
-.descricao{
+
+.descricao {
 	height: 150px;
 	width: 700px;
 }
-.fotogrande{
+
+.fotogrande {
 	border: none;
 	color: white;
 }
-.tempoentrega{
+
+.tempoentrega {
 	height: 15px;
 	width: 15px;
 }
-.fornecedor{
+
+.fornecedor {
 	height: 30px;
 	width: 100px;
 }
+
 /*  botão */
-.boton{
+.boton {
 	display: flex;
 	color: white;
 	margin-bottom: 20px;
@@ -84,34 +97,39 @@ input {
 	cursor: pointer;
 	font-size: large;
 	border-radius: 20px;
-	border:none;
+	border: none;
 	font-family: 'Source Sans Pro', sans-serif;
 	justify-content: center;
 	margin-left: 100px;
 }
-.boton:hover{
+
+.boton:hover {
 	background-color: #1cc6ff;
 	background-image: none;
 	border-color: none;
 
 }
-.branco{
-	color:white;
+
+.branco {
+	color: white;
 }
-footer{
+
+footer {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 auto;
 	width: content;
 	border-bottom: 30px solid #144bb8c7;
 	justify-content: center;
-	
+
 }
-.imagens2{
+
+.imagens2 {
 	padding-right: 2px;
 }
+
 /* negocio do pesquisar*/
-#pesquisa{
+#pesquisa {
 	display: flex;
 	align-items: center;
 }
@@ -137,6 +155,6 @@ footer{
 	border-left: 0;
 	border-width: 2px;
 	padding: 0;
-	width:28px; 
-	height:29px;
+	width: 28px;
+	height: 29px;
 }

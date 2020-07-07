@@ -1,158 +1,125 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-  <head>
-    <meta charset = "utf-8"\>
-    <title> Controle de Estoque</title>
-    <link rel="stylesheet" href="style.css">
-    
-  </head>
-  
-	<body>
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
+{% endblock %}
 
-	  <header>
-      <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-       <div>
-         <img id="logo" src="imagens/logo.png">
-       </div>
+{% block conteudo %}
+<header>
+  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <div>
+    <a href="{{ url_for('estoque') }}"><img id="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
+  </div>
 
-       <h1>Sistema de Controle de Estoque</h1>
+  <h1>Sistema de Controle de Estoque</h1>
 
-       <div class="linha"></div>
+  <div class="linha"></div>
 
-       <div id="menuInteracao">
-          <div class="imagens"><a href="adicionar.html"><img src="imagens/in-adicionar.png" height="50" width="50"></a><p>Adicionar</p></div>
-          <div class="imagens"><a href=""><img src="imagens/in-planilha.png"height="50" width="50"></a><p>Planilha</p></div>
-          <div class="imagens"><a href="historico.html"><img src="imagens/in-historico.png"height="50" width="50"></a><p>Histórico</p></div>
-        
-       </div>
+  <div id="menuInteracao">
+    <div class="imagens"><a href="{{ url_for('adicionar') }}"><img src="{{ url_for('static', filename= 'images/in-adicionar.png') }}" height="50" width="50"></a>
+      <p>Adicionar</p>
+    </div>
+    <div class="imagens"><a href=""><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50" width="50"></a>
+      <p>Planilha</p>
+    </div>
+    <div class="imagens"><a href="{{ url_for('historico') }}"><img src="{{ url_for('static', filename= 'images/in-historico.png') }}" height="50" width="50"></a>
+      <p>Histórico</p>
+    </div>
 
-        <div class="S+Pesquisa">
-          <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img src="imagens/in-voltar.png"height="15" width="15"></h5>
-          <span id="pesquisa">
-            <input id="inPesquisa" type="text" nome="pesquisar" placeholder="Pesquise itens aqui!">
-            <input id="botaoPesquisa" type=image src="imagens/in-buscar.png" width="29" height="28">
-          </span>
-      <!--esse parágrafo serve apens para alinhar melhor esse conjunto -->
-      <p></p>
-        </div>
-      </header>
-  
-  <main>
-  
-      <div class="item"> 
-        <ul>
-          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
-          <li class="nome">Nome do produto que é grande e extenso</li>
-          <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button class = "bt" onclick="exibirPopRetirada()">RETIRAR</button> <span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
-        </ul>
-      </div>
+  </div>
 
-      <div class="item"> 
-        <ul>
-          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
-          <li class="nome">Nome do produto</li>
-          <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button class = "bt" onclick="exibirPopRetirada()">RETIRAR</button><span id="contador">X</span> <button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
-        </ul>
-      </div>
+  <div class="S+Pesquisa">
+    <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img src="{{ url_for('static', filename= 'images/in-voltar.png') }}"
+        height="15" width="15"></h5>
+    <span id="pesquisa">
+      <input id="inPesquisa" type="text" nome="pesquisar" placeholder="Pesquise itens aqui!">
+      <input id="botaoPesquisa" type=image src="{{ url_for('static', filename= 'images/in-buscar.png') }}" width="29" height="28">
+    </span>
+    <!--esse parágrafo serve apenas para alinhar melhor esse conjunto -->
+    <p></p>
+  </div>
+</header>
 
-      <div class="item"> 
-        <ul>
-          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
-          <li class="nome">Nome do produto</li>
-          <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button  class = "bt" onclick="exibirPopRetirada()">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
-        </ul>
-      </div>
+<main>
 
-      <div class="item"> 
-        <ul>
-          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
-          <li class="nome">Nome do produto</li>
-          <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button class = "bt" onclick="exibirPopRetirada()">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
-        </ul>
-      </div>
+  {% for i in range (8) %}
+    <div class="item">
+      <ul>
+        <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto"
+              src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></button></li>
+        <li class="nome">Nome do produto que é grande e extenso</li>
+        <li class="dado"><b>Dado: </b>informação</li>
+        <li class="finalItem"><button class="bt" onclick="exibirPopRetirada()">RETIRAR</button> <span
+            id="contador">X</span><button class="bt2"><img src="{{ url_for('static', filename= 'images/in-adicionarItem.png') }}"></button></li>
+      </ul>
+    </div>
+  {% endfor %}
 
-      <div class="item"> 
-        <ul>
-          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
-          <li class="nome">Nome do produto</li>
-          <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button  class = "bt" onclick="exibirPopRetirada()">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
-        </ul>
-      </div>
+</main>
 
-      <div class="item"> 
-        <ul>
-          <li><button class="detalheItem" onclick="exibirPopInfo()"><img class="imagemProduto" src="imagens/produto1.jpg"></button></li>
-          <li class="nome">Nome do produto</li>
-          <li class="dado"><b>Dado: </b>informação</li>
-          <li class="finalItem"><button class = "bt" onclick="exibirPopRetirada()">RETIRAR</button><span id="contador">X</span><button class = "bt2"><img src="imagens/in-adicionarItem.png"></button></li>
-        </ul>
-      </div>
-  
-   
-  </main> 
+<footer>
+  <div class="foot">
+    <div class="imagensFooter"><a href="https://www.instagram.com/titan_ufba/" target="_blank"><img
+          src="{{ url_for('static', filename= 'images/footer1.png') }}" height="30" width="30"></a></div>
+    <div class="imagensFooter"><a href="https://www.linkedin.com/company/ufbatitan/" target="_blank"><img
+          src="{{ url_for('static', filename= 'images/footer2.png') }}" height="30" width="30"></a></div>
+  </div>
 
-  <footer>
-      <div class = "foot" >
-        <div class="imagensFooter"><a href="https://www.instagram.com/titan_ufba/" target="_blank"><img src="imagens/footer1.png"height="30" width="30"></a></div>
-        <div class="imagensFooter"><a href="https://www.linkedin.com/company/ufbatitan/"target="_blank"><img src="imagens/footer2.png"height="30" width="30"></a></div>
-      </div>
+</footer>
 
-  </footer>
+<!--Essa parte constroi os popups que são utilizados como forma de dar mais informações sobre produto (1) e para retirar um item (2)-->
 
-  <!--Essa parte constroi os popups que são utilizados como forma de dar mais informações sobre produto (1) e para retirar um item (2)-->
+<!--(1)-->
+<div id="fundoPop"></div>
 
-  <!--(1)-->
-  <div id="fundoPop"></div>
-  
-    <div id="popUpInfo">
+<div id="popUpInfo">
 
-  <div><img class="imagemPop" src="imagens/produto1.jpg"></div>
-    <ul id="ulInfo">
-      <li><b>Nome: </b></li>
-      <li><b>Preço: </b></li>
-      <li><b>Código de Barras: </b></li>
-      <li><b>Fornecedor: </b></li>
-      <li><b>Tempo de Entrega: </b></li>
+  <div><img class="imagemPop" src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></div>
+  <ul id="ulInfo">
+    <li><b>Nome: </b></li>
+    <li><b>Preço: </b></li>
+    <li><b>Código de Barras: </b></li>
+    <li><b>Fornecedor: </b></li>
+    <li><b>Tempo de Entrega: </b></li>
   </ul>
 
-  <div id="descriçãoInfo"><p><b>Descrição:</b></p><span></span></div>
+  <div id="descriçãoInfo">
+    <p><b>Descrição:</b></p><span></span>
+  </div>
 
   <button id="botaoCIn" onclick="retirarPopInfo()">CONFIRMAR</button>
 
-    </div>
+</div>
 
-  <!--(2)-->
+<!--(2)-->
 
-  <div id="popUpRetirada">
-    <div><img class="imagemPop" src="imagens/produto1.jpg"></div>
-    <ul id="ulRetirada">
-      <li><b>Nome: </b></li>
-      <li><b>Preço: </b></li>
-      <li><b>Código de Barras: </b></li>
-      <li><b>Fornecedor: </b></li>
-      <li><b>Tempo de Entrega: </b></li>
+<div id="popUpRetirada">
+
+  <div><img class="imagemPop" src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></div>
+  <ul id="ulRetirada">
+    <li><b>Nome: </b></li>
+    <li><b>Preço: </b></li>
+    <li><b>Código de Barras: </b></li>
+    <li><b>Fornecedor: </b></li>
+    <li><b>Tempo de Entrega: </b></li>
+  </ul>
+
+  <div id="detalhes">
+    <ul>
+      <li id="quantidade"><b>Quantidade a ser retirada: </b>Variável <button id="bQuantidadeR">+</button></li>
+      <li><b>Valor total a ser recebido: </b>8000</li>
     </ul>
-
-    <div id="detalhes">
-      <ul>
-        <li id="quantidade"><b>Quantidade a ser retirada: </b>Variável <button id="bQuantidadeR">+</button></li>
-        <li><b>Valor total a ser recebido: </b>8000</li>
-      </ul>
-    </div>
-
-    <button id="botaoCR" onclick="retirarPopRetirada()">CONFIRMAR</button>
-
   </div>
-  </body>
-  <script type="text/javascript" src="script.js"></script>
-</html>
+
+  <button id="botaoCR" onclick="retirarPopRetirada()">CONFIRMAR</button>
+
+</div>
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript" src="{{ url_for('static', filename= 'js/script.js') }}"></script>
+{% endblock %}

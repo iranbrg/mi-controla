@@ -1,87 +1,89 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-  <head>
-    <meta charset = "utf-8"\>
-    <title> Adicionar Produto</title>
-    <link rel="stylesheet" href="styleadd.css">
-  </head>
-  
-  <body>
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_adicionar.css') }}">
+{% endblock %}
 
-      <header>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-          <div>
-            <img class="logo" src="imagens/Logo.png">
-          </div>
+{% block conteudo %}
+<header>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <div>
+    <a href="{{ url_for('estoque') }}"><img class="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
+  </div>
 
-          <h1>Sistema de Controle de Estoque</h1>
+  <h1>Sistema de Controle de Estoque</h1>
 
-            <div class="botaofoto">
-                <div class="imagens"><a href="Estoque.html"><img src="imagens/in-estoque.png" height="50" width="50"></a><p>Estoque</div>
-                <div class="imagens"><a href=""><img src="imagens/in-planilha.png"height="50" width="50"></a><p>Planilha</p></div>
-                <div class="imagens"><a href="historico.html"><img src="imagens/in-historico.png"height="50" width="50"></a><p>Histórico</p></div>
-            </div>
-          
-            <div class="S+Pesquisa">
-              <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img src="imagens/in-voltar.png"height="15" width="15"></h5>
-              <span id="pesquisa">
-                <input id="inPesquisa" type="text" nome="pesquisar" placeholder="Pesquise itens aqui!">
-                <input id="botaoPesquisa" type=image src="imagens/in-buscar.png">
-              </span>
-             
-          </div>
-        </header>
-    
-    <main>
-        <div>
-            <form action="#" method="post">
-                <h2>Adicionar Novo Produto</h2>
-                <input type="text" name="nomeproduto" placeholder="Nome do Produto"> <br/>
-                <input type="text" name="estoque" placeholder="Estoque (unidades)"><br/>
-                <input type="text" name="codigodebarras" placeholder="Código de Barra"><br/>
-                <input type="text" name="Preço" placeholder="Preço (Reais)"><br/>
-                <label style="color: white;">Selecione o fornecedor do produto</label><br/>
-                <select class= "fornecedor" name="fornecedor"> 
-                  <option value="1"> Americanas </option>     
-                  <option value="2"> Amazon</option> 
-                  <option value="3"> Mercado Livre </option>                   
-                </select> 
-                <br/>
-                <br/>
-                <label style="color: white;">Tempo de Entrega</label>
-                <div class="branco">
-                    <input  class= "tempoentrega"type="radio" name="tempoentrega" value="7">
-                         7 Dias 
-                    <input class= "tempoentrega"type="radio" name="tempoentrega" value="14">
-                        14 Dias
-                    <input class= "tempoentrega" type="radio" name="tempoentrega" value="30">
-                        30 Dias
-                </div>
-                <br/>
-                <input class= "descricao" type="text" name="Descrição" placeholder="Descrição do Produto"><br/>
-                <label style="color: white;">Foto Grande</label><br/>
-                <input class="fotogrande" type="file" name = "Foto Grande"><br/>
-                <input class = "boton" type="submit" value="Inserir Produto"><br/>                           
-            </form>
-         </div>
-    </main> 
+  <div class="botaofoto">
+    <div class="imagens"><a href="{{ url_for('estoque') }}"><img src="{{ url_for('static', filename= 'images/in-estoque.png') }}" height="50" width="50"></a>
+      <p>Estoque
+    </div>
+    <div class="imagens"><a href=""><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50" width="50"></a>
+      <p>Planilha</p>
+    </div>
+    <div class="imagens"><a href="{{ url_for('historico') }}"><img src="{{ url_for('static', filename= 'images/in-historico.png') }}" height="50" width="50"></a>
+      <p>Histórico</p>
+    </div>
+  </div>
 
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+  <div class="S+Pesquisa">
+    <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img src="{{ url_for('static', filename= 'images/in-voltar.png') }}"
+        height="15" width="15"></h5>
+    <span id="pesquisa">
+      <input id="inPesquisa" type="text" nome="pesquisar" placeholder="Pesquise itens aqui!">
+      <input id="botaoPesquisa" type=image src="{{ url_for('static', filename= 'images/in-buscar.png') }}">
+    </span>
 
-    <footer>
-      <div class = "imagens2">
-          <a href= "https://www.instagram.com/titan_ufba/" target = "_blank"><img src="imagens/footer1.png"height="30" width="30"></a>
-          <a href="https://www.linkedin.com/company/ufbatitan/" target = _blank><img src="imagens/footer2.png"height="30" width="30"></a>
+  </div>
+</header>
+
+<main>
+  <div>
+    <form action="{{ url_for('adicionar') }}" method="post">
+      <h2>Adicionar novo produto</h2>
+      <input type="text" name="nomeproduto" placeholder="Nome do produto"> <br />
+      <input type="text" name="estoque" placeholder="Estoque (unidades)"><br />
+      <input type="text" name="codigodebarras" placeholder="Código de barra"><br />
+      <input type="text" name="Preço" placeholder="Preço (reais)"><br />
+      <label style="color: white;">Selecione o fornecedor do produto</label><br />
+      <select class="fornecedor" name="fornecedor">
+        <option value="americanas"> Americanas </option>
+        <option value="amazon"> Amazon</option>
+        <option value="mercado_livre"> Mercado Livre </option>
+      </select>
+      <br />
+      <br />
+      <label style="color: white;">Tempo de entrega</label>
+      <div class="branco">
+        <input class="tempoentrega" type="radio" name="tempoentrega" value="7">
+        7 dias
+        <input class="tempoentrega" type="radio" name="tempoentrega" value="14">
+        14 dias
+        <input class="tempoentrega" type="radio" name="tempoentrega" value="30">
+        30 dias
       </div>
-    </footer> 
+      <br />
+      <input class="descricao" type="text" name="Descrição" placeholder="Descrição do produto"><br />
+      <label style="color: white;">Adicionar imagem</label><br />
+      <input class="fotogrande" type="file" name="Foto Grande"><br />
+      <input class="boton" type="submit" value="Inserir Produto"><br />
+    </form>
+  </div>
+</main>
 
-  </body>
+<br />
+<br />
+<br />
+<br />
 
-</html>
+<footer>
+  <div class="imagens2">
+    <a href="https://www.instagram.com/titan_ufba/" target="_blank"><img src="{{ url_for('static', filename= 'images/footer1.png') }}" height="30"
+        width="30"></a>
+    <a href="https://www.linkedin.com/company/ufbatitan/" target=_blank><img src="{{ url_for('static', filename= 'images/footer2.png') }}" height="30"
+        width="30"></a>
+  </div>
+</footer>
+{% endblock %}
