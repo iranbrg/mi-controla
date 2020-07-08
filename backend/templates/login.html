@@ -6,44 +6,46 @@ href="{{ url_for('static', filename= 'css/style_login.css') }}">
 {% endblock %}
 
 
+{% block title %}Login - Mi-Controla{% endblock %}
 
-      <header>
-         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-          <div>
-            <img class="logo" src="imagens/Logo.png">
-          </div>
+{% block conteudo %}
+<header>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <div>
+    <a href="{{ url_for('estoque') }}"><img class="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
+  </div>
 
-          <h1>Sistema de Controle de Estoque</h1>
-        </header>
-    
-    <main>
-            <form >
-                <div class="login">
-                    <p id="logintitulo">Faça Seu Login</p>
-                    <input class="campo" type ="text" placeholder="       Usuário"/>
-                    <input class="campo" type="password"placeholder="       Senha"/>
-                    <div class="checkbox">
-                      <input  type="checkbox" style="width: 20px;", height="20px" />
-                      <h4>Lembrar-me</h4>
-                    </div>
-                    <input class= "boton" type="submit" value="LOGIN"/>
-                    <a href="registro.html">Registre-se agora</a>
-                </div>
-            </form>  
-    </main> 
+  <h1>Sistema de Controle de Estoque</h1>
+</header>
 
-    <br/>
-    <br/>
-    <footer>
-      <div class = "imagens2">
-          <a href= "https://www.instagram.com/titan_ufba/" target = "_blank"><img src="imagens/footer1.png"height="30" width="30"></a>
-          <a href="https://www.linkedin.com/company/ufbatitan/" target = _blank><img src="imagens/footer2.png"height="30" width="30"></a>
+<main>
+  <form>
+    <div class="login">
+      <p id="logintitulo">Faça Seu Login</p>
+      <input class="campo" type="text" placeholder="       Usuário" />
+      <input class="campo" type="password" placeholder="       Senha" />
+      <div class="checkbox">
+        <input type="checkbox" style="width: 20px;" , height="20px" />
+        <h4>Lembrar-me</h4>
       </div>
-    </footer> 
+      <input class="boton" type="submit" value="LOGIN" />
+      <a href="{{ url_for('registro') }}">Registre-se agora</a>
+    </div>
+  </form>
+</main>
 
-  </body>
+<br />
+<br />
+<footer>
+  <div class="imagens2">
+    <a href="https://www.instagram.com/titan_ufba/" target="_blank"><img
+        src="{{ url_for('static', filename= 'images/footer1.png') }}" height="30" width="30"></a>
+    <a href="https://www.linkedin.com/company/ufbatitan/" target=_blank><img
+        src="{{ url_for('static', filename= 'images/footer2.png') }}" height="30" width="30"></a>
+  </div>
+</footer>
+{% endblock conteudo %}
 
-</html>

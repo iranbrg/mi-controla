@@ -1,8 +1,7 @@
 {% extends "layout.html" %}
 
 {% block stylesheet %}
-<link rel="stylesheet" type="text/css" 
-href="{{ url_for('static', filename= 'css/style_adicionar.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_adicionar.css') }}">
 {% endblock %}
 
 
@@ -22,20 +21,23 @@ href="{{ url_for('static', filename= 'css/style_adicionar.css') }}">
   <h1>Sistema de Controle de Estoque</h1>
 
   <div class="botaofoto">
-    <div class="imagens"><a href="{{ url_for('estoque') }}"><img src="{{ url_for('static', filename= 'images/in-estoque.png') }}" height="50" width="50"></a>
+    <div class="imagens"><a href="{{ url_for('estoque') }}"><img
+          src="{{ url_for('static', filename= 'images/in-estoque.png') }}" height="50" width="50"></a>
       <p>Estoque
     </div>
-    <div class="imagens"><a href=""><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50" width="50"></a>
+    <div class="imagens"><a href=""><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50"
+          width="50"></a>
       <p>Planilha</p>
     </div>
-    <div class="imagens"><a href="{{ url_for('historico') }}"><img src="{{ url_for('static', filename= 'images/in-historico.png') }}" height="50" width="50"></a>
+    <div class="imagens"><a href="{{ url_for('historico') }}"><img
+          src="{{ url_for('static', filename= 'images/in-historico.png') }}" height="50" width="50"></a>
       <p>Histórico</p>
     </div>
   </div>
 
   <div class="S+Pesquisa">
-    <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img src="{{ url_for('static', filename= 'images/in-voltar.png') }}"
-        height="15" width="15"></h5>
+    <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img
+        src="{{ url_for('static', filename= 'images/in-voltar.png') }}" height="15" width="15"></h5>
     <span id="pesquisa">
       <input id="inPesquisa" type="text" nome="pesquisar" placeholder="Pesquise itens aqui!">
       <input id="botaoPesquisa" type=image src="{{ url_for('static', filename= 'images/in-buscar.png') }}">
@@ -67,8 +69,8 @@ href="{{ url_for('static', filename= 'css/style_adicionar.css') }}">
         {% for subfield in form.tempo_entrega %}
         <tr>
           <td>{{ subfield(class="tempoentrega") }}</td>
-              <td>{{ subfield.label }}</td>
-          </tr>
+          <td>{{ subfield.label }}</td>
+        </tr>
         {% endfor %}
       </div>
       <br />
@@ -89,10 +91,10 @@ href="{{ url_for('static', filename= 'css/style_adicionar.css') }}">
 
 <footer>
   <div class="imagens2">
-    <a href="https://www.instagram.com/titan_ufba/" target="_blank"><img src="{{ url_for('static', filename= 'images/footer1.png') }}" height="30"
-        width="30"></a>
-    <a href="https://www.linkedin.com/company/ufbatitan/" target=_blank><img src="{{ url_for('static', filename= 'images/footer2.png') }}" height="30"
-        width="30"></a>
+    <a href="https://www.instagram.com/titan_ufba/" target="_blank"><img
+        src="{{ url_for('static', filename= 'images/footer1.png') }}" height="30" width="30"></a>
+    <a href="https://www.linkedin.com/company/ufbatitan/" target=_blank><img
+        src="{{ url_for('static', filename= 'images/footer2.png') }}" height="30" width="30"></a>
   </div>
 </footer>
 {% endblock %}

@@ -1,8 +1,7 @@
 {% extends "layout.html" %}
 
 {% block stylesheet %}
-<link rel="stylesheet" type="text/css" 
-href="{{ url_for('static', filename= 'css/style_historico.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_historico.css') }}">
 {% endblock %}
 
 
@@ -10,54 +9,57 @@ href="{{ url_for('static', filename= 'css/style_historico.css') }}">
 
 
 {% block conteudo %}
-  <header>
-    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <div>
-      <a href="{{ url_for('estoque') }}"><img id="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
+<header>
+  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <div>
+    <a href="{{ url_for('estoque') }}"><img id="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
+  </div>
+
+  <h1>Sistema de Controle de Estoque</h1>
+
+  <div id="menuInteracao">
+    <div class="imagens"><a href="{{ url_for('estoque') }}"><img
+          src="{{ url_for('static', filename= 'images/in-estoque.png') }}" height="50" width="50"></a>
+      <p>Estoque</p>
+    </div>
+    <div class="imagens"><a href="{{ url_for('adicionar') }}"><img
+          src="{{ url_for('static', filename= 'images/in-adicionar.png') }}" height="50" width="50"></a>
+      <p>Adicionar</p>
+    </div>
+    <div class="imagens"><a href=""><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50"
+          width="50"></a>
+      <p>Planilha</p>
     </div>
 
-    <h1>Sistema de Controle de Estoque</h1>
+  </div>
+  <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="{{ url_for('login') }}">Sair</a><img
+      src="{{ url_for('static', filename= 'images/in-voltar.png') }}" height="15" width="15"></h5>
 
-    <div id="menuInteracao">
-      <div class="imagens"><a href="{{ url_for('estoque') }}"><img src="{{ url_for('static', filename= 'images/in-estoque.png') }}" height="50" width="50"></a>
-        <p>Estoque</p>
-      </div>
-      <div class="imagens"><a href="{{ url_for('adicionar') }}"><img src="{{ url_for('static', filename= 'images/in-adicionar.png') }}" height="50" width="50"></a>
-        <p>Adicionar</p>
-      </div>
-      <div class="imagens"><a href=""><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50" width="50"></a>
-        <p>Planilha</p>
-      </div>
+</header>
 
+<main>
+
+  <div id="blocoHistórico">
+
+
+    <div class="histAdd">
+      <div id="faixaAdd">v</div>
+      <span id="nomeA">Nome do Produto<br></span>
+      <span id="quantidadeA"><b>Quantidade adicionada:</b> X</span>
+      <div class="dataEHora">Data e Hora</div>
     </div>
-    <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="{{ url_for('login') }}">Sair</a><img src="{{ url_for('static', filename= 'images/in-voltar.png') }}"
-        height="15" width="15"></h5>
 
-  </header> 
-
-  <main>
-
-    <div id="blocoHistórico">
-
-
-      <div class="histAdd">
-        <div id="faixaAdd">v</div>
-        <span id="nomeA">Nome do Produto<br></span>
-        <span id="quantidadeA"><b>Quantidade adicionada:</b> X</span>
-        <div class="dataEHora">Data e Hora</div>
-      </div>
-
-      <div class="histRetirada">
-        <div id="faixaRetirar">v</div>
-        <span id="nomeR">Nome do Produto</span>
-        <span><b>Quantidade retirada:</b> X</span>
-        <span id="vRecebido"><b>Valor Recebido:</b><br> X</span>
-        <div class="dataEHora">Data e Hora</div>
-      </div>
-
+    <div class="histRetirada">
+      <div id="faixaRetirar">v</div>
+      <span id="nomeR">Nome do Produto</span>
+      <span><b>Quantidade retirada:</b> X</span>
+      <span id="vRecebido"><b>Valor Recebido:</b><br> X</span>
+      <div class="dataEHora">Data e Hora</div>
     </div>
-  </main>
+
+  </div>
+</main>
 {% endblock %}

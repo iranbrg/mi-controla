@@ -1,55 +1,54 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-  <head>
-    <meta charset = "utf-8"\>
-    <title> Página de registro</title>
-    <link rel="stylesheet" href="styleregistro.css">
-  </head>
-  
-  <body>
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_registro.css') }}">
+{% endblock %}
 
-      <header>
-         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-          <div>
-           <a href="login.html"><img class="logo" src="imagens/Logo.png"></a> 
-          </div>
 
-          <h1>Sistema de Controle de Estoque</h1>
+{% block title %}Registro - Mi-Controla{% endblock %}
 
-        </header>
-    
-    <main>
-            <form >
-                <div class="registro">
-                    <p id="registrotitulo">Registre -se</p>
-                    <label>Nome completo</label>
-                    <input class="campo" type ="text"/>
-                    <label>Usuário</label>
-                    <input class="campo" type ="text"/>
-                    <label>E-mail</label>
-                    <input class="campo" type ="text"/>
-                    <label>Senha</label>
-                    <input class="campo" type="password"/>
-                    <label>Confirme a senha</label>
-                    <input class="campo" type="password"/>
-                    <input class= "boton" type="submit" value="REGISTAR"/>
-                </div>
-            </form>  
-    </main> 
 
-    <br/>
-    <br/>
-    <footer>
-      <div class = "imagens2">
-          <a href= "https://www.instagram.com/titan_ufba/" target = "_blank"><img src="imagens/footer1.png"height="30" width="30"></a>
-          <a href="https://www.linkedin.com/company/ufbatitan/" target = _blank><img src="imagens/footer2.png"height="30" width="30"></a>
-      </div>
-    </footer> 
+{% block conteudo %}
+<header>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <div>
+    <a href="{{ url_for('estoque') }}"><img class="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
+  </div>
 
-  </body>
+  <h1>Sistema de Controle de Estoque</h1>
 
-</html>
+</header>
+
+<main>
+  <form>
+    <div class="registro">
+      <p id="registrotitulo">Registre -se</p>
+      <label>Nome completo</label>
+      <input class="campo" type="text" />
+      <label>Usuário</label>
+      <input class="campo" type="text" />
+      <label>E-mail</label>
+      <input class="campo" type="text" />
+      <label>Senha</label>
+      <input class="campo" type="password" />
+      <label>Confirme a senha</label>
+      <input class="campo" type="password" />
+      <input class="boton" type="submit" value="REGISTAR" />
+    </div>
+  </form>
+</main>
+
+<br />
+<br />
+<footer>
+  <div class="imagens2">
+    <a href="https://www.instagram.com/titan_ufba/" target="_blank"><img src="{{ url_for('static', filename= 'images/footer1.png') }}" height="30"
+        width="30"></a>
+    <a href="https://www.linkedin.com/company/ufbatitan/" target=_blank><img src="{{ url_for('static', filename= 'images/footer2.png') }}" height="30"
+        width="30"></a>
+  </div>
+</footer>
+{% endblock conteudo %}
