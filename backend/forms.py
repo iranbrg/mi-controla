@@ -7,7 +7,7 @@ class NovoProduto(FlaskForm):
 
     quantidade = IntegerField("Quantidade", validators=[DataRequired(message="Campo obrigatório")])
 
-    codigo_de_barras = StringField("Código de Barras", validators=[DataRequired(message="Campo obrigatório")])
+    codigo_barras = StringField("Código de Barras", validators=[DataRequired(message="Campo obrigatório")])
 
     preco = DecimalField("Preço", validators=[DataRequired(message="Campo obrigatório")])
 
