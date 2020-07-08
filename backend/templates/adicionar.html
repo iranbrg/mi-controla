@@ -41,34 +41,38 @@
 
 <main>
   <div>
-    <form action="{{ url_for('adicionar') }}" method="post">
-      <h2>Adicionar novo produto</h2>
-      <input type="text" name="nomeproduto" placeholder="Nome do produto"> <br />
-      <input type="text" name="estoque" placeholder="Estoque (unidades)"><br />
-      <input type="text" name="codigodebarras" placeholder="Código de barra"><br />
-      <input type="text" name="Preço" placeholder="Preço (reais)"><br />
-      <label style="color: white;">Selecione o fornecedor do produto</label><br />
-      <select class="fornecedor" name="fornecedor">
-        <option value="americanas"> Americanas </option>
-        <option value="amazon"> Amazon</option>
-        <option value="mercado_livre"> Mercado Livre </option>
-      </select>
+    <form action="{{ url_for('adicionar') }}" method="POST">
+      <h2>Adicionar Novo Produto</h2>
+      {{ form.hidden_tag() }}
+      {{ form.nome_produto(placeholder="Nome do produto") }}
+      <br>
+      {{ form.quantidade(placeholder="Estoque (unidades)") }}
+      <br>
+      {{ form.codigo_de_barras(placeholder="Código de barras") }}
+      <br>
+      {{ form.preco(placeholder="Preço (reais)") }}
+      <br>
+      {{ form.fornecedor.label(style="color: white;") }}
+      <br>
+      {{ form.fornecedor(class="fornecedor") }}
       <br />
       <br />
-      <label style="color: white;">Tempo de entrega</label>
+      {{ form.tempo_entrega.label(style="color: white;") }}
       <div class="branco">
-        <input class="tempoentrega" type="radio" name="tempoentrega" value="7">
-        7 dias
-        <input class="tempoentrega" type="radio" name="tempoentrega" value="14">
-        14 dias
-        <input class="tempoentrega" type="radio" name="tempoentrega" value="30">
-        30 dias
+        {% for subfield in form.tempo_entrega %}
+        <tr>
+          <td>{{ subfield(class="tempoentrega") }}</td>
+              <td>{{ subfield.label }}</td>
+          </tr>
+        {% endfor %}
       </div>
       <br />
-      <input class="descricao" type="text" name="Descrição" placeholder="Descrição do produto"><br />
+      {{ form.descricao(class="descricao", placeholder="Descrição do produto") }}
+      <br />
       <label style="color: white;">Adicionar imagem</label><br />
       <input class="fotogrande" type="file" name="Foto Grande"><br />
-      <input class="boton" type="submit" value="Inserir Produto"><br />
+      {{ form.inserir_produto(class="boton") }}
+      <br />
     </form>
   </div>
 </main>
