@@ -1,5 +1,6 @@
 from backend import app
-from flask import render_template
+from flask import render_template, redirect, url_for, flash
+from backend.forms import NovoProduto
 
 
 @app.route('/')
@@ -9,7 +10,10 @@ def estoque():
 
 @app.route('/adicionar', methods=['POST','GET'])
 def adicionar():
-    return render_template('adicionar.html', title='Adicionar ') 
+    form = NovoProduto()
+    if form.validate_on_submit():
+        return redirect(url_for('estoque'))
+    return render_template('adicionar.html', title='Adicionar', form=form)
 
 @app.route('/historico')
 def historico():
@@ -21,6 +25,4 @@ def login():
 
 @app.route('/registro')
 def registro():
-    return render_template('registro.html', title='Registro') 
-
-
+    return render_template('registro.html', title='Registro')
