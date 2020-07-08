@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-  <head>
-    <meta charset = "utf-8"\>
-    <title> Página de Login</title>
-    <link rel="stylesheet" href="stylelogin.css">
-  </head>
-  
-  <body>
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" 
+href="{{ url_for('static', filename= 'css/style_login.css') }}">
+{% endblock %}
+
+
 
       <header>
          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">

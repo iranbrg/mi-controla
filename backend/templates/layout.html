@@ -2,23 +2,15 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-
     {% block stylesheet %}
-    {% endblock stylesheet %}
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {% if title %}
-    <title>Mi-Controla - {{ title }}</title>
-    {% else %}
-    <title>Mi-Controla</title>
-    {% endif %}
-
+    {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
 </head>
 
 <body>
-    {% block conteudo %} {% endblock conteudo %}
+    {% block conteudo %} {% endblock %}
 </body>
 
 {% block script %}
