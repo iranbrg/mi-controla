@@ -17,11 +17,11 @@ def novo_produto(form):
     except EmptyDataError:
         #Se o estoque.csv existir, mas esteja vazio (sem produtos) um novo dataframe será criado
         estoque_df = pd.DataFrame([dados_novo_produto])
-    except FileNotFoundError:
-        #Se o estoque.csv não existir, um novo arquivo será criado
-        with open(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), "w"):
-            #Além de um novo dataframe, o qual preencherá o estoque.csv
-            estoque_df = pd.DataFrame([dados_novo_produto])
+    # except FileNotFoundError:
+    #     #Se o estoque.csv não existir, um novo arquivo será criado
+    #     with open(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), "w"):
+    #         #Além de um novo dataframe, o qual preencherá o estoque.csv
+    #         estoque_df = pd.DataFrame([dados_novo_produto])
     else:
         estoque_df.set_index("nome_produto", inplace=True)
 
