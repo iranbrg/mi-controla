@@ -1,12 +1,12 @@
 from flask import render_template, redirect, url_for
 from backend import app
 from backend.forms import NovoProduto
-from backend.pd import novo_produto
+from backend.pd import novo_produto, leitura_estoque
 
 @app.route('/')
 @app.route('/estoque')
 def estoque():
-    return render_template('estoque.html', title='Estoque') 
+    return render_template('estoque.html', title='Estoque', estoque=leitura_estoque())
 
 @app.route('/adicionar', methods=['POST','GET'])
 def adicionar():

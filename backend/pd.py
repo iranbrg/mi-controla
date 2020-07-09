@@ -2,6 +2,16 @@ import pandas as pd
 from pandas.errors import EmptyDataError
 import os
 
+def leitura_estoque():
+    try:
+        #Leitura do estoque.csv (criação do dataframe)
+        estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
+    except EmptyDataError:
+        #Se o estoque.csv estiver vazio (sem produtos) a string é retornada
+        return "estoque vazio"
+    else:
+        return estoque_df.to_dict("list")
+
 def novo_produto(form):
     dados_novo_produto = {"nome_produto": form.nome_produto.data.lower(),
                           "quantidade": form.quantidade.data,
