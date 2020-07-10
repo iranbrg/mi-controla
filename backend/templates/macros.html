@@ -1,9 +1,9 @@
 {% macro produto(estoque, nome, nome_index) -%}
     <!-- Uma lista com os atributos do produto referente ao seu respectivo card é atribuida à variável "info_produto" -->
-    <!--{% set info_produto = [nome, estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index]] %}-->
+    {% set info_produto = [nome = nome.replace(" ", "_"), estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index]] %}
 
     <!-- A variável "info_produto" é passada por meio do atributo "data-info" para o JS -->
-    <li><button class="detalheItem" onclick="exibirPopInfo()" data-info={{[nome, estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index]]}} id="{{ nome }}"><img class="imagemProduto"
+    <li><button class="detalheItem" onclick="exibirPopInfo()" data-info={{ info_produto }} id="{{ nome }}"><img class="imagemProduto"
                 src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></button></li>
     <li class="nome">{{ nome }}</li>
     <li class="dado"><b>Preço: </b>{{ estoque["preco"][nome_index] }}</li>

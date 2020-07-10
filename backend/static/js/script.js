@@ -6,7 +6,11 @@ let testeMain = document.querySelector('main').children
 
 
 // A variável "info_produto" é recebida por meio do atributo "data-info" e posteriormente deverá ser passada do JS para o HTML para que as informações do produto sejam exibidas nos pop-ups
+<<<<<<< HEAD
 
+=======
+// var info = document.getElementById("idDoBotao").getAttribute("data-info");
+>>>>>>> ab5aab459e0b419dc4636df4a51669bee07ef3dc
 
 function exibirPopInfo() {
     popUpInfo.style.display = "grid";
