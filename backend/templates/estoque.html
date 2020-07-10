@@ -86,6 +86,7 @@
 
   <div><img class="imagemPop" src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></div>
   <ul id="ulInfo">
+    <!-- Esta lista receberá as informações do JS para serem dispostas no pop-up -->
     <li><b>Nome: </b>{{ estoque["nome_produto"][0]}}</li>
     <li><b>Preço: </b>{{ estoque["preco"][0]}}</li>
     <li><b>Código de Barras: </b>{{ estoque["codigo_barras"][0]}}</li>
