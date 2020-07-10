@@ -7,14 +7,14 @@ class NovoProduto(FlaskForm):
 
     quantidade = IntegerField("Quantidade", validators=[DataRequired(message="Campo obrigatório")])
 
-    codigo_de_barras = StringField("Código de Barras", validators=[DataRequired(message="Campo obrigatório")])
+    codigo_barras = StringField("Código de Barras", validators=[DataRequired(message="Campo obrigatório")])
 
     preco = DecimalField("Preço", validators=[DataRequired(message="Campo obrigatório")])
 
-    fornecedor = SelectField("Selecione o fornecedor do produto", choices=[("americanas", "Americanas"), ("amazon", "Amazon"), ("mercadolivre", "Mercado Livre")], validators=[DataRequired(message="Campo obrigatório")])
+    fornecedor = SelectField("Selecione o fornecedor do produto", choices=[("Americanas", "Americanas"), ("Amazon", "Amazon"), ("Mercado Livre", "Mercado Livre")], validators=[DataRequired(message="Campo obrigatório")])
 
-    tempo_entrega = RadioField("Tempo de Entrega", choices=[("7", "7 Dias"), ("14", "14 Dias"), ("30", "30 Dias")], validators=[DataRequired(message="Campo obrigatório")])
+    tempo_entrega = RadioField("Tempo de Entrega", choices=[("7 dias", "7 dias"), ("14 dias", "14 dias"), ("30 dias", "30 dias")], validators=[DataRequired(message="Campo obrigatório")])
 
-    descricao = StringField("Descrição")
+    descricao = StringField("Descrição", default=" ")
 
     inserir_produto = SubmitField("Inserir Produto")
