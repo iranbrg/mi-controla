@@ -14,16 +14,17 @@ def adicionar():
     if form.validate_on_submit():
         novo_produto(form)
         return redirect(url_for('estoque'))
-    return render_template('adicionar.html', title='Adicionar', form=form)
+    return render_template('adicionar.html', form=form)
 
 @app.route('/historico')
 def historico():
-    return render_template('historico.html', title='Histórico') 
+    return render_template('historico.html') 
+
 
 @app.route('/login', methods=['POST','GET'])
 def login():
-    return render_template('login.html', title='Login') 
+    return render_template('login.html') 
 
 @app.route('/registro')
 def registro():
-    return render_template('registro.html', title='Registro')
+    return render_template('registro.html')

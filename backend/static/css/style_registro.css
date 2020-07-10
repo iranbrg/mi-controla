@@ -1,8 +1,7 @@
 body {
-	background-color: #778899;
+	background-color:#778899	;
 	margin: 0;
-}	
-
+}
 header {
 	display: flex;
 	width: 100%;
@@ -13,23 +12,20 @@ header {
 	justify-content: space-between;
 	align-items: center;
 }
-
-h1 {
+h1{
 	font-family: 'Holtwood One SC', serif;
-	font-size: 30px;
-	display: flex;
-	padding-right: 350px;
-	
+    font-size: 30px;
+    display: flex;
+    padding-right:350px ;
 }
-
 .logo {
 	max-width: 110px;
 	padding-top: 4px;
 }
 
 
-/*  formulario */
-main {
+/*  formulario DE REGISTRO */
+main{
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 auto;
@@ -37,52 +33,39 @@ main {
 	justify-content: center;
 
 }
-
 input {
-	display: block;
+    display: block;
 	border-radius: 20px;
 	margin-bottom: 20px;
 	border-radius: 5px;
-	height: 60px;
-	width: 300px;
-	border: none;
+	height: 40px;
+    width: 300px;
+    border: none;
 }
-
-.login {
-	padding-left: 0px;
-	padding-top: 80px;
-	padding-bottom: 60px;
+.registro{
+    padding-left: 0px;
+    padding-top: 30px;
+    padding-bottom: 60px;
 
 }
-
-.campo {
-	border-radius: 50px;
+.campo{
+    border-radius: 50px;
 }
-
-#logintitulo {
-	padding-left: 40px;
-	color: white;
-	font-size: 30px;
-	font-family: 'Poppins', sans-serif;
+#registrotitulo{
+    padding-left: 55px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
 }
-
-.login > a{
-	display: flex;
-	justify-content: center;
-	cursor: pointer;
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	text-decoration: none;
-}
-
-.checkbox{
-	display: flex;
-	padding-left: 10px;
-	color:white
+label{
+    display: flex;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    color: white;
 }
 
 /*  botão */
-.boton {
+.boton{
 	display: flex;
 	color: white;
 	background-color: #25b1e0;
@@ -91,20 +74,18 @@ input {
 	cursor: pointer;
 	font-size: large;
 	border-radius: 20px;
-	border: none;
+	border:none;
 	font-family: 'Source Sans Pro', sans-serif;
 	justify-content: center;
 	margin-left: 50px;
 }
-
-.boton:hover {
+.boton:hover{
 	background-color: #1cc6ff;
 	background-image: none;
 	border-color: none;
 
 }
-
-footer {
+footer{
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 auto;
@@ -112,7 +93,6 @@ footer {
 	border-bottom: 30px solid #144bb8c7;
 	justify-content: center;
 }
-
-.imagens2 {
+.imagens2{
 	padding-right: 2px;
 }
