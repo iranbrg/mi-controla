@@ -4,8 +4,9 @@ let fundoPop = document.getElementById('fundoPop')
 
 let testeMain = document.querySelector('main').children
 
+
 // A variável "info_produto" é recebida por meio do atributo "data-info" e posteriormente deverá ser passada do JS para o HTML para que as informações do produto sejam exibidas nos pop-ups
-// var info = document.getElementById("info-botao").getAttribute("data-info");
+
 
 function exibirPopInfo() {
     popUpInfo.style.display = "grid";
@@ -28,3 +29,10 @@ function retirarPopRetirada() {
     fundoPop.style.display = "none";
 
 }
+
+var a = document.getElementsByClassName('detalheItem')
+var info = a[0].getAttribute("data-info");
+
+console.log(a);
+console.log(info);
+
