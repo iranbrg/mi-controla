@@ -1,66 +1,114 @@
-{% extends "layout.html" %}
-
-{% block stylesheet %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_adicionar.css') }}">
-{% endblock %}
-
-
-{% block title %}Adicionar - Mi-Controla{% endblock %}
-
-
-{% block conteudo %}
+{% extends "layout.html" %} {% block stylesheet %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename= 'css/style_adicionar.css') }}"
+/>
+{% endblock %} {% block title %}Adicionar - Mi-Controla{% endblock %} {% block
+conteudo %}
 <header>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+    rel="stylesheet"
+  />
   <div>
-    <a href="{{ url_for('estoque') }}"><img class="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
+    <a href="{{ url_for('estoque') }}"
+      ><img
+        class="logo"
+        src="{{ url_for('static', filename= 'images/logo.png') }}"
+    /></a>
   </div>
 
   <h1>Sistema de Controle de Estoque</h1>
 
   <div class="botaofoto">
-    <div class="imagens"><a href="{{ url_for('estoque') }}"><img
-          src="{{ url_for('static', filename= 'images/in-estoque.png') }}" height="50" width="50"></a>
-      <p>Estoque
+    <div class="imagens">
+      <a href="{{ url_for('estoque') }}"
+        ><img
+          src="{{ url_for('static', filename= 'images/in-estoque3.png') }}"
+          height="50"
+          width="50"
+      /></a>
+      <p>Estoque</p>
     </div>
-    <div class="imagens"><a href=""><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50"
-          width="50"></a>
+
+    <div class="imagens">
+      <a href=""
+        ><img
+          src="{{ url_for('static', filename= 'images/in-planilha.png') }}"
+          height="50"
+          width="50"
+      /></a>
       <p>Planilha</p>
     </div>
-    <div class="imagens"><a href="{{ url_for('historico') }}"><img
-          src="{{ url_for('static', filename= 'images/in-historico.png') }}" height="50" width="50"></a>
+    <div class="imagens">
+      <a href="{{ url_for('historico') }}"
+        ><img
+          src="{{ url_for('static', filename= 'images/in-historico.png') }}"
+          height="50"
+          width="50"
+      /></a>
       <p>Histórico</p>
     </div>
   </div>
 
   <div class="S+Pesquisa">
-    <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img
-        src="{{ url_for('static', filename= 'images/in-voltar.png') }}" height="15" width="15"></h5>
-    <span id="pesquisa">
-      <input id="inPesquisa" type="text" nome="pesquisar" placeholder="Pesquise itens aqui!">
-      <input id="botaoPesquisa" type=image src="{{ url_for('static', filename= 'images/in-buscar.png') }}">
-    </span>
+    <h5 class="textoInicio">
+      Bem vindo(a) <a class="textoInicio" href="#">Sair</a
+      ><img
+        src="{{ url_for('static', filename= 'images/in-voltar.png') }}"
+        height="15"
+        width="15"
+      />
+    </h5>
 
+    <span id="pesquisa">
+      <input
+        id="inPesquisa"
+        type="text"
+        nome="pesquisar"
+        placeholder="Pesquise itens aqui!"
+      />
+      <input
+        id="botaoPesquisa"
+        type="image"
+        src="{{ url_for('static', filename= 'images/in-buscar.png') }}"
+      />
+    </span>
   </div>
 </header>
 
 <main>
   <div>
-    <form action="{{ url_for('adicionar') }}" method="POST">
+    <form action="{{ url_for('adicionar') }}" method="POST" onsubmit="alerta()">
       <h2>Adicionar Novo Produto</h2>
-      {{ form.hidden_tag() }}
-      {{ form.nome_produto(placeholder="Nome do produto") }}
-      <br>
+      {{ form.hidden_tag() }} {{ form.nome_produto(placeholder="Nome do
+      produto") }}
+      <br />
       {{ form.quantidade(placeholder="Estoque (unidades)") }}
-      <br>
+      <br />
       {{ form.codigo_de_barras(placeholder="Código de barras") }}
-      <br>
+      <br />
       {{ form.preco(placeholder="Preço (reais)") }}
-      <br>
+      <br />
       {{ form.fornecedor.label(style="color: white;") }}
-      <br>
+      <br />
       {{ form.fornecedor(class="fornecedor") }}
       <br />
       <br />
@@ -74,10 +122,11 @@
         {% endfor %}
       </div>
       <br />
-      {{ form.descricao(class="descricao", placeholder="Descrição do produto") }}
+      {{ form.descricao(class="descricao", placeholder="Descrição do produto")
+      }}
       <br />
       <label style="color: white;">Adicionar imagem</label><br />
-      <input class="fotogrande" type="file" name="Foto Grande"><br />
+      <input class="fotogrande" type="file" name="Foto Grande" /><br />
       {{ form.inserir_produto(class="boton") }}
       <br />
     </form>
@@ -91,10 +140,27 @@
 
 <footer>
   <div class="imagens2">
-    <a href="https://www.instagram.com/titan_ufba/" target="_blank"><img
-        src="{{ url_for('static', filename= 'images/footer1.png') }}" height="30" width="30"></a>
-    <a href="https://www.linkedin.com/company/ufbatitan/" target=_blank><img
-        src="{{ url_for('static', filename= 'images/footer2.png') }}" height="30" width="30"></a>
+    <a href="https://www.instagram.com/titan_ufba/" target="_blank"
+      ><img
+        src="{{ url_for('static', filename= 'images/footer1.png') }}"
+        height="30"
+        width="30"
+    /></a>
+
+    <a href="https://www.linkedin.com/company/ufbatitan/" target="_blank"
+      ><img
+        src="{{ url_for('static', filename= 'images/footer2.png') }}"
+        height="30"
+        width="30"
+    /></a>
   </div>
 </footer>
+
+{% endblock %} 
+
+{% block script %}
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename= 'js/script_adicionar.js') }}"
+></script>
 {% endblock %}

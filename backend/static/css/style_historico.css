@@ -38,6 +38,7 @@ h1 {
 .imagens {
     display: flex;
     flex-direction: column;
+    padding-top: 15px;
 
 }
 
@@ -45,7 +46,6 @@ h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
     margin-left: 4px;
-
 }
 
 .imagens>a {
