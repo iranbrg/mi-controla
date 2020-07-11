@@ -98,8 +98,7 @@ conteudo %}
   <div>
     <form action="{{ url_for('adicionar') }}" method="POST" onsubmit="alerta()">
       <h2>Adicionar Novo Produto</h2>
-      {{ form.hidden_tag() }} {{ form.nome_produto(placeholder="Nome do
-      produto") }}
+      {{ form.hidden_tag() }} {{ form.nome_produto(placeholder="Nome do produto") }}
       <br />
       {{ form.quantidade(placeholder="Estoque (unidades)") }}
       <br />

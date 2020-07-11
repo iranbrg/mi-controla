@@ -88,6 +88,8 @@ h1 {
   border-color: #666666;
   border-width: 2px;
   font-family: "Zilla Slab", serif;
+  box-shadow: 0 0 0 0;
+	outline: 0;
 }
 
 #botaoPesquisa {
@@ -99,6 +101,8 @@ h1 {
   border-left: 0;
   border-width: 2px;
   padding: 0;
+  box-shadow: 0 0 0 0;
+	outline: 0;
 }
 
 /* Personalização do main*/
@@ -156,6 +160,8 @@ main {
   border-radius: 20px;
   background-color: transparent;
   border-color: transparent;
+  box-shadow: 0 0 0 0;
+  outline: 0;
 }
 
 .nome {
@@ -193,9 +199,10 @@ main {
   margin-right: 1vw;
   margin-left: 0.5vw;
   border-style: none;
-  box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   font-family: "Source Sans Pro", sans-serif;
+  box-shadow: 0 0 0 0;
+	outline: 0;
 }
 
 .bt2 {
@@ -204,6 +211,8 @@ main {
   border-style: none;
   margin-right: 0.2vw;
   cursor: pointer;
+  box-shadow: 0 0 0 0;
+	outline: 0;
 }
 
 .bt2 > img {
@@ -317,6 +326,8 @@ main {
   border-style: none;
   cursor: pointer;
   font-family: "Source Sans Pro", sans-serif;
+  box-shadow: 0 0 0 0;
+	outline: 0;
 }
 
 #botaoCIn:hover {
@@ -396,6 +407,8 @@ main {
   border-style: none;
   cursor: pointer;
   font-family: "Source Sans Pro", sans-serif;
+  box-shadow: 0 0 0 0;
+	outline: 0;
 }
 
 #botaoCR:hover {
@@ -428,6 +441,7 @@ main {
   font-family: "Source Sans Pro", sans-serif;
   margin-left: 3px;
   font-weight: bold;
+  
 }
 
 #fecharPop{
@@ -441,6 +455,8 @@ main {
   width: 40px;
   height: 40px;
   padding-top: 10px;
+  box-shadow: 0 0 0 0;
+	outline: 0;
   
 }
 
@@ -455,4 +471,6 @@ main {
   border-style: none;
   border-color: transparent;
   margin-left: 2px;
+  box-shadow: 0 0 0 0;
+	outline: 0;
 }
