@@ -2,7 +2,8 @@ from flask import render_template, redirect, url_for, request
 from backend import app
 from backend.forms import NovoProduto
 from backend.pd import novo_produto, leitura_estoque
-
+from werkzeug.utils import secure_filename
+import os
 
 @app.route('/estoque')
 def estoque():
@@ -13,6 +14,10 @@ def adicionar():
     form = NovoProduto()
     if form.validate_on_submit():
         novo_produto(form)
+        f = form.foto.data
+        filename = secure_filename(f.filename)
+        f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename))
+        print(form.errors)
         return redirect(url_for('estoque'))
     return render_template('adicionar.html', form=form)
 

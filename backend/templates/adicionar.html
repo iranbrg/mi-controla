@@ -48,7 +48,7 @@
 
 <main>
   <div>
-    <form action="{{ url_for('adicionar') }}" method="POST">
+    <form action="{{ url_for('adicionar') }}" method="POST" enctype="multipart/form-data">
       <h2>Adicionar Novo Produto</h2>
       {{ form.hidden_tag() }}
       {{ form.nome_produto(placeholder="Nome do produto") }}
@@ -77,7 +77,7 @@
       {{ form.descricao(class="descricao", placeholder="Descrição do produto") }}
       <br />
       <label style="color: white;">Adicionar imagem</label><br />
-      <input class="fotogrande" type="file" name="Foto Grande"><br />
+      {{ form.foto }}
       {{ form.inserir_produto(class="boton") }}
       <br />
     </form>

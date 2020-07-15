@@ -1,6 +1,5 @@
 {% extends "layout.html" %}
-{% import "macros2.html" as produto %}
-{% from datetime import datetime %}
+{% import "macros.html" as produto %}
 {% block stylesheet %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_historico.css') }}">
 {% endblock %}
@@ -56,7 +55,7 @@
       <div id="faixaAdd">v</div>
       <span id="nomeA">Nome do Produto<br></span>
       <span id="quantidadeA"><b>Quantidade adicionada:</b> X</span>
-      <div class="dataEHora">{% now = datetime.now(), print(now) %}</div>
+      <div class="dataEHora"></div>
     </div>
 
     <div class="histRetirada">

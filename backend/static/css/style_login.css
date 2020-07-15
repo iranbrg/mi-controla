@@ -27,6 +27,61 @@ h1 {
 	padding-top: 4px;
 }
 
+.imagens {
+	display: flex;
+	flex-direction: line;
+	align-items: center;
+	display: inline-block;
+	padding-top: 15px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	padding-right: 50px;
+}
+
+.botaofoto {
+	display: flex;
+	font-size: 10px;
+}
+
+h2 {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: aliceblue;
+	display: flex;
+	justify-content: center;
+
+}
+
+/* negocio do pesquisar*/
+#pesquisa {
+	display: flex;
+	align-items: center;
+}
+
+#inPesquisa {
+	padding: 0;
+	height: 28px;
+	width: 210px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 2px;
+	font-family: 'Zilla Slab', serif;
+}
+
+#botaoPesquisa {
+	border-color: #666666;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	margin-right: 0.4vw;
+	border-style: solid;
+	border-left: 0;
+	border-width: 2px;
+	padding: 0;
+	width: 28px;
+	height: 29px;
+}
+
 
 /*  formulario */
 main {
@@ -66,20 +121,6 @@ input {
 	font-family: 'Poppins', sans-serif;
 }
 
-.login > a{
-	display: flex;
-	justify-content: center;
-	cursor: pointer;
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	text-decoration: none;
-}
-
-.checkbox{
-	display: flex;
-	padding-left: 10px;
-	color:white
-}
 
 /*  botão */
 .boton {
