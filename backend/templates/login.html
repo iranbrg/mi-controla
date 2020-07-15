@@ -22,11 +22,11 @@ href="{{ url_for('static', filename= 'css/style_login.css') }}">
 </header>
 
 <main>
-  <form>
+  <form action="" method="post">
     <div class="login">
       <p id="logintitulo">Faça Seu Login</p>
-      <input class="campo" type="text" placeholder="       Usuário" />
-      <input class="campo" type="password" placeholder="       Senha" />
+      <input class="campo" type="text" placeholder="       Usuário" name="username" value="{{ request.form.username }}" />
+      <input class="campo" type="password" placeholder="       Senha" name="password" value="{{ request.form.password }}" />
       <div class="checkbox">
         <input type="checkbox" style="width: 20px;" , height="20px" />
         <h4>Lembrar-me</h4>
@@ -35,7 +35,10 @@ href="{{ url_for('static', filename= 'css/style_login.css') }}">
       <a href="{{ url_for('registro') }}">Registre-se agora</a>
     </div>
   </form>
-</main>
+  {% if error %}
+    {{ error }}
+  {% endif %}
+</main>   
 
 <br />
 <br />

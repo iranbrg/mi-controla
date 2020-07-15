@@ -1,9 +1,9 @@
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request   
 from backend import app
 from backend.forms import NovoProduto
 from backend.pd import novo_produto, leitura_estoque
 
-@app.route('/')
+
 @app.route('/estoque')
 def estoque():
     return render_template('estoque.html', title='Estoque', estoque=leitura_estoque())
@@ -18,12 +18,18 @@ def adicionar():
 
 @app.route('/historico')
 def historico():
-    return render_template('historico.html') 
+    return render_template('historico.html', estoque=leitura_estoque()) 
 
-
+@app.route('/')
 @app.route('/login', methods=['POST','GET'])
 def login():
-    return render_template('login.html') 
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] !='admin' or request.form['password'] != 'admin':
+            error = ' Credenciais incorretas. Por favor, tente novamente.'
+        else:
+            return redirect(url_for('estoque'))
+    return render_template('login.html', error=error) 
 
 @app.route('/registro')
 def registro():

@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
-
+{% import "macros2.html" as produto %}
+{% from datetime import datetime %}
 {% block stylesheet %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_historico.css') }}">
 {% endblock %}
@@ -43,13 +44,19 @@
 <main>
 
   <div id="blocoHistórico">
-
-
+    {% for nome in estoque["nome_produto"] %}
+      <div class="histAdd">
+        <div id="faixaAdd">v</div>
+        <ul>
+          {{ produto.produto(estoque, nome, estoque["nome_produto"].index(nome)) }}
+        </ul>
+      </div>
+    {% endfor %}
     <div class="histAdd">
       <div id="faixaAdd">v</div>
       <span id="nomeA">Nome do Produto<br></span>
       <span id="quantidadeA"><b>Quantidade adicionada:</b> X</span>
-      <div class="dataEHora">Data e Hora</div>
+      <div class="dataEHora">{% now = datetime.now(), print(now) %}</div>
     </div>
 
     <div class="histRetirada">
