@@ -20,13 +20,13 @@ def adicionar():
 def historico():
     return render_template('historico.html', estoque=leitura_estoque()) 
 
-@app.route('/')
+@app.route('/', methods=['POST','GET'])
 @app.route('/login', methods=['POST','GET'])
 def login():
     error = None
     if request.method == 'POST':
         if request.form['username'] !='admin' or request.form['password'] != 'admin':
-            error = ' Credenciais incorretas. Por favor, tente novamente.'
+            error = 'Credenciais incorretas. Por favor, tente novamente.'
         else:
             return redirect(url_for('estoque'))
     return render_template('login.html', error=error) 

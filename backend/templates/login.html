@@ -1,8 +1,7 @@
 {% extends "layout.html" %}
 
 {% block stylesheet %}
-<link rel="stylesheet" type="text/css" 
-href="{{ url_for('static', filename= 'css/style_login.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_login.css') }}">
 {% endblock %}
 
 
@@ -25,8 +24,10 @@ href="{{ url_for('static', filename= 'css/style_login.css') }}">
   <form action="" method="post">
     <div class="login">
       <p id="logintitulo">Faça Seu Login</p>
-      <input class="campo" type="text" placeholder="       Usuário" name="username" value="{{ request.form.username }}" />
-      <input class="campo" type="password" placeholder="       Senha" name="password" value="{{ request.form.password }}" />
+      <input class="campo" type="text" placeholder="       Usuário" name="username"
+        value="{{ request.form.username }}" />
+      <input class="campo" type="password" placeholder="       Senha" name="password"
+        value="{{ request.form.password }}" />
       <div class="checkbox">
         <input type="checkbox" style="width: 20px;" , height="20px" />
         <h4>Lembrar-me</h4>
@@ -36,9 +37,9 @@ href="{{ url_for('static', filename= 'css/style_login.css') }}">
     </div>
   </form>
   {% if error %}
-    {{ error }}
+  <strong>Error:</strong> {{ error }}
   {% endif %}
-</main>   
+</main>
 
 <br />
 <br />
@@ -51,4 +52,3 @@ href="{{ url_for('static', filename= 'css/style_login.css') }}">
   </div>
 </footer>
 {% endblock conteudo %}
-
