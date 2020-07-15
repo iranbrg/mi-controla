@@ -25,8 +25,13 @@ h1 {
 .logo {
 	max-width: 110px;
 	padding-top: 4px;
+	margin-left: 1.5vw;
 }
-
+.logo:hover{
+	-webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
 
 /*  formulario */
 main {
@@ -63,6 +68,9 @@ input {
 .campo {
 	border-radius: 50px;	
 }
+.campo:hover{
+	box-shadow: 0 10px 20px 0 #25b1e0;
+}
 #logintitulo {
 	padding-left: 30px;
 	color: white;
@@ -78,24 +86,31 @@ input {
 	color: white;
 	text-decoration: none;
 }
+.login > a:hover{
+	color: #25b1e0;
 
+}
 .checkbox{
 	display: flex;
 	padding-left: 10px;
 	color:white
 }
-
-.iconuser i {
+.icon_user > i {
   position: absolute;
   padding: 14px;
   padding-left: 20px;
+  opacity: 80%;
+  color:#778899;
 }
-.iconlock i {
+.icon_lock > i {
 	position: absolute;
 	padding: 14px;
-    padding-left: 20px;
+	padding-left: 20px;
+	opacity: 80%;
+	color:#778899;
 }
 /*  botão */
+
 .boton {
 	display: flex;
 	color: white;
@@ -116,7 +131,10 @@ input {
 	background-color: #1cc6ff;
 	background-image: none;
 	border-color: none;
-
+	-webkit-transform: scale(1.1);
+     -ms-transform: scale(1.1);
+	 transform: scale(1.1);
+	 box-shadow: 0 10px 20px 0 #25b1e0;
 }
 
 footer {
@@ -129,5 +147,10 @@ footer {
 }
 
 .imagens2 {
-	padding-right: 2px;
+	padding-right: 10px;
+}
+.imagens2:hover{
+	-webkit-transform: rotateZ(-30deg);
+        -ms-transform: rotateZ(-30deg);
+        transform: rotateZ(-30deg);
 }

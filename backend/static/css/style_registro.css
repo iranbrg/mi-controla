@@ -21,6 +21,12 @@ h1{
 .logo {
 	max-width: 110px;
 	padding-top: 4px;
+	margin-left: 1.5vw;
+}
+.logo:hover{
+  -webkit-transform: scale(1.2);
+   -ms-transform: scale(1.2);
+   transform: scale(1.2);
 }
 
 
@@ -54,6 +60,9 @@ input {
 .campo{
     border-radius: 50px;
 }
+.campo:hover{
+	box-shadow: 0 10px 20px 0 #25b1e0;
+}
 #registrotitulo{
     padding-left: 80px;
     color: white;
@@ -66,26 +75,33 @@ label{
     padding-bottom: 5px;
     color: white;
 }
-.icon_nome i{
+.icon_nome >i{
     position: absolute;
     padding: 4px;
-    padding-left: 10px;
-
+	padding-left: 10px;
+	opacity: 80%;
+	color:#778899;
 }
-.icon_user i{
+.icon_user > i{
     position: absolute;
     padding: 4px;
-    padding-left: 10px;
+	padding-left: 10px;
+	opacity: 80%;
+	color:#778899;
 }
-.icon_email i{
+.icon_email > i{
     position: absolute;
     padding: 4px;
-    padding-left: 10px;
+	padding-left: 10px;
+	opacity: 80%;
+	color:#778899;
 }
-.icon_senha i{
+.icon_senha > i{
     position: absolute;
     padding: 4px;
-    padding-left: 10px;
+	padding-left: 10px;
+	opacity: 80%;
+	color:#778899;
 }
 
 /*  botão */
@@ -108,7 +124,10 @@ label{
 	background-color: #1cc6ff;
 	background-image: none;
 	border-color: none;
-
+	-webkit-transform: scale(1.1);
+	 -ms-transform: scale(1.1);
+	 transform: scale(1.1);
+	box-shadow: 0 10px 20px 0 #25b1e0;
 }
 footer{
 	display: flex;
@@ -118,6 +137,11 @@ footer{
 	border-bottom: 30px solid #144bb8c7;
 	justify-content: center;
 }
-.imagens2{
-	padding-right: 2px;
+.imagens2 {
+	padding-right: 10px;
+}
+.imagens2:hover{
+	-webkit-transform: rotateZ(-30deg);
+     -ms-transform: rotateZ(-30deg);
+     transform: rotateZ(-30deg);
 }

@@ -29,6 +29,12 @@ h1 {
     padding-top: 4px;
     margin-left: 1.5vw;
 }
+#logo:hover{
+	-webkit-transform: scale(1.2);
+     -ms-transform: scale(1.2);
+     transform: scale(1.2);
+}
+
 
 #menuInteracao {
     display: flex;
@@ -41,7 +47,11 @@ h1 {
     padding-top: 15px;
 
 }
-
+.imagens:hover{
+ -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
 .imagens>p {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
@@ -60,6 +70,7 @@ h1 {
     padding-right: 3vw;
     padding-top: 2.5vh;
     padding-top: 4px;
+    opacity: 80%;
 
 }
 
