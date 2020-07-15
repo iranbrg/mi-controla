@@ -117,13 +117,13 @@
 
   <div id="detalhes">
     <ul>
-      <li id="quantidade"><b>Quantidade a ser retirada: </b>Variável <button id="bQuantidadeR">+</button></li>
-      <li><b>Valor total a ser recebido: </b>8000</li>
+      <li id="quantidade"><b>Quantidade a ser retirada: </b><input type="text" placeholder="Quantidade" id="quantidadeR"></li>
+      <li><b>Valor total a ser recebido: </b><span id="valorTotal">X</span></li>
     </ul>
   </div>
 
-  <button id="botaoCR" onclick="retirarPopRetirada()">CONFIRMAR</button>
-
+  <button id="botaoCR" onclick="retirarPopRetiradaBotaoConfirma()">CONFIRMAR</button>
+  <button id="fecharPop" onclick="retirarPopRetirada()">X</button>
 </div>
 {% endblock %}
 

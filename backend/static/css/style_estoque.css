@@ -372,7 +372,7 @@ main {
 	max-width: 700px;
 	max-height: 500px;
 	display: grid;
-	grid-template-columns: 250fr 450fr;
+	grid-template-columns: 250px 410px 40px;
 	grid-template-rows: 250px 200px 50px;
 	background-color: #8c8c8c;
 	font-family: 'Roboto', sans-serif;
@@ -451,3 +451,34 @@ main {
 	margin-left: 3px;
 	font-weight: bold;
 }
+
+#fecharPop{
+	font-weight: bold;
+	background-color: transparent;
+	grid-column: 3/4;
+	text-align: start;
+	border-style: none;
+	border-color: transparent;
+	font-size: 16px;
+	width: 40px;
+	height: 40px;
+	padding-top: 10px;
+	box-shadow: 0 0 0 0;
+	  outline: 0;
+	
+  }
+  
+  #fecharPop:hover{
+	color: white;
+  }
+  
+  #quantidadeR{
+	width: 80px;
+	padding: 3px;
+	border-radius: 3px;
+	border-style: none;
+	border-color: transparent;
+	margin-left: 2px;
+	box-shadow: 0 0 0 0;
+	  outline: 0;
+  }

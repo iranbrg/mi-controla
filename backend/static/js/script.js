@@ -12,6 +12,11 @@ function retirarPopRetirada() {
     fundoPop.style.display = "none";
 }
 
+function retirarPopRetiradaBotaoConfirma() {
+    popUpRetirada.style.display = "none";
+    fundoPop.style.display = "none";
+}
+
 var botoes = document.getElementsByClassName('detalheItem')
 
 //não está reconhecendo o data-atribute como vetor. Quando reconhecer a função vai funcionar
@@ -30,7 +35,6 @@ function dados(){
     document.getElementById('4').textContent = vDados[3];
     document.getElementById('5').textContent = vDados[4];
     document.getElementById('6').textContent = vDados[5];
-    console.log(vDados);
 }
 
 //Para o pop-up de retirada
@@ -50,7 +54,22 @@ function dadosRetirada(){
     document.getElementById('3.1').textContent = vDadosR[2];
     document.getElementById('4.1').textContent = vDadosR[3];
     document.getElementById('5.1').textContent = vDadosR[4];
-    console.log(vDadosR);
+    preço = vDadosR[1];
 }
+
+
+let preço = 1;
+let total;
+
+function exibir (){
+    var valorInput = document.getElementById('quantidadeR').value;
+    Number(valorInput);
+    total = preço*valorInput;
+    let valorTotal = document.getElementById("valorTotal");
+    valorTotal.textContent = total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
+}
+
+
+oninput = exibir;
 
 //o id é o código de barras para os botões de retirar
