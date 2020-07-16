@@ -20,6 +20,7 @@ function retirarPopRetirada() {
 
 }
 
+<<<<<<< HEAD
 var botoes = document.getElementsByClassName('detalheItem')
 
 //não está reconhecendo o data-atribute como vetor. Quando reconhecer a função vai funcionar
@@ -64,3 +65,20 @@ function dadosRetirada(){
 }
 
 //o id é o código de barras para os botões de retirar
+=======
+let preço = 2;
+let total;
+
+function exibir (){
+    var valorInput = document.getElementById('quantidadeR').value;
+    Number(valorInput);
+    total = preço*valorInput;
+    let valorTotal = document.getElementById("valorTotal");
+    valorTotal.textContent = total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
+}
+
+
+oninput = exibir; 
+
+
+>>>>>>> remotes/origin/feature/front

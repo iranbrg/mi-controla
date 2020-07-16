@@ -3,6 +3,7 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms import StringField, IntegerField, DecimalField, SelectField, SubmitField, RadioField, TextAreaField
 from wtforms.validators import DataRequired, Optional
 
+
 class NovoProduto(FlaskForm):
     nome_produto = StringField("Nome do Produto", validators=[DataRequired(message="Campo obrigatório")])
 

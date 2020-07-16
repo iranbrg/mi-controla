@@ -17,16 +17,22 @@ header {
 h1 {
 	font-family: 'Holtwood One SC', serif;
 	font-size: 30px;
+	letter-spacing: 1px;
 	display: flex;
 	padding-right: 350px;
 	margin: 0 auto;
 	padding-right: 100px;	
-	
 }
 
 .logo {
 	max-width: 110px;
 	padding-top: 4px;
+	margin-left: 1.5vw;
+}
+.logo:hover{
+	-webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .imagens {
@@ -94,15 +100,18 @@ main {
 	justify-content: center;
 
 }
-
 input {
 	display: block;
-	border-radius: 20px;
+	font-size: 15px;
+	border-radius: 25px;
 	margin-bottom: 20px;
-	border-radius: 5px;
 	height: 60px;
-	width: 300px;
+	width: 200px;
 	border: none;
+	box-shadow: 0 0 0 0;
+	outline: 0;
+	padding: 0 30px 0 60px;
+
 }
 
 .login {
@@ -116,13 +125,11 @@ input {
 }
 
 .campo {
-	border-radius: 50px;
+	border-radius: 50px;	
 }
-
 .campo:hover{
 	box-shadow: 0 10px 20px 0 #25b1e0;
 }
-
 #logintitulo {
 	padding-left: 30px;
 	color: white;
@@ -140,6 +147,7 @@ input {
 }
 .login > a:hover{
 	color: #25b1e0;
+
 }
 .checkbox{
 	display: flex;
@@ -160,9 +168,8 @@ input {
 	opacity: 80%;
 	color:#778899;
 }
-
-
 /*  botão */
+
 .boton {
 	display: flex;
 	color: white;
@@ -176,13 +183,17 @@ input {
 	font-family: 'Source Sans Pro', sans-serif;
 	justify-content: center;
 	margin-left: 45px;
+	padding: 0;
 }
 
 .boton:hover {
 	background-color: #1cc6ff;
 	background-image: none;
 	border-color: none;
-
+	-webkit-transform: scale(1.1);
+     -ms-transform: scale(1.1);
+	 transform: scale(1.1);
+	 box-shadow: 0 10px 20px 0 #25b1e0;
 }
 
 footer {
@@ -195,5 +206,10 @@ footer {
 }
 
 .imagens2 {
-	padding-right: 2px;
+	padding-right: 10px;
+}
+.imagens2:hover{
+	-webkit-transform: rotateZ(-30deg);
+        -ms-transform: rotateZ(-30deg);
+        transform: rotateZ(-30deg);
 }

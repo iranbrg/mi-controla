@@ -9,7 +9,7 @@ import os
 def estoque():
     return render_template('estoque.html', estoque=leitura_estoque())
 
-@app.route('/adicionar', methods=['POST','GET'])
+@app.route('/adicionar', methods=['POST', 'GET'])
 def adicionar():
     form = NovoProduto()
     if form.validate_on_submit():
@@ -24,6 +24,7 @@ def adicionar():
         print(form.errors)
         return redirect(url_for('estoque'))
     return render_template('adicionar.html', form=form)
+
 
 @app.route('/historico')
 def historico():

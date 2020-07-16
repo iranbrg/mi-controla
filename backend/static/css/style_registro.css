@@ -14,13 +14,21 @@ header {
 }
 h1{
 	font-family: 'Holtwood One SC', serif;
-    font-size: 30px;
-    display: flex;
-    padding-right:350px ;
+	font-size: 30px;
+	letter-spacing: 1px;
+	display: flex;
+	margin: 0 auto;
+	padding-right: 100px;
 }
 .logo {
 	max-width: 110px;
 	padding-top: 4px;
+	margin-left: 1.5vw;
+}
+.logo:hover{
+  -webkit-transform: scale(1.2);
+   -ms-transform: scale(1.2);
+   transform: scale(1.2);
 }
 
 
@@ -31,7 +39,6 @@ main{
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
 	justify-content: center;
-
 }
 input {
     display: block;
@@ -41,18 +48,28 @@ input {
 	height: 40px;
     width: 300px;
     border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    padding-left: 60px;
 }
 .registro{
-    padding-left: 0px;
-    padding-top: 30px;
-    padding-bottom: 60px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 10px;
+    padding-bottom: 20px;
+    background: #3358a12f;
+    margin-top: 50px;
+	border-radius: 40px;
 
 }
 .campo{
     border-radius: 50px;
 }
+.campo:hover{
+	box-shadow: 0 10px 20px 0 #25b1e0;
+}
 #registrotitulo{
-    padding-left: 55px;
+    padding-left: 80px;
     color: white;
     font-size: 30px;
     font-family: 'Poppins', sans-serif;
@@ -62,6 +79,34 @@ label{
     padding-left: 10px;
     padding-bottom: 5px;
     color: white;
+}
+.icon_nome >i{
+    position: absolute;
+    padding: 4px;
+	padding-left: 10px;
+	opacity: 80%;
+	color:#778899;
+}
+.icon_user > i{
+    position: absolute;
+    padding: 4px;
+	padding-left: 10px;
+	opacity: 80%;
+	color:#778899;
+}
+.icon_email > i{
+    position: absolute;
+    padding: 4px;
+	padding-left: 10px;
+	opacity: 80%;
+	color:#778899;
+}
+.icon_senha > i{
+    position: absolute;
+    padding: 4px;
+	padding-left: 10px;
+	opacity: 80%;
+	color:#778899;
 }
 
 /*  botão */
@@ -77,13 +122,17 @@ label{
 	border:none;
 	font-family: 'Source Sans Pro', sans-serif;
 	justify-content: center;
-	margin-left: 50px;
+    margin-left: 80px;
+    padding-left: 3px;
 }
 .boton:hover{
 	background-color: #1cc6ff;
 	background-image: none;
 	border-color: none;
-
+	-webkit-transform: scale(1.1);
+	 -ms-transform: scale(1.1);
+	 transform: scale(1.1);
+	box-shadow: 0 10px 20px 0 #25b1e0;
 }
 footer{
 	display: flex;
@@ -93,6 +142,11 @@ footer{
 	border-bottom: 30px solid #144bb8c7;
 	justify-content: center;
 }
-.imagens2{
-	padding-right: 2px;
+.imagens2 {
+	padding-right: 10px;
+}
+.imagens2:hover{
+	-webkit-transform: rotateZ(-30deg);
+     -ms-transform: rotateZ(-30deg);
+     transform: rotateZ(-30deg);
 }
