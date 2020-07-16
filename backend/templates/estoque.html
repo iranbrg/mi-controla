@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% import "macros.html" as produto %}
+{% import "macros.html" as macros %}
 
 {% block stylesheet %}
 <link rel="stylesheet" type="text/css" 
@@ -57,7 +57,7 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
     {% for nome in estoque["nome_produto"] %}
       <div class="item">
         <ul>
-          {{ produto.produto(estoque, nome, estoque["nome_produto"].index(nome)) }}
+          {{ macros.produto(estoque, nome, estoque["nome_produto"].index(nome)) }}
         </ul>
       </div>
     {% endfor %}

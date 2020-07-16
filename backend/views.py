@@ -13,14 +13,19 @@ def estoque():
 def adicionar():
     form = NovoProduto()
     if form.validate_on_submit():
+        global variavel
+        variavel = None
         novo_produto(form)
         f = form.foto.data
         filename = secure_filename(f.filename)
-        f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename))
         if filename.endswith('.png'):
-            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtos", "{}.png".format(form.nome_produto.data)))
+            f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtospng", filename))
+            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtospng", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtospng", "{}.png".format(form.nome_produto.data)))
+            variavel = 0
         else:
-            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtos", "{}.jpg".format(form.nome_produto.data)))
+            f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtosjpg", filename))
+            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtosjpg", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtosjpg", "{}.jpg".format(form.nome_produto.data)))   
+            varivel = 1
         print(form.errors)
         return redirect(url_for('estoque'))
     return render_template('adicionar.html', form=form)
@@ -44,8 +49,7 @@ def login():
 @app.route('/registro')
 def registro():
     return render_template('registro.html')
-
-@app.route('/macros')
-def macros():
-    variavel = True
-    return render_template('macros.html', variavel=variavel)
+    
+# @app.route('/macros')
+# def macros():
+#     return render_template('macros.html', variavel=variavel)

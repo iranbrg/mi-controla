@@ -92,26 +92,7 @@ h1 {
     margin-top: 10vh;
 }
 
-.histAdd,
-.histRetirada {
-    width: 960px;
-    height: 96px;
-    background-color: #FFFAFA;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
-    margin-top: 1vh;
 
-}
-
-
-.dataEHora {
-    font-size: 12px;
-    margin-bottom: 70px;
-    margin-right: 20px;
-}
 
 /*.botao{
     width:960px;
@@ -126,16 +107,22 @@ h1 {
 }*/
 
 /* bloco Add*/
-#nomeA {
-    margin-left: 0px;
 
+.dataEHora {
+    font-size: 14px;
+    margin-bottom: 70px
 }
 
-#quantidadeA {
-    margin-left: 250px;
+
+.nomeA {
+}
+.preco {
 }
 
-#faixaAdd {
+.quantidadeA {
+}
+
+.faixaAdd {
     background-color: green;
     color: green;
     width: 20px;
@@ -166,4 +153,29 @@ h1 {
     height: 6em;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+
+.imagemProduto {
+    border-radius: 20px;
+    max-width: 160px;
+    max-height: 95px;
+}
+
+.imagestart {
+    position: relative; right: 90px;
+}
+
+.histAdd,
+.histRetirada {
+    width: 960px;
+    height: 96px;
+    background-color: #FFFAFA;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1vh;
+
 }
