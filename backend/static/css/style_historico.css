@@ -20,6 +20,7 @@ header {
 h1 {
     font-family: 'Holtwood One SC', serif;
     font-size: 27px;
+    letter-spacing: 1px;
     margin-left: 70px;
 
 }

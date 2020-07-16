@@ -17,6 +17,7 @@ header {
 h1 {
   font-family: "Holtwood One SC", serif;
   font-size: 30px;
+  letter-spacing: 1px;
 }
 
 .logo {
@@ -83,6 +84,7 @@ main {
   max-width: 1300px;
   font-family: "Open Sans", sans-serif;
   justify-content: center;
+  
 }
 
 input {

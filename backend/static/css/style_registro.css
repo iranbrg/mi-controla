@@ -14,9 +14,11 @@ header {
 }
 h1{
 	font-family: 'Holtwood One SC', serif;
-    font-size: 30px;
-    display: flex;
-    padding-right:350px ;
+	font-size: 30px;
+	letter-spacing: 1px;
+	display: flex;
+	margin: 0 auto;
+	padding-right: 100px;
 }
 .logo {
 	max-width: 110px;
@@ -37,7 +39,6 @@ main{
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
 	justify-content: center;
-
 }
 input {
     display: block;
@@ -52,9 +53,13 @@ input {
     padding-left: 60px;
 }
 .registro{
-    padding-left: 0px;
-    padding-top: 30px;
-    padding-bottom: 60px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 10px;
+    padding-bottom: 20px;
+    background: #3358a12f;
+    margin-top: 50px;
+	border-radius: 40px;
 
 }
 .campo{
