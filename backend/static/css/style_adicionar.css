@@ -17,11 +17,19 @@ header {
 h1 {
 	font-family: 'Holtwood One SC', serif;
 	font-size: 30px;
+	letter-spacing: 1px;
 }
 
 .logo {
 	max-width: 110px;
 	padding-top: 4px;
+	margin-left: 1.5vw;
+}
+
+.logo:hover{
+	-webkit-transform: scale(1.2);
+   -ms-transform: scale(1.2);
+   transform: scale(1.2);
 }
 
 .imagens {
@@ -33,8 +41,13 @@ h1 {
 	font-family: 'Roboto', sans-serif;
 	font-size: 12px;
 	padding-right: 50px;
+	opacity: 80%;
 }
-
+.imagens:hover{
+  -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
 .botaofoto {
 	display: flex;
 	font-size: 10px;
@@ -64,7 +77,17 @@ input {
 	border-radius: 5px;
 	height: 60px;
 	width: 700px;
+	box-shadow: 0 0 0 0;
+	outline: 0;
+	padding-left: 10px;
 }
+
+input:hover{
+	box-shadow: 0 10px 20px 0 #25b1e0;
+  }
+  input[type="file"]{
+	box-shadow: none;
+  }
 
 .descricao {
 	height: 150px;
@@ -74,6 +97,7 @@ input {
 .fotogrande {
 	border: none;
 	color: white;
+	padding-left: 0%;
 }
 
 .tempoentrega {
@@ -107,7 +131,9 @@ input {
 	background-color: #1cc6ff;
 	background-image: none;
 	border-color: none;
-
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .branco {
@@ -125,8 +151,15 @@ footer {
 }
 
 .imagens2 {
-	padding-right: 2px;
+	padding-right: 10px;
 }
+
+.imagens2:hover{
+	-webkit-transform: rotateZ(-30deg);
+    -ms-transform: rotateZ(-30deg);
+     transform: rotateZ(-30deg);
+}
+
 
 /* negocio do pesquisar*/
 #pesquisa {
@@ -146,6 +179,10 @@ footer {
 	font-family: 'Zilla Slab', serif;
 }
 
+#inPesquisa:hover{
+	box-shadow: none;
+  }
+  
 #botaoPesquisa {
 	border-color: #666666;
 	border-top-right-radius: 7px;

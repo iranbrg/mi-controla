@@ -19,6 +19,7 @@ header {
 h1 {
 	font-family: 'Holtwood One SC', serif;
 	font-size: 27px;
+	letter-spacing: 1px;
 }
 
 #logo {
@@ -27,14 +28,19 @@ h1 {
 	margin-left: 1.5vw;
 }
 
+#logo:hover{
+	-webkit-transform: scale(1.2);
+	 -ms-transform: scale(1.2);
+	 transform: scale(1.2);
+  
+}
+
 #menuInteracao {
 	display: flex;
 	font-size: 10px;
 }
 
-.linha {
-	height: 100px;
-}
+
 
 .textoInicio {
 	font-family: 'Roboto', sans-serif;
@@ -53,7 +59,12 @@ h1 {
 .imagens {
 	display: flex;
 	flex-direction: column;
+}
 
+.imagens:hover{
+	-webkit-transform: scale(0.8);
+	  -ms-transform: scale(0.8);
+	  transform: scale(0.8);
 }
 
 .imagens>p {
@@ -74,6 +85,7 @@ h1 {
 	padding-right: 3vw;
 	padding-top: 2.5vh;
 	padding-top: 4px;
+	opacity: 80%;
 
 }
 
@@ -341,6 +353,9 @@ main {
 #botaoCIn:hover {
 	background-color: #1cc6ff;
 	border-color: none;
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	  transform: scale(1.1);
 }
 
 .imagemPop {
@@ -422,6 +437,9 @@ main {
 #botaoCR:hover {
 	background-color: #1cc6ff;
 	border-color: none;
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	  transform: scale(1.1);
 }
 
 #detalhes {

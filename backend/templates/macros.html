@@ -1,13 +1,20 @@
 {% macro produto(estoque, nome, nome_index) -%}
-    <!-- Uma lista com os atributos do produto referente ao seu respectivo card é atribuida à variável "info_produto" -->
-    {% set info_produto = [nome, estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index]] %}
+<!-- Uma lista com os atributos do produto referente ao seu respectivo card é atribuida à variável "info_produto" -->
+{% set info_produto = [nome, estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index]] %}
 
-    <!-- A variável "info_produto" é passada por meio do atributo "data-info" para o JS -->
-    <li><button class="detalheItem" data-info={{info_produto}} id="{{ nome.replace(" ", "_") }}"><img class="imagemProduto"
-                src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></button></li>
-    <li class="nome">{{ nome }}</li>
-    <li class="dado"><b>Preço: </b>{{ estoque["preco"][nome_index] }}</li>
-    <li class="finalItem"><button class="bt" id="{{estoque["codigo_barras"][nome_index]}}" data-info2={{info_produto}}>RETIRAR</button> <span
-            id="contador">{{ estoque["quantidade"][nome_index] }}</span><button class="bt2"><img
-                src="{{ url_for('static', filename= 'images/in-adicionarItem.png') }}"></button></li>
+<!-- A variável "info_produto" é passada por meio do atributo "data-info" para o JS -->
+{% if variavel %}
+{{print(variavel)}}
+<li><button class="detalheItem" data-info={{info_produto}} id="{{ nome.replace(" ", "_") }}"><img class="imagemProduto"
+            src="{{ url_for('static', filename= 'images/produtos/{}.png'.format(nome)) }}"></button></li>
+{% else %}
+<li><button class="detalheItem" data-info={{info_produto}} id="{{ nome.replace(" ", "_") }}"><img class="imagemProduto"
+            src="{{ url_for('static', filename= 'images/produtos/{}.jpg'.format(nome)) }}"></button></li>
+{% endif %}
+<li class="nome">{{ nome }}</li>
+<li class="dado"><b>Preço: </b>{{ estoque["preco"][nome_index] }}</li>
+<li class="finalItem"><button class="bt" id="{{estoque["codigo_barras"][nome_index]}}"
+        data-info2={{info_produto}}>RETIRAR</button> <span
+        id="contador">{{ estoque["quantidade"][nome_index] }}</span><button class="bt2"><img
+            src="{{ url_for('static', filename= 'images/in-adicionarItem.png') }}"></button></li>
 {%- endmacro %}

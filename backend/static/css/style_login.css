@@ -19,6 +19,8 @@ h1 {
 	font-size: 30px;
 	display: flex;
 	padding-right: 350px;
+	margin: 0 auto;
+	padding-right: 100px;	
 	
 }
 
@@ -104,21 +106,59 @@ input {
 }
 
 .login {
-	padding-left: 0px;
-	padding-top: 80px;
-	padding-bottom: 60px;
-
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 10px;
+    padding-bottom: 20px;
+    background: #3358a12f;
+    margin-top: 50px;
+	border-radius: 40px;
 }
 
 .campo {
 	border-radius: 50px;
 }
 
+.campo:hover{
+	box-shadow: 0 10px 20px 0 #25b1e0;
+}
+
 #logintitulo {
-	padding-left: 40px;
+	padding-left: 30px;
 	color: white;
 	font-size: 30px;
 	font-family: 'Poppins', sans-serif;
+}
+
+.login > a{
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	text-decoration: none;
+}
+.login > a:hover{
+	color: #25b1e0;
+}
+.checkbox{
+	display: flex;
+	padding-left: 10px;
+	color:white
+}
+.icon_user > i {
+  position: absolute;
+  padding: 14px;
+  padding-left: 20px;
+  opacity: 80%;
+  color:#778899;
+}
+.icon_lock > i {
+	position: absolute;
+	padding: 14px;
+	padding-left: 20px;
+	opacity: 80%;
+	color:#778899;
 }
 
 
@@ -135,7 +175,7 @@ input {
 	border: none;
 	font-family: 'Source Sans Pro', sans-serif;
 	justify-content: center;
-	margin-left: 50px;
+	margin-left: 45px;
 }
 
 .boton:hover {
