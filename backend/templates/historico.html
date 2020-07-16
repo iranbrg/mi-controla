@@ -50,10 +50,10 @@
       <span class="nomeA">Nome do Produto<br></span>
       <span class="preco">Preço</span>
       <span class="quantidadeA"> Quantidade adicionada </span>
-      <div class="dataEHora"> Data e hora</div>
+      <div class="dataEHora"> {{ data_hora }}</div>
   </div>
 
-
+  
 {% for nome in estoque["nome_produto"] %}
   <div class="histAdd">
     <div class="faixaAdd">v</div>

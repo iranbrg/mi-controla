@@ -2,6 +2,7 @@ from flask import render_template, redirect, url_for, request
 from backend import app
 from backend.forms import NovoProduto
 from backend.pd import novo_produto, leitura_estoque
+from backend.datahora import hora
 from werkzeug.utils import secure_filename
 import os
 
@@ -33,7 +34,7 @@ def adicionar():
 
 @app.route('/historico')
 def historico():
-    return render_template('historico.html', estoque=leitura_estoque()) 
+    return render_template('historico.html', estoque=leitura_estoque(), data_hora=hora()) 
 
 @app.route('/', methods=['POST','GET'])
 @app.route('/login', methods=['POST','GET'])
@@ -49,7 +50,7 @@ def login():
 @app.route('/registro')
 def registro():
     return render_template('registro.html')
-    
+
 # @app.route('/macros')
 # def macros():
 #     return render_template('macros.html', variavel=variavel)
