@@ -489,3 +489,7 @@ main {
   ::-webkit-input-placeholder{
 	  color: #cfcece;
   }
+
+  #listaQuantidade{
+	  list-style: none;
+  }

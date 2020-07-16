@@ -118,8 +118,8 @@
   <div id="detalhes">
     <form action="" method="POST" id="form_retirar">
       {{ form.csrf_token }}
-      {{ form.hidden_nome_produto(id="") }}
-      <ul>
+      {{ form.hidden_nome_produto(id="passarNome") }}
+      <ul id="listaQuantidade">
         <li id="quantidade"><b>Quantidade a ser retirada: </b>{{ form.quantidadeR(placeholder="Quantidade") }}</li>
         <li><b>Valor total a ser recebido: </b><span id="valorTotal">R$ 0,00</span></li>
       </ul>
