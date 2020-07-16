@@ -12,6 +12,19 @@ def leitura_estoque():
     else:
         return estoque_df.to_dict("list")
 
+def retirar_produto(form):
+    # estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
+    # estoque_df.set_index("nome_produto", inplace=True)
+    
+    # for nome_produto in estoque_df.index:
+    #     if var_nome_produto_card == nome_produto:
+    #         estoque_df.loc[nome_produto, "quantidade"] -= form.quantidadeR.data
+
+    # estoque_df.reset_index(inplace=True)
+    # estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
+    print(form.hidden_nome_produto.data)
+    print(form.quantidadeR.data)
+
 def novo_produto(form):
     dados_novo_produto = {"nome_produto": form.nome_produto.data.lower(),
                           "quantidade": form.quantidade.data,

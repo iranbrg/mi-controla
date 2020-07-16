@@ -1,12 +1,16 @@
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
 from backend import app
-from backend.forms import NovoProduto
-from backend.pd import novo_produto, leitura_estoque
+from backend.forms import NovoProduto, RetirarProduto
+from backend.pd import novo_produto, leitura_estoque, retirar_produto
 
-@app.route('/')
-@app.route('/estoque')
+@app.route('/', methods=['POST','GET'])
+@app.route('/estoque', methods=['POST','GET'])
 def estoque():
-    return render_template('estoque.html', title='Estoque', estoque=leitura_estoque())
+    form = RetirarProduto()
+    if form.validate_on_submit():
+        retirar_produto(form)
+        return redirect(request.url)
+    return render_template('estoque.html', estoque=leitura_estoque(), form=form)
 
 @app.route('/adicionar', methods=['POST','GET'])
 def adicionar():

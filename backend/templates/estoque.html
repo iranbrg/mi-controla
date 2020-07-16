@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% import "macros.html" as produto %}
+{% import "macros.html" as macros %}
 
 {% block stylesheet %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
@@ -60,7 +60,7 @@
     {% for nome in estoque["nome_produto"] %}
       <div class="item">
         <ul>
-          {{ produto.produto(estoque, nome, estoque["nome_produto"].index(nome)) }}
+          {{ macros.produto(estoque, nome, estoque["nome_produto"].index(nome)) }}
         </ul>
       </div>
     {% endfor %}
@@ -114,15 +114,19 @@
     <li><b>Fornecedor: </b><span id="4.1">x</span></li>
     <li><b>Tempo de Entrega: </b><span id="5.1">x</span></li>
   </ul>
-
+  
   <div id="detalhes">
-    <ul>
-      <li id="quantidade"><b>Quantidade a ser retirada: </b><input type="text" placeholder="Quantidade" id="quantidadeR"></li>
-      <li><b>Valor total a ser recebido: </b><span id="valorTotal">R$ 0,00</span></li>
-    </ul>
+    <form action="" method="POST" id="form_retirar">
+      {{ form.csrf_token }}
+      {{ form.hidden_nome_produto(id="") }}
+      <ul>
+        <li id="quantidade"><b>Quantidade a ser retirada: </b>{{ form.quantidadeR(placeholder="Quantidade") }}</li>
+        <li><b>Valor total a ser recebido: </b><span id="valorTotal">R$ 0,00</span></li>
+      </ul>
+    </form>
   </div>
 
-  <button id="botaoCR" onclick="retirarPopRetiradaBotaoConfirma()">CONFIRMAR</button>
+  {{ form.botaoCR(onclick="retirarPopRetiradaBotaoConfirma()", form="form_retirar") }}
   <button id="fecharPop" onclick="retirarPopRetirada()">X</button>
 </div>
 {% endblock %}
