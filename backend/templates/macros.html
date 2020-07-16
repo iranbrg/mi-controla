@@ -6,7 +6,7 @@
     <li><button class="detalheItem" data-info="{{ info_produto }}" id="{{ 'info_' + nome.replace(' ', '_') }}"><img class="imagemProduto"
                 src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></button></li>
     <li class="nome">{{ nome }}</li>
-    <li class="dado"><b>Preço: </b>{{ estoque["preco"][nome_index] }}</li>
+    <li class="dado"><b>Preço: </b>R$ {{ estoque["preco"][nome_index] }}</li>
     <li class="finalItem"><button class="bt" id="{{ 'retirar_' + nome.replace(' ', '_') }}" data-info2="{{ info_produto }}">RETIRAR</button> <span
             id="contador">{{ estoque["quantidade"][nome_index] }}</span><button class="bt2"><img
                 src="{{ url_for('static', filename= 'images/in-adicionarItem.png') }}"></button></li>
