@@ -117,7 +117,7 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 auto;
-	max-width: 70%
+	max-width: 80%;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -133,6 +133,7 @@ main {
 	border-radius: 20px;
 	margin-left: 4vw;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	font-family: 'Roboto', sans-serif;
 }
 
 .item:hover {
@@ -283,8 +284,6 @@ main {
 	left: 0;
 	right: 0;
 	background-color: #FFFAFA;
-	width: 100vw;
-	height: 100vh;
 	opacity: 0.8;
 	display: none;
 	box-sizing: border-box;

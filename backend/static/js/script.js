@@ -73,3 +73,7 @@ function exibir (){
 oninput = exibir;
 
 //o id é o código de barras para os botões de retirar
+
+fundoPop.style.height = window.innerHeight;
+fundoPop.style.width = window.innerWidth;
+

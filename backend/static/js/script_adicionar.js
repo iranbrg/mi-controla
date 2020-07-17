@@ -115,6 +115,3 @@ function açãoBotão (){
     }
 }
 
-var botãoSubmit = document.getElementById("botãoSubmit");
-
-botãoSubmit.onclick = açãoBotão;

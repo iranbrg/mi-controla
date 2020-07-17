@@ -65,6 +65,7 @@ input {
 	width: 700px;
 	margin-bottom: 0;
 	border-color: transparent;
+	border-width: 1px;
 }
 
 .descricao {
@@ -111,7 +112,6 @@ input {
 	font-family: 'Source Sans Pro', sans-serif;
 	justify-content: center;
 	margin-left: 100px;
-	padding-top: 12.5px;
 }
 
 .boton:hover {

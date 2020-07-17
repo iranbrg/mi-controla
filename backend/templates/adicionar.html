@@ -2,7 +2,6 @@
 
 {% block stylesheet %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_adicionar.css') }}">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 {% endblock %}
 
 
@@ -52,19 +51,19 @@
     <form action="{{ url_for('adicionar') }}" method="POST" name="formAdd" id="formAddProduto">
       <h2>Adicionar Novo Produto</h2>
       {{ form.hidden_tag() }}
-      {{ form.nome_produto(placeholder="Nome do produto", class="form-control form-control-lg is-invalid") }}
+      {{ form.nome_produto(placeholder="Nome do produto", oninvalid="this.setCustomValidity(' ')") }}
       <br>
       <span class="erro"></span>
       <br>
-      {{ form.quantidade(placeholder="Estoque (unidades)") }}
+      {{ form.quantidade(placeholder="Estoque (unidades)", oninvalid="this.setCustomValidity(' ')") }}
       <br>
       <span class="erro"></span>
       <br>
-      {{ form.codigo_barras(placeholder="Código de barras") }}
+      {{ form.codigo_barras(placeholder="Código de barras", oninvalid="this.setCustomValidity(' ')") }}
       <br>
       <span class="erro"></span>
       <br>
-      {{ form.preco(placeholder="Preço (reais)") }}
+      {{ form.preco(placeholder="Preço (reais)", oninvalid="this.setCustomValidity(' ')") }}
       <br>
       <span class="erro"></span>
       <br>
@@ -90,8 +89,9 @@
       <br />
       <label style="color: white;">Adicionar imagem</label><br />
       <input class="fotogrande" type="file" name="Foto Grande"><br />
+      {{ form.inserir_produto(class="boton", onclick="açãoBotão()") }}
+      <br>
     </form>
-    <button class="boton" id="botãoSubmit">Inserir Produto</button>
   </div>
 </main>
 <br />
