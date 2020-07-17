@@ -12,29 +12,23 @@ def leitura_estoque():
     else:
         return estoque_df.to_dict("list")
 
-def quantidade_max(form):
-    estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
-    estoque_df.set_index("nome_produto", inplace=True)
-    
-    for nome_produto in estoque_df.index:
-        if form.hidden_nome_produto.data == nome_produto and form.quantidadeR.data > estoque_df.loc[nome_produto, "quantidade"]:
-            return False
-            # return False, estoque_df.loc[nome_produto, "quantidade"]
-        elif form.hidden_nome_produto.data == nome_produto and form.quantidadeR.data <= estoque_df.loc[nome_produto, "quantidade"]:
-            return True
-        # else:
-        #     continue
-
 def retirar_produto(form):
     estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
     estoque_df.set_index("nome_produto", inplace=True)
     
     for nome_produto in estoque_df.index:
-        if form.hidden_nome_produto.data == nome_produto:
+        #Verificação se a quantidade a ser retirada é menor ou igual à diponível no estoque
+        if form.hidden_nome_produto.data == nome_produto and form.quantidadeR.data <= estoque_df.loc[nome_produto, "quantidade"]:
+            #Caso seja, ocorrerá o decremento da quantidade no estoque (estoque.csv) e uma mensagem de confimação será retornada
             estoque_df.loc[nome_produto, "quantidade"] -= form.quantidadeR.data
-
-    estoque_df.reset_index(inplace=True)
-    estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
+            estoque_df.reset_index(inplace=True)
+            estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
+            return True, "Produto retirado com sucesso"
+        #Do contrário, não há decremento e uma mensagem de erro será retornada com o máximo de unidades que o usuário poderá retirar.
+        elif form.hidden_nome_produto.data == nome_produto and form.quantidadeR.data > estoque_df.loc[nome_produto, "quantidade"]:
+            return False, f"Pode-se retirar no máximo {estoque_df.loc[nome_produto, 'quantidade']} unidades"
+        else:
+            continue
     
 def novo_produto(form):
     dados_novo_produto = {"nome_produto": form.nome_produto.data.lower(),
@@ -51,11 +45,6 @@ def novo_produto(form):
     except EmptyDataError:
         #Se o estoque.csv existir, mas esteja vazio (sem produtos) um novo dataframe será criado
         estoque_df = pd.DataFrame([dados_novo_produto])
-    # except FileNotFoundError:
-    #     #Se o estoque.csv não existir, um novo arquivo será criado
-    #     with open(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), "w"):
-    #         #Além de um novo dataframe, o qual preencherá o estoque.csv
-    #         estoque_df = pd.DataFrame([dados_novo_produto])
     else:
         estoque_df.set_index("nome_produto", inplace=True)
 
