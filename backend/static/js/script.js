@@ -80,9 +80,9 @@ let numeroDeItens = 8;
 let limitante = 4;
 let altura = 178;
 
-if (main.length <= 4) {
+if (main.length <= 4 && main.length > 0) {
     fundoPop.style.height = "100%"
-} else if (main.length <= 8) {
+} else if (main.length <= 8 && main.length > 4) {
     fundoPop.style.height = "178%"
 } 
 
