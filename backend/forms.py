@@ -18,6 +18,6 @@ class NovoProduto(FlaskForm):
 
     descricao = StringField("Descrição", default=" ")
 
-    foto = FileField("foto", validators=[FileRequired(), FileAllowed(['jpg', 'png'], message='Somente fotos!!')])
+    foto = FileField("foto", validators=[FileRequired(), FileAllowed(['png'], message='Somente imagens .png!!')])
 
     inserir_produto = SubmitField("Inserir Produto")

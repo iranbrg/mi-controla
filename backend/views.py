@@ -12,17 +12,16 @@ import os
 def adicionar():
     form = NovoProduto()
     if form.validate_on_submit():
-        
         novo_produto(form)
         f = form.foto.data
         filename = secure_filename(f.filename)
         if filename.endswith('.png'):
-            f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtospng", filename))
-            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtospng", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtospng", "{}.png".format(form.nome_produto.data)))
+            f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename))
+            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtos", "{}.png".format(form.nome_produto.data)))
            
         else:
-            f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtosjpg", filename))
-            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtosjpg", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtosjpg", "{}.jpg".format(form.nome_produto.data)))   
+            f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename))
+            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtos", "{}.jpg".format(form.nome_produto.data)))   
             
         print(form.errors)
         return redirect(url_for('estoque'))
@@ -30,13 +29,12 @@ def adicionar():
 
 @app.route('/estoque')
 def estoque():
-    global png, jpg
-
     return render_template('estoque.html', estoque=leitura_estoque())
 
 
 @app.route('/historico')
 def historico():
+    
     return render_template('historico.html', estoque=leitura_estoque()) 
 
 @app.route('/', methods=['POST','GET'])
