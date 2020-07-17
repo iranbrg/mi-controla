@@ -1,5 +1,5 @@
 nome_produto,quantidade,codigo_barras,preco,fornecedor,tempo_entrega,descricao
-galaxy s20,6,codigodebarras,4500.0,mercadolivre,30 dias, 
+galaxy s20,5,codigodebarras,4500.0,mercadolivre,30 dias, 
 iphone 11 pro max,2,codigodebarras,15000.99,Americanas,30 dias, celular caro
 moto g5,0,codigodebarras,999.99,Mercado Livre,14 dias, 
 pixel 4,2,codigodebarras,8000.999,Amazon,7 dias, 
