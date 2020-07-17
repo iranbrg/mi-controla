@@ -1,14 +1,13 @@
 nome_produto,quantidade,codigo_barras,preco,fornecedor,tempo_entrega,descricao
-Galaxy S20,14,1212121212121112,4000.0,Americanas,7 dias, lançamento!
-Galaxy S20,20,2343243243,1899.0,Americanas,7 dias, ótimo aparelho
-Galaxy S20,12,1233243432,1600.0,Amazon,7 dias, assfdsfdsfd
-Galaxy S20,10,21312312,7000.0,Americanas,7 dias," ,sjbczkczx"
-Galaxy S20,23,2312312312,2400.0,Americanas,7 dias, sfffdfsdfdfsdgfgd
-Galaxy S20,2,213231,1870.99,Americanas,7 dias,  dfsdfdsfsdf
-Galaxy S20,123213,123213,124434.0,Americanas,7 dias, sfdf
-Galaxy S20,123213,1233243432,23123.0,Americanas,7 dias, sfsdfs
-galaxy s9,123213,213231,123213,Americanas,7 dias, dfsd
-galaxy s9,123213,213231,76,Americanas,7 dias, dfsd
-galaxy s9,123213,213231,32,Americanas,7 dias, dfsd
-galaxy s9,123213,213231,45,Americanas,7 dias, dfsd
-galaxy s9,123213,213231,1234,Americanas,7 dias, dfsd
+galaxy s20,2,codigodebarras,4500.0,mercadolivre,30 dias, 
+iphone 11 pro max,2,codigodebarras,15000.99,Americanas,30 dias, celular caro
+moto g5,0,codigodebarras,999.99,Mercado Livre,14 dias, 
+pixel 4,0,codigodebarras,8000.999,Amazon,7 dias, 
+as,2,1213232,12.0,Americanas,7 dias, gdfgdfgdfg
+samsung j7,10,sdytasjdtasdtshj,1799.99,Mercado Livre,30 dias, celular daora
+iphone,240,123,123.0,Americanas,7 dias, 
+iphone1,11,asdasd,5000.99,Mercado Livre,14 dias, 
+iphone2,15,asdasd,4000.99,Amazon,30 dias, 
+iphone99,15,hfdsgf,10000.99,Americanas,14 dias, 
+iphone50,15,asdasd,2000.99,Americanas,14 dias, 
+iphone 1000,1000,adasd,1293712983712983,Amazon,30 dias, 

@@ -490,3 +490,14 @@ main {
   ::-webkit-input-placeholder{
 	  color: #cfcece;
   }
+
+  #listaQuantidade{
+	  list-style: none;
+  }
+
+  #mensagemErroEx{
+	  padding-top: 10px;
+	  margin-left: 30px;
+	  font-size: 14px;
+	  color: red;
+  }
