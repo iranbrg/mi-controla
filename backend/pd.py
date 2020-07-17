@@ -16,7 +16,6 @@ def retirar_produto(form):
     estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
     estoque_df.set_index("nome_produto", inplace=True)
     
-    
     #Verificação se a quantidade a ser retirada é menor ou igual à diponível no estoque
     if form.quantidadeR.data <= estoque_df.loc[form.hidden_nome_produto.data, "quantidade"]:
         #Caso seja, ocorrerá o decremento da quantidade no estoque (estoque.csv) e uma mensagem de confimação será retornada
