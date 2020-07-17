@@ -137,6 +137,7 @@ main {
 
 .item:hover {
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	
 }
 
 .item>ul {
@@ -202,9 +203,10 @@ main {
 	margin-right: 1vw;
 	margin-left: 0.5vw;
 	border-style: none;
-	box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.2);
 	cursor: pointer;
 	font-family: 'Source Sans Pro', sans-serif;
+	box-shadow: 0 0 0 0;
+    outline: 0;
 
 }
 
@@ -214,6 +216,8 @@ main {
 	border-style: none;
 	margin-right: 0.2vw;
 	cursor: pointer;
+	box-shadow: 0 0 0 0;
+    outline: 0;
 
 }
 
@@ -328,7 +332,7 @@ main {
 	height: 40px;
 	padding: 0;
 	font-weight: bold;
-	margin-left: 17vw;
+	margin-left: 250px;
 	border-radius: 4px;
 	box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.2);
 	border-color: none;
@@ -336,6 +340,8 @@ main {
 	border-style: none;
 	cursor: pointer;
 	font-family: 'Source Sans Pro', sans-serif;
+	box-shadow: 0 0 0 0;
+    outline: 0;
 
 }
 
@@ -343,11 +349,36 @@ main {
 	background-color: #1cc6ff;
 	border-color: none;
 }
+#botaoexcluir{
+	margin-left: 130px;
+	width: 100px;
+	height: 40px;
+	padding: 0;
+	font-weight: bold;
+	border-radius: 4px;
+	box-shadow: 0 0 0 0;
+	border-color: none;
+	background-color: #e02b25;
+	opacity: 70%;
+	border-style: none;
+	cursor: pointer;
+	font-family: 'Source Sans Pro', sans-serif;
+	box-shadow: 0 0 0 0;
+    outline: 0;
+	
+}
+#botaoexcluir:hover{
+	background-color: #e02b25;
+	opacity: 100%;
+	border-color: none;
 
+}
 .imagemPop {
 	max-width: 250px;
 	max-height: 250px;
 	border-radius: 20px;
+	box-shadow: 0 0 0 0;
+    outline: 0;
 }
 
 #ulInfo {
@@ -411,12 +442,13 @@ main {
 	font-weight: bold;
 	margin-left: 17vw;
 	border-radius: 8px;
-	box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.2);
 	border-color: none;
 	background-color: #25b1e0;
 	border-style: none;
 	cursor: pointer;
 	font-family: 'Source Sans Pro', sans-serif;
+	box-shadow: 0 0 0 0;
+    outline: 0;
 
 }
 
