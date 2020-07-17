@@ -74,6 +74,29 @@ oninput = exibir;
 
 //o id é o código de barras para os botões de retirar
 
-fundoPop.style.height = window.innerHeight;
-fundoPop.style.width = window.innerWidth;
+let main = document.querySelector("main").children;
+
+let numeroDeItens = 8;
+let limitante = 4;
+let altura = 178;
+
+if (main.length <= 4) {
+    fundoPop.style.height = "100%"
+} else if (main.length <= 8) {
+    fundoPop.style.height = "178%"
+} 
+
+while(true) {
+    altura += 71;
+    numeroDeItens += 4;
+    limitante += 4;
+    
+    if (main.length > limitante && main.length <= numeroDeItens) {
+    fundoPop.style.height = altura+"%";
+    break
+    }
+
+}
+
+
 
