@@ -14,19 +14,17 @@ def estoque():
 def adicionar():
     form = NovoProduto()
     if form.validate_on_submit():
-        global variavel
-        variavel = None
+        global hora_mod
+        hora_mod = hora()
         novo_produto(form)
         f = form.foto.data
         filename = secure_filename(f.filename)
         if filename.endswith('.png'):
             f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtospng", filename))
             os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtospng", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtospng", "{}.png".format(form.nome_produto.data)))
-            variavel = 0
         else:
             f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtosjpg", filename))
             os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtosjpg", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtosjpg", "{}.jpg".format(form.nome_produto.data)))   
-            varivel = 1
         print(form.errors)
         return redirect(url_for('estoque'))
     return render_template('adicionar.html', form=form)
@@ -34,7 +32,8 @@ def adicionar():
 
 @app.route('/historico')
 def historico():
-    return render_template('historico.html', estoque=leitura_estoque(), data_hora=hora()) 
+    global hora_mod
+    return render_template('historico.html', estoque=leitura_estoque(), data_hora=hora_mod) 
 
 @app.route('/', methods=['POST','GET'])
 @app.route('/login', methods=['POST','GET'])
@@ -53,4 +52,4 @@ def registro():
 
 # @app.route('/macros')
 # def macros():
-#     return render_template('macros.html', variavel=variavel)
+#     return render_template('macros.html', data_hora=hora())

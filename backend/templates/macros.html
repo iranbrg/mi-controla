@@ -21,7 +21,7 @@
 
 
 
-{% macro produto1(estoque, nome, nome_index) -%}
+{% macro produto1(estoque, nome, nome_index, data_hora) -%}
 
 
 {% set info_produto = [nome, estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index]] %}
@@ -30,5 +30,5 @@
     <span class="nomeA">{{ nome }}<br></span>
     <span class="preco">R$ {{ estoque["preco"][nome_index] }}</span>
     <span class="quantidadeA"><b>{{ estoque["quantidade"][nome_index] }} </b>unidades</span>
-    <div class="dataEHora">Data e hora</div>
+    <div class="dataEHora">{{ data_hora }}</div>
 {%- endmacro %}

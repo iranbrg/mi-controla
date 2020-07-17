@@ -3,7 +3,6 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms import StringField, IntegerField, DecimalField, SelectField, SubmitField, RadioField, TextAreaField
 from wtforms.validators import DataRequired, Optional
 
-
 class NovoProduto(FlaskForm):
     nome_produto = StringField("Nome do Produto", validators=[DataRequired(message="Campo obrigatório")])
 
@@ -20,5 +19,6 @@ class NovoProduto(FlaskForm):
     descricao = StringField("Descrição", default=" ")
 
     foto = FileField("foto", validators=[FileRequired(), FileAllowed(['jpg', 'png'], message='Somente fotos!!')])
+
 
     inserir_produto = SubmitField("Inserir Produto")
