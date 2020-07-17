@@ -1,11 +1,12 @@
-{% macro produto(estoque, nome, nome_index) -%}
+{% macro produto(estoque, nome, nome_index, png, jpg) -%}
 <!-- Uma lista com os atributos do produto referente ao seu respectivo card é atribuida à variável "info_produto" -->
 {% set info_produto = [nome, estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index]] %}
 
 <!-- A variável "info_produto" é passada por meio do atributo "data-info" para o JS -->
+
 <li><button class="detalheItem" data-info={{info_produto}} id="{{ nome.replace(" ", "_") }}"><img class="imagemProduto"
             src="{{ url_for('static', filename= 'images/produtospng/{}.png'.format(nome)) }}"></button></li>
-<!-- \/ esta linha de código carregaria imagens do tipo JPG, porém ainda não funcionalidade para informar o tipo da imagem e por isso o programa só carregará imagens PNG-->
+
 <!-- <li><button class="detalheItem" data-info={{info_produto}} id="{{ nome.replace(" ", "_") }}"><img class="imagemProduto"
             src="{{ url_for('static', filename= 'images/produtosjpg/{}.jpg'.format(nome)) }}"></button></li> -->
 

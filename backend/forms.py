@@ -20,5 +20,4 @@ class NovoProduto(FlaskForm):
 
     foto = FileField("foto", validators=[FileRequired(), FileAllowed(['jpg', 'png'], message='Somente fotos!!')])
 
-
     inserir_produto = SubmitField("Inserir Produto")

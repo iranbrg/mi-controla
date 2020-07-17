@@ -45,7 +45,7 @@
   <div id="blocoHistórico">
 
     <div class="histAdd">
-      <div class="faixaAdd">v</div>
+      <div class="faixaAdd"></div>
       <span >imagem</span>
       <span class="nomeA">Nome do Produto<br></span>
       <span class="preco">Preço</span>
@@ -56,7 +56,7 @@
   
 {% for nome in estoque["nome_produto"] %}
   <div class="histAdd">
-    <div class="faixaAdd">v</div>
+    <div class="faixaAdd"></div>
     {{ macros.produto1(estoque, nome, estoque["nome_produto"].index(nome), data_hora) }}
   </div>
 

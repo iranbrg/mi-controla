@@ -1,6 +1,10 @@
 import datetime
 
-def hora():
+novo_produto_data_hora= {}
+
+def hora(nome):
     data_hora = datetime.datetime.now()
-    return data_hora.strftime("%d"+"/"+"%m"+"/"+"%Y"+" %X")
+    novo_produto_data_hora[nome]= data_hora.strftime("%d"+"/"+"%m"+"/"+"%Y"+" %X")
+    return novo_produto_data_hora
     
+
