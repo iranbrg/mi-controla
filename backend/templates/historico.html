@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% import "macros.html" as macros %}
 
 {% block stylesheet %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_historico.css') }}">
@@ -41,25 +42,20 @@
 </header>
 
 <main>
-
   <div id="blocoHistórico">
+    {% if hist == "historico vazio" %}
+      <h1>HISTÓRICO VAZIO</h1>
+    {% else %}
+      {% for nome in hist["nome_produto"] %}
+        {% set nome_index = hist["nome_produto"].index(nome) %}
 
-
-    <div class="histAdd">
-      <div id="faixaAdd">v</div>
-      <span id="nomeA">Nome do Produto<br></span>
-      <span id="quantidadeA"><b>Quantidade adicionada:</b> X</span>
-      <div class="dataEHora">Data e Hora</div>
-    </div>
-
-    <div class="histRetirada">
-      <div id="faixaRetirar">v</div>
-      <span id="nomeR">Nome do Produto</span>
-      <span><b>Quantidade retirada:</b> X</span>
-      <span id="vRecebido"><b>Valor Recebido:</b><br> X</span>
-      <div class="dataEHora">Data e Hora</div>
-    </div>
-
+        {% if hist["status"][nome_index] == "adicionado"%}
+          {{ macros.historico_adicionar(hist, nome, nome_index) }}
+        {% elif hist["status"][nome_index] == "retirado"%}
+          {{ macros.historico_retirar(hist, nome, nome_index) }}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   </div>
 </main>
 {% endblock %}
