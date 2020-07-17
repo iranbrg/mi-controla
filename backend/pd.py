@@ -12,6 +12,19 @@ def leitura_estoque():
     else:
         return estoque_df.to_dict("list")
 
+def quantidade_max(form):
+    estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
+    estoque_df.set_index("nome_produto", inplace=True)
+    
+    for nome_produto in estoque_df.index:
+        if form.hidden_nome_produto.data == nome_produto and form.quantidadeR.data > estoque_df.loc[nome_produto, "quantidade"]:
+            return False
+            # return False, estoque_df.loc[nome_produto, "quantidade"]
+        elif form.hidden_nome_produto.data == nome_produto and form.quantidadeR.data <= estoque_df.loc[nome_produto, "quantidade"]:
+            return True
+        # else:
+        #     continue
+
 def retirar_produto(form):
     estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
     estoque_df.set_index("nome_produto", inplace=True)
