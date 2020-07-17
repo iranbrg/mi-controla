@@ -16,19 +16,17 @@ def retirar_produto(form):
     estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
     estoque_df.set_index("nome_produto", inplace=True)
     
-    for nome_produto in estoque_df.index:
-        #Verificação se a quantidade a ser retirada é menor ou igual à diponível no estoque
-        if form.hidden_nome_produto.data == nome_produto and form.quantidadeR.data <= estoque_df.loc[nome_produto, "quantidade"]:
-            #Caso seja, ocorrerá o decremento da quantidade no estoque (estoque.csv) e uma mensagem de confimação será retornada
-            estoque_df.loc[nome_produto, "quantidade"] -= form.quantidadeR.data
-            estoque_df.reset_index(inplace=True)
-            estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
-            return True, "Produto retirado com sucesso"
-        #Do contrário, não há decremento e uma mensagem de erro será retornada com o máximo de unidades que o usuário poderá retirar.
-        elif form.hidden_nome_produto.data == nome_produto and form.quantidadeR.data > estoque_df.loc[nome_produto, "quantidade"]:
-            return False, f"Pode-se retirar no máximo {estoque_df.loc[nome_produto, 'quantidade']} unidades"
-        else:
-            continue
+    
+    #Verificação se a quantidade a ser retirada é menor ou igual à diponível no estoque
+    if form.quantidadeR.data <= estoque_df.loc[form.hidden_nome_produto.data, "quantidade"]:
+        #Caso seja, ocorrerá o decremento da quantidade no estoque (estoque.csv) e uma mensagem de confimação será retornada
+        estoque_df.loc[form.hidden_nome_produto.data, "quantidade"] -= form.quantidadeR.data
+        estoque_df.reset_index(inplace=True)
+        estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
+        return True, "Produto retirado com sucesso"
+    #Do contrário, não há decremento e uma mensagem de erro será retornada com o máximo de unidades que o usuário poderá retirar.
+    elif form.quantidadeR.data > estoque_df.loc[form.hidden_nome_produto.data, "quantidade"]:
+        return False, f"Pode-se retirar no máximo {estoque_df.loc[form.hidden_nome_produto.data, 'quantidade']} unidades"
     
 def novo_produto(form):
     dados_novo_produto = {"nome_produto": form.nome_produto.data.lower(),
