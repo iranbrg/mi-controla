@@ -1,8 +1,11 @@
 nome_produto,quantidade,codigo_barras,preco,fornecedor,tempo_entrega,descricao
-galaxy s20,6,codigodebarras,4500.0,mercadolivre,30 dias, 
+galaxy s20,4,codigodebarras,4500.0,mercadolivre,30 dias, 
 iphone 11 pro max,2,codigodebarras,15000.99,Americanas,30 dias, celular caro
 moto g5,0,codigodebarras,999.99,Mercado Livre,14 dias, 
 pixel 4,2,codigodebarras,8000.999,Amazon,7 dias, 
 as,2,1213232,12.0,Americanas,7 dias, gdfgdfgdfg
 samsung j7,10,sdytasjdtasdtshj,1799.99,Mercado Livre,30 dias, celular daora
 iphone,240,123,123.0,Americanas,7 dias, 
+iphone1,12,asdasd,5000.99,Mercado Livre,14 dias, 
+iphone2,15,asdasd,4000.99,Amazon,30 dias, 
+iphone99,15,hfdsgf,10000.99,Americanas,14 dias, 
