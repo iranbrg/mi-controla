@@ -47,6 +47,7 @@ for (i=0; i < botoesRetirada.length; i++){
 
 function dadosRetirada(){
     document.getElementById('quantidadeR').value = "";
+    document.getElementById("mensagemErroEx").textContent = "";
     popUpRetirada.style.display = "grid";
     fundoPop.style.display = "block";
     var vDadosR = this.getAttribute("data-info2").split(",");
@@ -72,7 +73,7 @@ function exibir (){
     let valorTotal = document.getElementById("valorTotal");
     valorTotal.textContent = total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}); 
     if (valorInput > quantidadeDoProdutoPop){
-        document.getElementById("mensagemErroEx").textContent = "A quantidade que você selecionou é maior do que o disponível em estoque"
+        document.getElementById("mensagemErroEx").textContent = "A quantidade que você selecionou é maior do que o disponível em estoque (Disponível: "+ quantidadeDoProdutoPop + ")";
         document.getElementById('quantidadeR').value = "";
         document.getElementById("valorTotal").textContent = "R$ 0,00"
     } else{
