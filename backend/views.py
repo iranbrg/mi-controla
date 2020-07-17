@@ -2,7 +2,6 @@ from flask import render_template, redirect, url_for, request, flash
 from backend import app
 from backend.forms import NovoProduto, RetirarProduto
 from backend.pd import novo_produto, leitura_estoque, retirar_produto, leitura_historico
-from backend.datahora import hora
 
 @app.route('/', methods=['POST','GET'])
 @app.route('/estoque/', methods=['POST','GET'])
