@@ -4,7 +4,7 @@
     
     <!-- A variável "info_produto" é passada por meio dos atributos "data-info" e "data-info2" para o JS -->
     <li><button class="detalheItem" data-info="{{ info_produto }}" id="{{ 'info_' + nome.replace(' ', '_') }}"><img class="imagemProduto"
-                src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></button></li>
+                src="{{ url_for('static', filename= 'images/produtos/{}.png'.format(nome)) }}"></button></li>
     <li class="nome">{{ nome }}</li>
     <li class="dado"><b>Preço: </b>{{ estoque["preco"][nome_index] }}</li>
     <li class="finalItem"><button class="bt" id="{{ 'retirar_' + nome.replace(' ', '_') }}" data-info2="{{ info_produto }}">RETIRAR</button> <span
@@ -12,9 +12,11 @@
                 src="{{ url_for('static', filename= 'images/in-adicionarItem.png') }}"></button></li>
 {%- endmacro %}
 
+
 {% macro historico_adicionar(hist, nome, nome_index) -%}
     <div class="histAdd">
         <div id="faixaAdd">v</div>
+        <span><img class='imagemProduto' src="{{ url_for('static', filename= 'images/produtos/{}.png'.format(nome)) }}"></span>
         <span id="nomeA">Nome do produto: {{ nome }}<br></span>
         <span id="quantidadeA"><b>Quantidade: </b>{{ hist["quantidade"][nome_index] }}</span>
         <div class="dataEHora">{{ hist["data_hora"][nome_index] }}</div>
@@ -24,6 +26,7 @@
 {% macro historico_retirar(hist, nome, nome_index) -%}
     <div class="histRetirada">
         <div id="faixaRetirar">v</div>
+        <span><img class='imagemProduto' src="{{ url_for('static', filename= 'images/produtos/{}.png'.format(nome)) }}"></span>
         <span id="nomeR">Nome do produto: {{ nome }}</span>
         <span><b>Quantidade retirada: </b>{{ hist["quantidade"][nome_index] }}</span>
         <span id="vRecebido"><b>Valor Recebido:</b><br> X</span>

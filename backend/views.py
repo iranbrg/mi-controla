@@ -2,8 +2,9 @@ from flask import render_template, redirect, url_for, request, flash
 from backend import app
 from backend.forms import NovoProduto, RetirarProduto
 from backend.pd import novo_produto, leitura_estoque, retirar_produto, leitura_historico
+from werkzeug.utils import secure_filename
+import os
 
-@app.route('/', methods=['POST','GET'])
 @app.route('/estoque/', methods=['POST','GET'])
 def estoque():
     form = RetirarProduto()
@@ -23,6 +24,17 @@ def adicionar():
     form = NovoProduto()
     if form.validate_on_submit():
         novo_produto(form)
+        f = form.foto.data
+        filename = secure_filename(f.filename)
+        if filename.endswith('.png'):
+            f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename))
+            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtos", "{}.png".format(form.nome_produto.data)))
+           
+        else:
+            f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename))
+            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtos", "{}.jpg".format(form.nome_produto.data)))   
+            
+        print(form.errors)
         return redirect(url_for('estoque'))
     return render_template('adicionar.html', form=form)
 
@@ -30,9 +42,16 @@ def adicionar():
 def historico():
     return render_template('historico.html', hist=leitura_historico())
 
-@app.route('/login/', methods=['POST','GET'])
+@app.route('/', methods=['POST','GET'])
+@app.route('/login', methods=['POST','GET'])
 def login():
-    return render_template('login.html') 
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] !='admin' or request.form['password'] != 'admin':
+            error = 'Credenciais incorretas. Por favor, tente novamente.'
+        else:
+            return redirect(url_for('estoque'))
+    return render_template('login.html', error=error) 
 
 @app.route('/registro/')
 def registro():

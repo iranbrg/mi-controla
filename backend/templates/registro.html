@@ -2,6 +2,7 @@
 
 {% block stylesheet %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_registro.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
 
@@ -15,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <div>
-    <a href="{{ url_for('estoque') }}"><img class="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
+    <a href="{{ url_for('login') }}"><img class="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
   </div>
 
   <h1>Sistema de Controle de Estoque</h1>
@@ -27,15 +28,30 @@
     <div class="registro">
       <p id="registrotitulo">Registre -se</p>
       <label>Nome completo</label>
-      <input class="campo" type="text" />
+      <div class="icon_nome">
+        <i class="fa fa-id-card fa-2x" aria-hidden="true"></i>
+        <input class="campo" type="text" />
+      </div>
       <label>Usuário</label>
-      <input class="campo" type="text" />
+      <div class="icon_user">
+        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+        <input class="campo" type="text" />
+      </div>
       <label>E-mail</label>
-      <input class="campo" type="text" />
+      <div class="icon_email">
+        <i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
+        <input class="campo" type="text" />
+      </div>
       <label>Senha</label>
-      <input class="campo" type="password" />
+      <div class="icon_senha">
+        <i class="fa fa-lock fa-2x" aria-hidden="true"></i>
+        <input class="campo" type="password" />
+      </div>
       <label>Confirme a senha</label>
-      <input class="campo" type="password" />
+      <div class="icon_senha">
+        <i class="fa fa-lock fa-2x" aria-hidden="true"></i>
+        <input class="campo" type="password" />
+      </div>
       <input class="boton" type="submit" value="REGISTAR" />
     </div>
   </form>
@@ -44,11 +60,9 @@
 <br />
 <br />
 <footer>
-  <div class="imagens2">
-    <a href="https://www.instagram.com/titan_ufba/" target="_blank"><img src="{{ url_for('static', filename= 'images/footer1.png') }}" height="30"
-        width="30"></a>
-    <a href="https://www.linkedin.com/company/ufbatitan/" target=_blank><img src="{{ url_for('static', filename= 'images/footer2.png') }}" height="30"
-        width="30"></a>
-  </div>
+    <a class="imagens2" href="https://www.instagram.com/titan_ufba/" target="_blank"><img
+        src="{{ url_for('static', filename= 'images/footer1.png') }}" height="30" width="30"></a>
+    <a class="imagens2" href="https://www.linkedin.com/company/ufbatitan/" target=_blank><img
+        src="{{ url_for('static', filename= 'images/footer2.png') }}" height="30" width="30"></a>
 </footer>
 {% endblock conteudo %}
