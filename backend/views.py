@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, request, flash
 from backend import app
 from backend.forms import NovoProduto, RetirarProduto
-from backend.pd import novo_produto, leitura_estoque, retirar_produto
+from backend.pd import novo_produto, leitura_estoque, retirar_produto, leitura_historico
 
 @app.route('/', methods=['POST','GET'])
 @app.route('/estoque/', methods=['POST','GET'])
@@ -28,7 +28,7 @@ def adicionar():
 
 @app.route('/historico/')
 def historico():
-    return render_template('historico.html') 
+    return render_template('historico.html', hist=leitura_historico())
 
 @app.route('/login/', methods=['POST','GET'])
 def login():

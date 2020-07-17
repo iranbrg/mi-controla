@@ -11,3 +11,22 @@
             id="contador">{{ estoque["quantidade"][nome_index] }}</span><button class="bt2"><img
                 src="{{ url_for('static', filename= 'images/in-adicionarItem.png') }}"></button></li>
 {%- endmacro %}
+
+{% macro historico_adicionar(hist, nome, nome_index) -%}
+    <div class="histAdd">
+        <div id="faixaAdd">v</div>
+        <span id="nomeA">Nome do produto: {{ nome }}<br></span>
+        <span id="quantidadeA"><b>Quantidade: </b>{{ hist["quantidade"][nome_index] }}</span>
+        <div class="dataEHora">{{ hist["data_hora"][nome_index] }}</div>
+    </div>
+{%- endmacro %}
+
+{% macro historico_retirar(hist, nome, nome_index) -%}
+    <div class="histRetirada">
+        <div id="faixaRetirar">v</div>
+        <span id="nomeR">Nome do produto: {{ nome }}</span>
+        <span><b>Quantidade retirada: </b>{{ hist["quantidade"][nome_index] }}</span>
+        <span id="vRecebido"><b>Valor Recebido:</b><br> X</span>
+        <div class="dataEHora">{{ hist["data_hora"][nome_index] }}</div>
+    </div>
+{%- endmacro %}
