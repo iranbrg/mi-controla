@@ -16,5 +16,3 @@ class NovoProduto(FlaskForm):
     tempo_entrega = RadioField("Tempo de Entrega", choices=[("7 dias", "7 dias"), ("14 dias", "14 dias"), ("30 dias", "30 dias")], validators=[DataRequired(message="Campo obrigatório")])
 
     descricao = StringField("Descrição", default=" ")
-
-    inserir_produto = SubmitField("Inserir Produto")

@@ -49,16 +49,24 @@
 
 <main>
   <div>
-    <form action="{{ url_for('adicionar') }}" method="POST">
+    <form action="{{ url_for('adicionar') }}" method="POST" name="formAdd" id="formAddProduto">
       <h2>Adicionar Novo Produto</h2>
       {{ form.hidden_tag() }}
       {{ form.nome_produto(placeholder="Nome do produto", class="form-control form-control-lg is-invalid") }}
       <br>
+      <span class="erro"></span>
+      <br>
       {{ form.quantidade(placeholder="Estoque (unidades)") }}
+      <br>
+      <span class="erro"></span>
       <br>
       {{ form.codigo_barras(placeholder="Código de barras") }}
       <br>
+      <span class="erro"></span>
+      <br>
       {{ form.preco(placeholder="Preço (reais)") }}
+      <br>
+      <span class="erro"></span>
       <br>
       {{ form.fornecedor.label(style="color: white;") }}
       <br>
@@ -74,17 +82,18 @@
         </tr>
         {% endfor %}
       </div>
+      <span class="erro"></span>
       <br />
       {{ form.descricao(class="descricao", placeholder="Descrição do produto") }}
+      <br>
+      <span class="erro"></span>
       <br />
       <label style="color: white;">Adicionar imagem</label><br />
       <input class="fotogrande" type="file" name="Foto Grande"><br />
-      {{ form.inserir_produto(class="boton") }}
-      <br />
     </form>
+    <button class="boton" id="botãoSubmit">Inserir Produto</button>
   </div>
 </main>
-
 <br />
 <br />
 <br />
@@ -98,4 +107,8 @@
         src="{{ url_for('static', filename= 'images/footer2.png') }}" height="30" width="30"></a>
   </div>
 </footer>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename= 'js/script_adicionar.js') }}"></script>
 {% endblock %}

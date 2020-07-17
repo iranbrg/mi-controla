@@ -59,11 +59,12 @@ main {
 }
 
 input {
-	border: none;
 	margin-bottom: 20px;
 	border-radius: 5px;
 	height: 60px;
 	width: 700px;
+	margin-bottom: 0;
+	border-color: transparent;
 }
 
 .descricao {
@@ -79,12 +80,21 @@ input {
 .tempoentrega {
 	height: 15px;
 	width: 15px;
+	margin-bottom: 0;
 }
 
 .fornecedor {
 	height: 30px;
 	width: 100px;
 }
+
+.erro{
+	margin-bottom: 1vh;
+	margin-top: 1vh;
+	color: #c50000d0;
+	font-size: 12px;
+}
+
 
 /*  botão */
 .boton {
@@ -101,6 +111,7 @@ input {
 	font-family: 'Source Sans Pro', sans-serif;
 	justify-content: center;
 	margin-left: 100px;
+	padding-top: 12.5px;
 }
 
 .boton:hover {
