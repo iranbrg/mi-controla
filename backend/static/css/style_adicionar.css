@@ -22,6 +22,7 @@ h1 {
 .logo {
 	max-width: 110px;
 	padding-top: 4px;
+	margin-left: 1.5vw;
 }
 
 .imagens {
@@ -40,11 +41,54 @@ h1 {
 	font-size: 10px;
 }
 
+.textoInicio {
+	font-family: 'Roboto', sans-serif;
+
+}
+
+.textoInicio>a {
+	text-decoration: none;
+	color: black;
+}
+
+.textoInicio>a:hover {
+	color: #666666;
+}
+
 h2 {
 	font-family: 'Poppins', sans-serif;
 	color: aliceblue;
 	display: flex;
 	justify-content: center;
+}
+
+#pesquisa {
+	display: flex;
+	align-items: center;
+}
+
+#inPesquisa {
+	padding: 0;
+	height: 28px;
+	width: 210px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 2px;
+	font-family: 'Zilla Slab', serif;
+}
+
+#botaoPesquisa {
+	border-color: #666666;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	margin-right: 0.4vw;
+	border-style: solid;
+	border-left: 0;
+	border-width: 2px;
+	padding: 0;
+
 }
 
 /*  formulario */
@@ -93,7 +137,9 @@ input {
 	margin-bottom: 1vh;
 	margin-top: 1vh;
 	color: #c50000d0;
-	font-size: 13px;
+	font-size: 14px;
+	font-family: 'Zilla Slab', serif;
+	font-weight: bold;
 }
 
 

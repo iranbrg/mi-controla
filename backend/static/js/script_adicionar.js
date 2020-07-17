@@ -41,14 +41,7 @@ function verificação (){
         espacoMensagemErro[1].textContent = "Campo Obrigatório.";
         vetorDeErros.push("2");
         window.scrollBy(0, -400)
-    } else if (isNaN(inQuantidade.value)){
-    
-            mudarEstilo(inQuantidade);
-            espacoMensagemErro[1].textContent = "Insira um valor numérico.";
-            vetorDeErros.push("2");
-            window.scrollBy(0, -400);
-        
-    }
+    } 
      
     if (inCodigoDeBarras.value == ""){
         mudarEstilo(inCodigoDeBarras);
@@ -63,13 +56,7 @@ function verificação (){
         vetorDeErros.push("4");
         window.scrollBy(0, -200);
 
-    } else if (isNaN(inPreco.value)) {
-        
-                mudarEstilo(inPreco);
-                espacoMensagemErro[3].textContent = "Insira um valor numérico.";
-                vetorDeErros.push("4");
-                window.scrollBy(0, -200);
-        }
+    } 
 
     
     if (document.formAdd.tempo_entrega[0].checked == false 
@@ -97,12 +84,12 @@ function limparEstilo (){
     voltarEstilo (inCodigoDeBarras)
     voltarEstilo (inPreco)
     voltarEstilo (inDescricao)
-    espacoMensagemErro[0].textContent = " ";
-    espacoMensagemErro[1].textContent = " ";
-    espacoMensagemErro[2].textContent = " ";
-    espacoMensagemErro[3].textContent = " ";
-    espacoMensagemErro[4].textContent = " ";
-    espacoMensagemErro[5].textContent = " ";
+    espacoMensagemErro[0].textContent = "";
+    espacoMensagemErro[1].textContent = "";
+    espacoMensagemErro[2].textContent = "";
+    espacoMensagemErro[3].textContent = "";
+    espacoMensagemErro[4].textContent = "";
+    espacoMensagemErro[5].textContent = "";
 }
 
 function açãoBotão (){
@@ -115,3 +102,28 @@ function açãoBotão (){
     }
 }
 
+function verificacaoInteiro () {
+if (isNaN(inQuantidade.value)){
+    
+    mudarEstilo(inQuantidade);
+    espacoMensagemErro[1].textContent = "Insira um valor numérico.";
+    vetorDeErros.push("2");
+
+} else if (!isNaN(inQuantidade.value)) {
+    espacoMensagemErro[1].textContent = "";
+    voltarEstilo (inQuantidade);
+}
+
+if (isNaN(inPreco.value)) {
+        
+    mudarEstilo(inPreco);
+    espacoMensagemErro[3].textContent = "Insira um valor numérico.";
+    vetorDeErros.push("4");
+} else if (!isNaN(inQuantidade.value)) {
+    espacoMensagemErro[3].textContent = "";
+    voltarEstilo (inPreco);
+}
+}
+
+verificacaoInteiro();
+oninput = verificacaoInteiro;

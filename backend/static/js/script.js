@@ -68,11 +68,11 @@ let total;
 
 function exibir (){
     var valorInput = document.getElementById('quantidadeR').value;
-    Number(valorInput);
-    total = preço*valorInput;
+    var inputNumero = Number(valorInput);
+    total = preço*inputNumero;
     let valorTotal = document.getElementById("valorTotal");
     valorTotal.textContent = total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}); 
-    if (valorInput > quantidadeDoProdutoPop){
+    if (inputNumero > quantidadeDoProdutoPop){
         document.getElementById("mensagemErroEx").textContent = "A quantidade que você selecionou é maior do que o disponível em estoque (Disponível: "+ quantidadeDoProdutoPop + ")";
         document.getElementById('quantidadeR').value = "";
         document.getElementById("valorTotal").textContent = "R$ 0,00"

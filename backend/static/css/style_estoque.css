@@ -501,3 +501,8 @@ main {
 	  font-size: 14px;
 	  color: red;
   }
+
+  .dadosT{
+	font-family: 'Alfa Slab One', cursive;
+	letter-spacing:1px;
+}

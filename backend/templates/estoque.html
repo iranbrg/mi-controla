@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
   <div>
     <a href="{{ url_for('estoque') }}"><img id="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
   </div>
@@ -84,18 +85,18 @@
 
 <div id="popUpInfo">
 
-  <div><img class="imagemPop" src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></div>
+  <div><img class="imagemPop" id="imgemDetalhe" src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></div>
   <ul id="ulInfo">
     <!-- Esta lista receberá as informações do JS para serem dispostas no pop-up -->
-    <li><b>Nome: </b><span id="1">x</span></li>
-    <li><b>Preço: </b>R$ <span id="2">x</span></li>
-    <li><b>Código de Barras: </b><span id="3">x</span></li>
-    <li><b>Fornecedor: </b><span id="4">x</span></li>
-    <li><b>Tempo de Entrega: </b><span id="5">x</span></li>
+    <li><b class="dadosT">Nome: </b><span id="1">x</span></li>
+    <li><b class="dadosT">Preço: </b>R$ <span id="2">x</span></li>
+    <li><b class="dadosT">Código de Barras: </b><span id="3">x</span></li>
+    <li><b class="dadosT">Fornecedor: </b><span id="4">x</span></li>
+    <li><b class="dadosT">Tempo de Entrega: </b><span id="5">x</span></li>
   </ul>
 
   <div id="descriçãoInfo">
-    <p><b>Descrição: </b></p><span id="6"></span>
+    <p><b class="dadosT">Descrição: </b></p><span id="6"></span>
   </div>
 
   <button id="botaoCIn" onclick="retirarPopInfo()">CONFIRMAR</button>
@@ -106,13 +107,13 @@
 
 <div id="popUpRetirada">
 
-  <div><img class="imagemPop" src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></div>
+  <div><img class="imagemPop" id="imagemRetirada" src=""></div>
   <ul id="ulRetirada">
-    <li><b>Nome: </b><span id="1.1">x</span></li>
-    <li><b>Preço: </b> R$ <span id="2.1">x</span></li>
-    <li><b>Código de Barras: </b><span id="3.1">x</span></li>
-    <li><b>Fornecedor: </b><span id="4.1">x</span></li>
-    <li><b>Tempo de Entrega: </b><span id="5.1">x</span></li>
+    <li><b class="dadosT">Nome: </b><span id="1.1">x</span></li>
+    <li><b class="dadosT">Preço: </b> R$ <span id="2.1">x</span></li>
+    <li><b class="dadosT">Código de Barras: </b><span id="3.1">x</span></li>
+    <li><b class="dadosT">Fornecedor: </b><span id="4.1">x</span></li>
+    <li><b class="dadosT">Tempo de Entrega: </b><span id="5.1">x</span></li>
   </ul>
   
   <div id="detalhes">
