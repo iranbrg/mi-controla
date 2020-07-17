@@ -1,6 +1,6 @@
 {% macro produto(estoque, nome, nome_index) -%}
     <!-- Uma lista com os atributos do produto referente ao seu respectivo card é atribuida à variável "info_produto", mas antes é usado um filtro "|join(",")" para transformar a lista numa string com atributos concatenados e separados por vírgulas -->
-    {% set info_produto = [nome, estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index]]|join(",") %}
+    {% set info_produto = [nome, estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index], estoque["quantidade"][nome_index]]|join(",") %}
     
     <!-- A variável "info_produto" é passada por meio dos atributos "data-info" e "data-info2" para o JS -->
     <li><button class="detalheItem" data-info="{{ info_produto }}" id="{{ 'info_' + nome.replace(' ', '_') }}"><img class="imagemProduto"
