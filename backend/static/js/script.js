@@ -35,6 +35,7 @@ function dados(){
     document.getElementById('4').textContent = vDados[3];
     document.getElementById('5').textContent = vDados[4];
     document.getElementById('6').textContent = vDados[5];
+    document.getElementById("imagemDetalhe").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
 }
 
 //Para o pop-up de retirada
@@ -59,6 +60,7 @@ function dadosRetirada(){
     preço = vDadosR[1];
     document.getElementById("passarNome").value = vDadosR[0];
     quantidadeDoProdutoPop = vDadosR[6];
+    document.getElementById("imagemRetirada").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
 }
 
 let quantidadeDoProdutoPop = 0;

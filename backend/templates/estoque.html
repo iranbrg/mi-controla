@@ -82,7 +82,7 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
 
 <div id="popUpInfo">
 
-  <div><img class="imagemPop" src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></div>
+  <div><img class="imagemPop" id="imagemDetalhe" src=""></div>
   <ul id="ulInfo">
     <!-- Esta lista receberá as informações do JS para serem dispostas no pop-up -->
     <li><b>Nome: </b><span id="1">x</span></li>
@@ -95,7 +95,7 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
   <div id="descriçãoInfo">
     <p><b>Descrição: </b></p><span id="6"></span>
   </div>
-
+  <button id="botaoexcluir" onclick="retirarPopInfo()">EXCLUIR ITEM</button>
   <button id="botaoCIn" onclick="retirarPopInfo()">CONFIRMAR</button>
 
 </div>
@@ -104,7 +104,7 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
 
 <div id="popUpRetirada">
 
-  <div><img class="imagemPop" src="{{ url_for('static', filename= 'images/produto1.jpg') }}"></div>
+  <div><img class="imagemPop" id="imagemRetirada" src="{{ url_for('static', filename= 'images/produtos/produto1.jpg') }}"></div>
   <ul id="ulRetirada">
     <li><b>Nome: </b><span id="1.1">x</span></li>
     <li><b>Preço: </b> R$ <span id="2.1">x</span></li>
