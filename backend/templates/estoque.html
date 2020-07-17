@@ -29,7 +29,8 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
     <div class="imagens"><a href="{{ url_for('adicionar') }}"><img src="{{ url_for('static', filename= 'images/in-adicionar.png') }}" height="50" width="50"></a>
       <p>Adicionar</p>
     </div>
-    <div class="imagens"><a href=""><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50" width="50"></a>
+    <div class="imagens"><a href="{{ url_for('static', filename= 'pd/estoque.csv') }}"><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50"
+          width="50"></a>
       <p>Planilha</p>
     </div>
     <div class="imagens"><a href="{{ url_for('historico') }}"><img src="{{ url_for('static', filename= 'images/in-historico.png') }}" height="50" width="50"></a>
@@ -111,15 +112,19 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
     <li><b>Fornecedor: </b><span id="4.1">x</span></li>
     <li><b>Tempo de Entrega: </b><span id="5.1">x</span></li>
   </ul>
-
+  
   <div id="detalhes">
-    <ul>
-      <li id="quantidade"><b>Quantidade a ser retirada: </b><input type="text" placeholder="Quantidade" id="quantidadeR"></li>
-      <li><b>Valor total a ser recebido: </b><span id="valorTotal">R$ 0,00</span></li>
-    </ul>
+    <form action="" method="POST" id="form_retirar">
+      {{ form.csrf_token }}
+      {{ form.hidden_nome_produto(id="passarNome") }}
+      <ul id="listaQuantidade">
+        <li id="quantidade"><b>Quantidade a ser retirada: </b>{{ form.quantidadeR(placeholder="Quantidade") }}</li>
+        <li><b>Valor total a ser recebido: </b><span id="valorTotal">R$ 0,00</span></li>
+      </ul>
+    </form>
   </div>
 
-  <button id="botaoCR" onclick="retirarPopRetiradaBotaoConfirma()">CONFIRMAR</button>
+  {{ form.botaoCR(onclick="retirarPopRetiradaBotaoConfirma()", form="form_retirar") }}
   <button id="fecharPop" onclick="retirarPopRetirada()">X</button>
 </div>
 {% endblock %}

@@ -55,6 +55,7 @@ function dadosRetirada(){
     document.getElementById('4.1').textContent = vDadosR[3];
     document.getElementById('5.1').textContent = vDadosR[4];
     preço = vDadosR[1];
+    document.getElementById("passarNome").value = vDadosR[0];
 }
 
 

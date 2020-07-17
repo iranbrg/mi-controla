@@ -48,13 +48,15 @@ conteudo %}
       <p>Estoque</p>
     </div>
 
-    <div class="imagens">
+    <!-- <div class="imagens">
       <a href=""
         ><img
           src="{{ url_for('static', filename= 'images/in-planilha.png') }}"
           height="50"
           width="50"
-      /></a>
+      /></a> -->
+    <div class="imagens"><a href="{{ url_for('static', filename= 'pd/estoque.csv') }}"><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50"
+          width="50"></a>
       <p>Planilha</p>
     </div>
     <div class="imagens">
