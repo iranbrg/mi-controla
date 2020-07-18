@@ -86,4 +86,5 @@ def leitura_historico():
         #Se o estoque.csv estiver vazio (sem produtos) a string é retornada
         return "historico vazio"
     else:
+        historico_df.sort_index(ascending=False, inplace=True)
         return historico_df.to_dict("list")
