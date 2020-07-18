@@ -102,8 +102,10 @@ input {
 input:hover{
 	box-shadow: 0 10px 20px 0 #25b1e0;
   }
-  input[type="file"]{
-	box-shadow: none;
+input[type="file"]{
+  box-shadow: none;
+  padding-left: 0px;
+  color: white;
   }
 
 .descricao {
