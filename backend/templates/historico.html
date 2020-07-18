@@ -55,7 +55,9 @@
         {% elif hist["status"][ni.nome_index] == "retirado" %}
           {{ macros.historico_retirar(hist, nome, ni.nome_index) }}
           {% set ni.nome_index = ni.nome_index + 1 %}
-        
+        {% elif hist["status"][ni.nome_index] == "removido" %}
+          {{ macros.historico_remover(hist, nome, ni.nome_index) }}
+          {% set ni.nome_index = ni.nome_index + 1 %}
         {% endif %}
       {% endfor %}
     {% endif %}

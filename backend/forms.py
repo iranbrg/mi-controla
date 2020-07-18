@@ -32,4 +32,4 @@ class RetirarProduto(FlaskForm):
 class RemoverProduto(FlaskForm):
     hidden_nome_produto = HiddenField()
     
-    botaoexcluir = SubmitField("REMOVER PRODUTO")
+    botaoexcluir = SubmitField("REMOVER")

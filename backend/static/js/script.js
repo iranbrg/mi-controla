@@ -36,6 +36,7 @@ function dados(){
     document.getElementById('5').textContent = vDados[4];
     document.getElementById('6').textContent = vDados[5];
     document.getElementById("imagemDetalhe").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
+    document.getElementById("passarNomeRemover").value = vDados[0];
 }
 
 //Para o pop-up de retirada
