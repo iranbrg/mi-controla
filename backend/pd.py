@@ -2,6 +2,13 @@ import pandas as pd
 from pandas.errors import EmptyDataError
 import os, datetime
 
+def remover(produto_removido):
+    estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
+    estoque_df.set_index("nome_produto", inplace=True)
+    estoque_df.drop(index=produto_removido.hidden_nome_produto.data, inplace=True)
+    estoque_df.reset_index(inplace=True)
+    estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
+
 def leitura_estoque():
     try:
         #Leitura do estoque.csv (criação do dataframe)
@@ -24,10 +31,6 @@ def retirar_produto(form):
         estoque_df.loc[form.hidden_nome_produto.data, "quantidade"] -= form.quantidadeR.data
         estoque_df.reset_index(inplace=True)
         estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
-        return True, "Produto retirado com sucesso"
-    #Do contrário, não há decremento e uma mensagem de erro será retornada com o máximo de unidades que o usuário poderá retirar.
-    elif form.quantidadeR.data > estoque_df.loc[form.hidden_nome_produto.data, "quantidade"]:
-        return False, f"Pode-se retirar no máximo {estoque_df.loc[form.hidden_nome_produto.data, 'quantidade']} unidades"
     
 def novo_produto(form):
     dados_novo_produto = {"nome_produto": form.nome_produto.data.lower(),

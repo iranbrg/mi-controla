@@ -1,23 +1,23 @@
 from flask import render_template, redirect, url_for, request, flash
 from backend import app
-from backend.forms import NovoProduto, RetirarProduto
-from backend.pd import novo_produto, leitura_estoque, retirar_produto, leitura_historico
+from backend.forms import NovoProduto, RetirarProduto, RemoverProduto
+from backend.pd import novo_produto, leitura_estoque, retirar_produto, leitura_historico, remover
 from werkzeug.utils import secure_filename
 import os
 
 @app.route('/estoque/', methods=['POST','GET'])
 def estoque():
     form = RetirarProduto()
+    form_remover = RemoverProduto()
 
     if form.validate_on_submit():
-        is_maximo, msg_maximo = retirar_produto(form)
-        if is_maximo:
-            flash(msg_maximo, "success")
-            return redirect(request.url)
-        else:
-            flash(msg_maximo, "error")
-
-    return render_template('estoque.html', estoque=leitura_estoque(), form=form)
+        retirar_produto(form)
+        return redirect(request.url)
+    elif form_remover.validate_on_submit():
+        remover(form_remover)
+        return redirect(request.url)
+        
+    return render_template('estoque.html', estoque=leitura_estoque(), form=form, form_remover=form_remover)
 
 @app.route('/adicionar/', methods=['POST','GET'])
 def adicionar():

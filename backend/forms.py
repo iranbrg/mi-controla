@@ -21,10 +21,15 @@ class NovoProduto(FlaskForm):
     foto = FileField("foto", validators=[FileRequired(), FileAllowed(['png'], message='Somente imagens .png!!')])
 
     inserir_produto = SubmitField("Inserir Produto")
-
+    
 class RetirarProduto(FlaskForm):
     quantidadeR = IntegerField(validators=[DataRequired(message="Quantidade obrigatória"), NumberRange(min=0)])
 
     hidden_nome_produto = HiddenField()
     
     botaoCR = SubmitField("Retirar Produto")
+
+class RemoverProduto(FlaskForm):
+    hidden_nome_produto = HiddenField()
+    
+    botaoexcluir = SubmitField("REMOVER PRODUTO")

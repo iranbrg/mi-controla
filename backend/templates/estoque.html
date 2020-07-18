@@ -95,9 +95,12 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
   <div id="descriçãoInfo">
     <p><b>Descrição: </b></p><span id="6"></span>
   </div>
-  <button id="botaoexcluir" onclick="retirarPopInfo()">EXCLUIR ITEM</button>
+  <form action="" method="POST">
+    {{ form_remover.csrf_token }}
+    {{ form_remover.hidden_nome_produto(id="passarNomeRemover") }}
+    {{ form_remover.botaoexcluir(onclick="retirarPopInfo()") }}
+  </form>
   <button id="botaoCIn" onclick="retirarPopInfo()">CONFIRMAR</button>
-
 </div>
 
 <!--(2)-->
