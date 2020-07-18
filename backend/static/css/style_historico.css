@@ -168,7 +168,8 @@ h1 {
 
 
 .histAdd,
-.histRetirada {
+.histRetirada,
+.histRemover {
     width: 960px;
     height: 96px;
     background-color: #FFFAFA;
@@ -180,4 +181,11 @@ h1 {
     font-family: 'Roboto', sans-serif;
     margin-top: 1vh;
 
+}
+#faixaRemover {
+    background-color: #4615ce;
+    width: 20px;
+    height: 6em;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }

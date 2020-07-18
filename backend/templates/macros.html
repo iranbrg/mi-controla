@@ -35,8 +35,8 @@
 {%- endmacro %}
 
 {% macro historico_remover(hist, nome, nome_index) -%}
-    <div class="histRetirada">
-        <div id="faixaRetirar"></div>
+    <div class="histRemover">
+        <div id="faixaRemover"></div>
         <span><img class='imagemProduto' src="{{ url_for('static', filename= 'images/produtos/{}.png'.format(nome)) }}"></span>
         <span id="nomeR">Nome do produto: {{ nome }}</span>
         <span><b>Quantidade removida: </b>{{ hist["quantidade"][nome_index] }}</span>
