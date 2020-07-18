@@ -23,7 +23,7 @@
 
   <div id="menuInteracao">
     <div class="imagens"><a href="{{ url_for('estoque') }}"><img
-          src="{{ url_for('static', filename= 'images/in-estoque.png') }}" height="50" width="50"></a>
+          src="{{ url_for('static', filename= 'images/in-estoque3.png') }}" height="50" width="50"></a>
       <p>Estoque</p>
     </div>
     <div class="imagens"><a href="{{ url_for('adicionar') }}"><img
@@ -44,15 +44,18 @@
 <main>
   <div id="blocoHistórico">
     {% if hist == "historico vazio" %}
-      <h1>HISTÓRICO VAZIO</h1>
+      <h1>HISTÓRCO VAZIO</h1>
     {% else %}
+      {% set ni = namespace(nome_index = 0) %}
+      
       {% for nome in hist["nome_produto"] %}
-        {% set nome_index = hist["nome_produto"].index(nome) %}
-
-        {% if hist["status"][nome_index] == "adicionado"%}
-          {{ macros.historico_adicionar(hist, nome, nome_index) }}
-        {% elif hist["status"][nome_index] == "retirado"%}
-          {{ macros.historico_retirar(hist, nome, nome_index) }}
+        {% if hist["status"][ni.nome_index] == "adicionado" %}
+          {{ macros.historico_adicionar(hist, nome, ni.nome_index) }}
+          {% set ni.nome_index = ni.nome_index + 1 %}
+        {% elif hist["status"][ni.nome_index] == "retirado" %}
+          {{ macros.historico_retirar(hist, nome, ni.nome_index) }}
+          {% set ni.nome_index = ni.nome_index + 1 %}
+        
         {% endif %}
       {% endfor %}
     {% endif %}
