@@ -19,6 +19,7 @@
         <span><img class='imagemProduto' src="{{ url_for('static', filename= 'images/produtos/{}.png'.format(nome)) }}"></span>
         <span id="nomeA">Nome do produto: {{ nome }}<br></span>
         <span id="quantidadeA"><b>Quantidade: </b>{{ hist["quantidade"][nome_index] }}</span>
+        <span id="vRecebido"><b>Preço: </b><br> R$ {{ hist["quantidade"][nome_index] }}</span>
         <div class="dataEHora">{{ hist["data_hora"][nome_index] }}</div>
     </div>
 {%- endmacro %}

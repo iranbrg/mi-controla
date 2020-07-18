@@ -1,9 +1,4 @@
-.vscode/
 venv/
 *.pyc
 **/__pycache__
-<<<<<<< HEAD
-env/
-=======
 **/.vscode
->>>>>>> develop
