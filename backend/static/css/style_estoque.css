@@ -209,7 +209,7 @@ main {
   padding-bottom: 5px;
   padding-left: 18px;
   padding-right: 18px;
-  margin-right: 1vw;
+  margin-right: 2px;
   margin-left: 0.5vw;
   border-style: none;
   cursor: pointer;
@@ -218,43 +218,23 @@ main {
 	outline: 0;
 }
 
-.bt2 {
-  margin-left: 0.1vw;
-  background-color: transparent;
-  border-style: none;
-  margin-right: 0.2vw;
-  cursor: pointer;
-  box-shadow: 0 0 0 0;
-	outline: 0;
-}
-
-.bt2 > img {
-  max-width: 20px;
-  background-color: #25b1e0;
-  padding: 3px;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  border-style: none;
-}
-
 .bt:hover {
   background-color: #1cc6ff;
   background-image: none;
   border-color: none;
 }
 
-.bt2 > img:hover {
-  background-color: #1cc6ff;
-  background-image: none;
-  border-color: none;
-}
 
 #contador {
-  width: 3vw;
-  text-align: right;
+  width: 30px;
+  max-width: 30px;
+  background-color: #25b1e0;
+  padding: 3px;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border-style: none;
+  text-align: center;
 }
 
 /*Personalização do footer*/
@@ -378,8 +358,10 @@ main {
 #botaoexcluir:hover{
 	background-color: #e02b25;
 	opacity: 100%;
-	border-color: none;
-
+  border-color: none;
+   -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+      transform: scale(1.1);
 }
 .imagemPop {
 	max-width: 250px;
