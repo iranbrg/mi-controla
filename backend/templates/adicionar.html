@@ -7,26 +7,12 @@
 {% endblock %} {% block title %}Adicionar - Mi-Controla{% endblock %} {% block
 conteudo %}
 <header>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <div>
     <a href="{{ url_for('estoque') }}"
       ><img
@@ -98,16 +84,25 @@ conteudo %}
 
 <main>
   <div>
-    <form action="{{ url_for('adicionar') }}" method="POST"  onsubmit="alerta()" enctype="multipart/form-data">
+    <form action="{{ url_for('adicionar') }}" method="POST" name="formAdd" id="formAddProduto" onsubmit="alerta()" enctype="multipart/form-data">
       <h2>Adicionar Novo Produto</h2>
-      {{ form.hidden_tag() }} {{ form.nome_produto(placeholder="Nome do produto") }}
-      <br />
-      {{ form.quantidade(placeholder="Estoque (unidades)") }}
+      {{ form.hidden_tag() }}
+      {{ form.nome_produto(placeholder="Nome do produto", oninvalid="this.setCustomValidity(' ')") }}
       <br>
-      {{ form.codigo_barras(placeholder="Código de barras") }}
+      <span class="erro"></span>
       <br>
-      {{ form.preco(placeholder="Preço (reais)") }}
-      <br />
+      {{ form.quantidade(placeholder="Estoque (unidades)", oninvalid="this.setCustomValidity(' ')") }}
+      <br>
+      <span class="erro"></span>
+      <br>
+      {{ form.codigo_barras(placeholder="Código de barras", oninvalid="this.setCustomValidity(' ')") }}
+      <br>
+      <span class="erro"></span>
+      <br>
+      {{ form.preco(placeholder="Preço (reais)", oninvalid="this.setCustomValidity(' ')") }}
+      <br>
+      <span class="erro"></span>
+      <br>
       {{ form.fornecedor.label(style="color: white;") }}
       <br />
       {{ form.fornecedor(class="fornecedor") }}
@@ -122,18 +117,20 @@ conteudo %}
         </tr>
         {% endfor %}
       </div>
+      <span class="erro"></span>
       <br />
       {{ form.descricao(class="descricao", placeholder="Descrição do produto")
       }}
+      <br>
+      <span class="erro"></span>
       <br />
       <label style="color: white;">Adicionar imagem</label><br />
       {{ form.foto }}
-      {{ form.inserir_produto(class="boton") }}
+      {{ form.inserir_produto(class="boton", onclick="açãoBotão()") }}
       <br />
     </form>
   </div>
 </main>
-
 <br />
 <br />
 <br />
@@ -154,12 +151,8 @@ conteudo %}
         width="30"
     /></a>
 </footer>
-
-{% endblock %} 
+{% endblock %}
 
 {% block script %}
-<script
-  type="text/javascript"
-  src="{{ url_for('static', filename= 'js/script_adicionar.js') }}"
-></script>
+<script type="text/javascript" src="{{ url_for('static', filename= 'js/script_adicionar.js') }}"></script>
 {% endblock %}

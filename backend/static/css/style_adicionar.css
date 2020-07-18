@@ -53,10 +53,20 @@ h1 {
 	font-size: 10px;
 }
 
-.botaofoto {
-  display: flex;
-  font-size: 10px;
+.textoInicio {
+	font-family: 'Roboto', sans-serif;
+
 }
+
+.textoInicio>a {
+	text-decoration: none;
+	color: black;
+}
+
+.textoInicio>a:hover {
+	color: #666666;
+}
+
 h2 {
   font-family: "Poppins", sans-serif;
   color: aliceblue;
@@ -77,6 +87,35 @@ h2 {
   color: #666666;
 }
 
+#pesquisa {
+	display: flex;
+	align-items: center;
+}
+
+#inPesquisa {
+	padding: 0;
+	height: 28px;
+	width: 210px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 2px;
+	font-family: 'Zilla Slab', serif;
+}
+
+#botaoPesquisa {
+	border-color: #666666;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	margin-right: 0.4vw;
+	border-style: solid;
+	border-left: 0;
+	border-width: 2px;
+	padding: 0;
+
+}
+
 /*  formulario */
 main {
   display: flex;
@@ -89,14 +128,13 @@ main {
 }
 
 input {
-	border: none;
 	margin-bottom: 20px;
 	border-radius: 5px;
 	height: 60px;
 	width: 700px;
-	box-shadow: 0 0 0 0;
-	outline: 0;
-	padding-left: 10px;
+	margin-bottom: 0;
+	border-color: transparent;
+	border-width: 1px;
 }
 
 input:hover{
@@ -120,14 +158,25 @@ input[type="file"]{
 }
 
 .tempoentrega {
-  height: 15px;
-  width: 15px;
+	height: 15px;
+	width: 15px;
+	margin-bottom: 0;
 }
 
 .fornecedor {
   height: 30px;
   width: 100px;
 }
+
+.erro{
+	margin-bottom: 1vh;
+	margin-top: 1vh;
+	color: #c50000d0;
+	font-size: 14px;
+	font-family: 'Zilla Slab', serif;
+	font-weight: bold;
+}
+
 
 /*  botão */
 .boton {

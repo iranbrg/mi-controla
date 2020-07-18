@@ -35,6 +35,10 @@ function dados(){
     document.getElementById('4').textContent = vDados[3];
     document.getElementById('5').textContent = vDados[4];
     document.getElementById('6').textContent = vDados[5];
+    quantidadeDoProdutoPop = vDados[6];
+    if (quantidadeDoProdutoPop <= 5) {
+        document.getElementById("mensagemQuantidadeBaixa").textContent = "Baixa quantidade em estoque"
+    }
     document.getElementById("imagemDetalhe").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
     document.getElementById("passarNomeRemover").value = vDados[0];
 }
@@ -71,8 +75,8 @@ let total;
 
 function exibir (){
     var valorInput = document.getElementById('quantidadeR').value;
-    var inputNumero = Number(valorInput); 
-    total = preço*valorInput;
+    var inputNumero = Number(valorInput);
+    total = preço*inputNumero;
     let valorTotal = document.getElementById("valorTotal");
     valorTotal.textContent = total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}); 
     if (inputNumero > quantidadeDoProdutoPop){
@@ -89,3 +93,30 @@ function exibir (){
 oninput = exibir;
 
 //o id é o código de barras para os botões de retirar
+
+let main = document.querySelector("main").children;
+
+let numeroDeItens = 8;
+let limitante = 4;
+let altura = 178;
+
+if (main.length <= 4 && main.length > 0) {
+    fundoPop.style.height = "100%"
+} else if (main.length <= 8 && main.length > 4) {
+    fundoPop.style.height = "178%"
+} 
+
+while(true) {
+    altura += 71;
+    numeroDeItens += 4;
+    limitante += 4;
+    
+    if (main.length > limitante && main.length <= numeroDeItens) {
+    fundoPop.style.height = altura+"%";
+    break
+    }
+
+}
+
+
+

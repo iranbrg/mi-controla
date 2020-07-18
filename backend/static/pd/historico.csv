@@ -1,19 +1,24 @@
 nome_produto,quantidade,codigo_barras,preco,fornecedor,tempo_entrega,descricao,status,data_hora
-pixel3,50,521341,50,Amazon,30 dias, kkkkkkkkkk,adicionado,17/07/2020 17:58:21
-pixel3,1,521341,50,Amazon,30 dias, kkkkkkkkkk,retirado,17/07/2020 18:02:10
-pixel3,10,521341,50,Amazon,30 dias, kkkkkkkkkk,retirado,17/07/2020 18:02:54
-pixel3,30,521341,50,Amazon,30 dias, kkkkkkkkkk,retirado,17/07/2020 18:05:17
-pixel5,47,68765,46,Mercado Livre,14 dias, hdfg,adicionado,17/07/2020 18:08:08
-pixel5,10,68765,46,Mercado Livre,14 dias, hdfg,retirado,17/07/2020 18:08:33
-sadasd,123,213312,1231,Americanas,7 dias, asddsa,adicionado,17/07/2020 18:14:56
-sadasd,6,213312,1231,Americanas,7 dias, asddsa,retirado,17/07/2020 18:15:10
-sadasddd,123,213312,1231,Americanas,7 dias, asddsa,adicionado,17/07/2020 18:16:45
-sadasd,50,213312,1231,Americanas,7 dias, asddsa,retirado,17/07/2020 18:40:21
-pixel5,5,68765,46,Mercado Livre,14 dias, hdfg,retirado,17/07/2020 18:48:55
-pixel5,23,68765,46,Mercado Livre,14 dias, hdfg,retirado,17/07/2020 18:49:01
-sadasd,2,213312,1231,Americanas,7 dias, asddsa,retirado,17/07/2020 18:56:15
-sadasd,5,213312,1231,Americanas,7 dias, asddsa,retirado,17/07/2020 21:04:20
-iphone3,123,323,43,Americanas,30 dias, asdas,adicionado,17/07/2020 21:05:00
-iphone3,12,323,43,Americanas,30 dias, asdas,retirado,17/07/2020 21:15:15
-sadasd,60,213312,1231,Americanas,7 dias, asddsa,removido,18/07/2020 12:26:24
-sadasddd,123,213312,1231,Americanas,7 dias, asddsa,removido,18/07/2020 12:34:00
+galaxy s20,2,codigodebarras,4500.0,mercadolivre,30 dias, ,retirado,17/07/2020 16:18:43
+iphone50,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone52,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone53,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone54,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone55,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone56,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone57,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone58,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone59,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone60,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone61,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone62,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone63,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone64,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone65,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone66,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone67,15,asdasd,2000.99,Americanas,14 dias, ,adicionado,17/07/2020 16:55:39
+iphone1,1,asdasd,5000.99,Mercado Livre,14 dias, ,retirado,17/07/2020 16:57:22
+pixel 4,2,codigodebarras,8000.999,Amazon,7 dias, ,retirado,17/07/2020 17:00:15
+iphone 1000,1000,adasd,1293712983712983.0,Amazon,30 dias, ,adicionado,17/07/2020 17:01:44
+ galaxy s9,12,ds,23.0,Americanas,7 dias, asd,adicionado,17/07/2020 18:38:42
+ galaxy s9,12323,21312,12,Americanas,7 dias, sdfsdfsd,adicionado,17/07/2020 18:39:38
