@@ -35,6 +35,10 @@ function dados(){
     document.getElementById('4').textContent = vDados[3];
     document.getElementById('5').textContent = vDados[4];
     document.getElementById('6').textContent = vDados[5];
+    quantidadeDoProdutoPop = vDados[6];
+    if (quantidadeDoProdutoPop <= 5) {
+        document.getElementById("mensagemQuantidadeBaixa").textContent = "Baixa quantidade em estoque"
+    }
 }
 
 //Para o pop-up de retirada
