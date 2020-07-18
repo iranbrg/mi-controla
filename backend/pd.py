@@ -2,6 +2,18 @@ import pandas as pd
 from pandas.errors import EmptyDataError
 import os, datetime
 
+def remover(form_remover):
+    estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
+    estoque_df.set_index("nome_produto", inplace=True)
+
+    #Gravação da remoção do produto no histórico
+    dados_produto_removido = {"nome_produto": form_remover.hidden_nome_produto.data, **estoque_df.loc[form_remover.hidden_nome_produto.data].to_dict()}
+    historico(dados_produto_removido, status="removido")
+    
+    estoque_df.drop(index=form_remover.hidden_nome_produto.data, inplace=True)
+    estoque_df.reset_index(inplace=True)
+    estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
+
 def leitura_estoque():
     try:
         #Leitura do estoque.csv (criação do dataframe)
@@ -18,16 +30,14 @@ def retirar_produto(form):
     
     #Verificação se a quantidade a ser retirada é menor ou igual à diponível no estoque
     if form.quantidadeR.data <= estoque_df.loc[form.hidden_nome_produto.data, "quantidade"]:
+        #Gravação da retirada no histórico
         dados_produto_retirado = {"nome_produto": form.hidden_nome_produto.data, **estoque_df.loc[form.hidden_nome_produto.data].to_dict(), "quantidade": form.quantidadeR.data}
         historico(dados_produto_retirado, status="retirado")
+
         #Caso seja, ocorrerá o decremento da quantidade no estoque (estoque.csv) e uma mensagem de confimação será retornada
         estoque_df.loc[form.hidden_nome_produto.data, "quantidade"] -= form.quantidadeR.data
         estoque_df.reset_index(inplace=True)
         estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
-        return True, "Produto retirado com sucesso"
-    #Do contrário, não há decremento e uma mensagem de erro será retornada com o máximo de unidades que o usuário poderá retirar.
-    elif form.quantidadeR.data > estoque_df.loc[form.hidden_nome_produto.data, "quantidade"]:
-        return False, f"Pode-se retirar no máximo {estoque_df.loc[form.hidden_nome_produto.data, 'quantidade']} unidades"
     
 def novo_produto(form):
     dados_novo_produto = {"nome_produto": form.nome_produto.data.lower(),
@@ -38,6 +48,7 @@ def novo_produto(form):
                           "tempo_entrega": form.tempo_entrega.data,
                           "descricao": form.descricao.data.lower()}
 
+    #Gravação do novo produto no histórico
     historico(dados_novo_produto, status="adicionado")
 
     try:
@@ -86,4 +97,5 @@ def leitura_historico():
         #Se o estoque.csv estiver vazio (sem produtos) a string é retornada
         return "historico vazio"
     else:
+        historico_df.sort_index(ascending=False, inplace=True)
         return historico_df.to_dict("list")

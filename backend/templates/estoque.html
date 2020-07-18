@@ -2,7 +2,8 @@
 {% import "macros.html" as macros %}
 
 {% block stylesheet %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
+<link rel="stylesheet" type="text/css" 
+href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
 {% endblock %}
 
 
@@ -23,31 +24,28 @@
 
   <h1>Sistema de Controle de Estoque</h1>
 
-  <div class="linha"></div>
+  
 
   <div id="menuInteracao">
-    <div class="imagens"><a href="{{ url_for('adicionar') }}"><img
-          src="{{ url_for('static', filename= 'images/in-adicionar.png') }}" height="50" width="50"></a>
+    <div class="imagens"><a href="{{ url_for('adicionar') }}"><img src="{{ url_for('static', filename= 'images/in-adicionar.png') }}" height="50" width="50"></a>
       <p>Adicionar</p>
     </div>
     <div class="imagens"><a href="{{ url_for('static', filename= 'pd/estoque.csv') }}"><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50"
           width="50"></a>
       <p>Planilha</p>
     </div>
-    <div class="imagens"><a href="{{ url_for('historico') }}"><img
-          src="{{ url_for('static', filename= 'images/in-historico.png') }}" height="50" width="50"></a>
+    <div class="imagens"><a href="{{ url_for('historico') }}"><img src="{{ url_for('static', filename= 'images/in-historico.png') }}" height="50" width="50"></a>
       <p>Histórico</p>
     </div>
 
   </div>
 
   <div class="S+Pesquisa">
-    <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img
-        src="{{ url_for('static', filename= 'images/in-voltar.png') }}" height="15" width="15"></h5>
+    <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img src="{{ url_for('static', filename= 'images/in-voltar.png') }}"
+        height="15" width="15"></h5>
     <span id="pesquisa">
       <input id="inPesquisa" type="text" nome="pesquisar" placeholder="Pesquise itens aqui!">
-      <input id="botaoPesquisa" type=image src="{{ url_for('static', filename= 'images/in-buscar.png') }}" width="29"
-        height="28">
+      <input id="botaoPesquisa" type=image src="{{ url_for('static', filename= 'images/in-buscar.png') }}" width="29" height="28">
     </span>
     <!--esse parágrafo serve apenas para alinhar melhor esse conjunto -->
     <p></p>
@@ -98,15 +96,19 @@
   <div id="descriçãoInfo">
     <p><b class="dadosT">Descrição: </b></p><span id="6"></span><div id="mensagemQuantidadeBaixa"></div>
   </div>
+  <form action="" method="POST">
+    {{ form_remover.csrf_token }}
+    {{ form_remover.hidden_nome_produto(id="passarNomeRemover") }}
+    {{ form_remover.botaoexcluir(onclick="retirarPopInfo()") }}
+  </form>
   <button id="botaoCIn" onclick="retirarPopInfo()">CONFIRMAR</button>
-
 </div>
 
 <!--(2)-->
 
 <div id="popUpRetirada">
 
-  <div><img class="imagemPop" id="imagemRetirada" src=""></div>
+  <div><img class="imagemPop" id="imagemRetirada" src="{{ url_for('static', filename= 'images/produtos/produto1.jpg') }}"></div>
   <ul id="ulRetirada">
     <li><b class="dadosT">Nome: </b><span id="1.1">x</span></li>
     <li><b class="dadosT">Preço: </b> R$ <span id="2.1">x</span></li>
@@ -133,5 +135,5 @@
 {% endblock %}
 
 {% block script %}
-<script type="text/javascript" src="{{ url_for('static', filename= 'js/script.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename= 'js/script.js') }}"></script>
 {% endblock %}

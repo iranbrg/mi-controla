@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, DecimalField, SelectField, SubmitField, RadioField, HiddenField
-from wtforms.validators import DataRequired, NumberRange
+from flask_wtf.file import FileField, FileAllowed, FileRequired
+from wtforms import StringField, IntegerField, DecimalField, SelectField, SubmitField, RadioField, TextAreaField, HiddenField
+from wtforms.validators import DataRequired, Optional, NumberRange
 
 class NovoProduto(FlaskForm):
     nome_produto = StringField("Nome do Produto", validators=[DataRequired(message="Campo obrigatório")])
@@ -17,11 +18,18 @@ class NovoProduto(FlaskForm):
 
     descricao = StringField("Descrição", default=" ")
 
-    inserir_produto = SubmitField("Inserir Produto")
+    foto = FileField("foto", validators=[FileRequired(), FileAllowed(['png'], message='Somente imagens .png!!')])
 
+    inserir_produto = SubmitField("Inserir Produto")
+    
 class RetirarProduto(FlaskForm):
     quantidadeR = IntegerField(validators=[DataRequired(message="Quantidade obrigatória"), NumberRange(min=0)])
 
     hidden_nome_produto = HiddenField()
     
     botaoCR = SubmitField("Retirar Produto")
+
+class RemoverProduto(FlaskForm):
+    hidden_nome_produto = HiddenField()
+    
+    botaoexcluir = SubmitField("REMOVER")

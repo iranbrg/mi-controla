@@ -39,6 +39,8 @@ function dados(){
     if (quantidadeDoProdutoPop <= 5) {
         document.getElementById("mensagemQuantidadeBaixa").textContent = "Baixa quantidade em estoque"
     }
+    document.getElementById("imagemDetalhe").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
+    document.getElementById("passarNomeRemover").value = vDados[0];
 }
 
 //Para o pop-up de retirada
@@ -63,6 +65,7 @@ function dadosRetirada(){
     preço = vDadosR[1];
     document.getElementById("passarNome").value = vDadosR[0];
     quantidadeDoProdutoPop = vDadosR[6];
+    document.getElementById("imagemRetirada").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
 }
 
 let quantidadeDoProdutoPop = 0;
