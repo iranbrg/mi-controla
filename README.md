@@ -1,4 +1,4 @@
-# equipe3
+# ESCOPO
 Projeto Final - Equipe 3
 
         ESCOPO DO PROJETO MI-CONTROLA
