@@ -21,11 +21,15 @@ var botoes = document.getElementsByClassName('detalheItem')
 
 //não está reconhecendo o data-atribute como vetor. Quando reconhecer a função vai funcionar
 
-for (i=0; i < botoes.length; i++){
+if(botoes.length !==0){
+    for (i=0; i < botoes.length; i++){
    document.getElementById(botoes[i].id).addEventListener('click', dados);
 }
+};
 
 function dados(){
+    document.getElementById("mensagemQuantidadeBaixa").style.display = "none";
+    document.getElementById("mensagemQuantidadeBaixa").textContent = "";
     popUpInfo.style.display = "grid";
     fundoPop.style.display = "block";
     var vDados = this.getAttribute("data-info").split(",");
@@ -37,9 +41,10 @@ function dados(){
     document.getElementById('6').textContent = vDados[5];
     quantidadeDoProdutoPop = vDados[6];
     if (quantidadeDoProdutoPop <= 5) {
-        document.getElementById("mensagemQuantidadeBaixa").textContent = "Baixa quantidade em estoque"
+        document.getElementById("mensagemQuantidadeBaixa").style.display = "block";
+        document.getElementById("mensagemQuantidadeBaixa").textContent = "Baixa quantidade em estoque";
     }
-    document.getElementById("imagemDetalhe").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
+    // document.getElementById("imagemDetalhe").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
     document.getElementById("passarNomeRemover").value = vDados[0];
 }
 
@@ -53,6 +58,7 @@ for (i=0; i < botoesRetirada.length; i++){
 
 function dadosRetirada(){
     document.getElementById('quantidadeR').value = "";
+    document.getElementById('valorTotal').textContent = "R$ 0,00";
     document.getElementById("mensagemErroEx").textContent = "";
     popUpRetirada.style.display = "grid";
     fundoPop.style.display = "block";
@@ -65,7 +71,7 @@ function dadosRetirada(){
     preço = vDadosR[1];
     document.getElementById("passarNome").value = vDadosR[0];
     quantidadeDoProdutoPop = vDadosR[6];
-    document.getElementById("imagemRetirada").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
+    // document.getElementById("imagemRetirada").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
 }
 
 let quantidadeDoProdutoPop = 0;
@@ -89,34 +95,4 @@ function exibir (){
    
 }
 
-
 oninput = exibir;
-
-//o id é o código de barras para os botões de retirar
-
-let main = document.querySelector("main").children;
-
-let numeroDeItens = 8;
-let limitante = 4;
-let altura = 178;
-
-if (main.length <= 4 && main.length > 0) {
-    fundoPop.style.height = "100%"
-} else if (main.length <= 8 && main.length > 4) {
-    fundoPop.style.height = "178%"
-} 
-
-while(true) {
-    altura += 71;
-    numeroDeItens += 4;
-    limitante += 4;
-    
-    if (main.length > limitante && main.length <= numeroDeItens) {
-    fundoPop.style.height = altura+"%";
-    break
-    }
-
-}
-
-
-

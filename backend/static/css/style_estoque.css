@@ -160,8 +160,8 @@ main {
 
 .imagemProduto {
   border-radius: 20px;
-  max-width: 210px;
-  max-height: 210px;
+  width: 210px;
+  height: 210px;
 }
 
 .detalheItem {
