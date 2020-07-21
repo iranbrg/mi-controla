@@ -1,9 +1,9 @@
-from flask import render_template, redirect, url_for, request, flash
+import os
+from flask import render_template, redirect, url_for, request
 from backend import app
 from backend.forms import NovoProduto, RetirarProduto, RemoverProduto
 from backend.pd import novo_produto, leitura_estoque, retirar_produto, leitura_historico, remover
 from werkzeug.utils import secure_filename
-import os
 
 @app.route('/estoque/', methods=['POST','GET'])
 def estoque():

@@ -1,9 +1,14 @@
+import os, datetime
 import pandas as pd
 from pandas.errors import EmptyDataError
-import os, datetime
+from backend import app
+
+path_to_estoque = os.path.join(os.path.dirname(app.instance_path), "backend", "static", "pd", "estoque.csv")
+
+path_to_historico = os.path.join(os.path.dirname(app.instance_path), "backend", "static", "pd", "historico.csv")
 
 def remover(form_remover):
-    estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
+    estoque_df = pd.read_csv(path_to_estoque)
     estoque_df.set_index("nome_produto", inplace=True)
 
     #Gravação da remoção do produto no histórico
@@ -12,20 +17,23 @@ def remover(form_remover):
     
     estoque_df.drop(index=form_remover.hidden_nome_produto.data, inplace=True)
     estoque_df.reset_index(inplace=True)
-    estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
+    estoque_df.to_csv(path_to_estoque, index_label=False, index=False)
 
 def leitura_estoque():
     try:
         #Leitura do estoque.csv (criação do dataframe)
-        estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
+        estoque_df = pd.read_csv(path_to_estoque)
     except EmptyDataError:
         #Se o estoque.csv estiver vazio (sem produtos) a string é retornada
         return "estoque vazio"
     else:
-        return estoque_df.to_dict("list")
+        if not estoque_df.empty:
+            return estoque_df.to_dict("list")
+        else:
+            return "estoque vazio"
 
 def retirar_produto(form):
-    estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
+    estoque_df = pd.read_csv(path_to_estoque)
     estoque_df.set_index("nome_produto", inplace=True)
     
     #Verificação se a quantidade a ser retirada é menor ou igual à diponível no estoque
@@ -37,7 +45,7 @@ def retirar_produto(form):
         #Caso seja, ocorrerá o decremento da quantidade no estoque (estoque.csv) e uma mensagem de confimação será retornada
         estoque_df.loc[form.hidden_nome_produto.data, "quantidade"] -= form.quantidadeR.data
         estoque_df.reset_index(inplace=True)
-        estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
+        estoque_df.to_csv(path_to_estoque, index_label=False, index=False)
     
 def novo_produto(form):
     dados_novo_produto = {"nome_produto": form.nome_produto.data.lower(),
@@ -53,7 +61,7 @@ def novo_produto(form):
 
     try:
         #Leitura do estoque.csv (criação do dataframe)
-        estoque_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"))
+        estoque_df = pd.read_csv(path_to_estoque)
     except EmptyDataError:
         #Se o estoque.csv existir, mas esteja vazio (sem produtos) um novo dataframe será criado
         estoque_df = pd.DataFrame([dados_novo_produto])
@@ -70,7 +78,7 @@ def novo_produto(form):
             #Do contrário, será adicionada uma nova linha ao dataframe (um novo produto)
             estoque_df = estoque_df.append(dados_novo_produto, ignore_index=True)
     finally:
-        estoque_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "estoque.csv"), index_label=False, index=False)
+        estoque_df.to_csv(path_to_estoque, index_label=False, index=False)
 
 def historico(dados_produto, status=""):
     data_hora = datetime.datetime.now().strftime("%d"+"/"+"%m"+"/"+"%Y"+" %X")
@@ -79,7 +87,7 @@ def historico(dados_produto, status=""):
 
     try:
         #Leitura do historico.csv (criação do dataframe)
-        historico_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "historico.csv"))
+        historico_df = pd.read_csv(path_to_historico)
     except EmptyDataError:
         #Se o historico.csv existir, mas estiver vazio um novo dataframe será criado
         historico_df = pd.DataFrame([produto_his])
@@ -87,12 +95,12 @@ def historico(dados_produto, status=""):
         #Do contrário, será adicionada uma nova linha ao dataframe (um novo registro no histórico)
         historico_df = historico_df.append(produto_his, ignore_index=True)
     finally:
-        historico_df.to_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "historico.csv"), index_label=False, index=False)
+        historico_df.to_csv(path_to_historico, index_label=False, index=False)
 
 def leitura_historico():
     try:
         #Leitura do historico.csv (criação do dataframe)
-        historico_df = pd.read_csv(os.path.join(os.getcwd(), "backend", "static", "pd", "historico.csv"))
+        historico_df = pd.read_csv(path_to_historico)
     except EmptyDataError:
         #Se o estoque.csv estiver vazio (sem produtos) a string é retornada
         return "historico vazio"
