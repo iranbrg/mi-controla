@@ -224,10 +224,10 @@ main {
 }
 
 #contador {
-  width: 30px;
-  max-width: 30px;
+  width: 45px;
+  height: 22px;
+  padding-top: 5px;
   background-color: #25b1e0;
-  padding: 3px;
   border-style: solid;
   border-radius: 5px;
   box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.2);
@@ -236,10 +236,10 @@ main {
 }
 
 #contador2 {
-  width: 30px;
-  max-width: 30px;
+  width: 45px;
+  height: 22px;
+  padding-top: 5px;
   background-color: rgba(219, 0, 0, 0.856);
-  padding: 3px;
   border-style: solid;
   border-radius: 5px;
   box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.2);
@@ -373,8 +373,8 @@ main {
       transform: scale(1.1);
 }
 .imagemPop {
-	max-width: 250px;
-	max-height: 250px;
+	width: 250px;
+	height: 250px;
 	border-radius: 20px;
 	box-shadow: 0 0 0 0;
     outline: 0;

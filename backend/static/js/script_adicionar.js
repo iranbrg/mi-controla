@@ -2,10 +2,6 @@ let popUpConfirmacao = document.getElementById("popUpConfirmacao");
 let fundoPop = document.getElementById("fundoPop");
 let botãoInserir = document.querySelector(".boton");
 
-function alerta() {
-  window.alert("Produto adicionado com sucesso!")
-}
-
 
 var espacoMensagemErro = document.getElementsByClassName("erro");
 var vetorDeErros = [];
@@ -67,7 +63,6 @@ function verificação (){
         espacoMensagemErro[5].textContent = "Dê uma descrição para o produto.";
         window.scrollBy(0, -10)
     }
-
     
 }
 
@@ -83,11 +78,6 @@ function limparEstilo (){
     espacoMensagemErro[3].textContent = "";
     espacoMensagemErro[4].textContent = "";
     espacoMensagemErro[5].textContent = "";
-}
-
-function açãoBotão (){
-    limparEstilo();
-    verificação();
 }
 
 function executarOnInput () {
@@ -132,26 +122,44 @@ if(inDescricao.value !== " "){
 }
 }
 
-function verificacaoInteiro () {
-    if (isNaN(inQuantidade.value)){
+function verificacaoInteiro() {
+    if (isNaN(inQuantidade.value) && inQuantidade.value !==""){
         
         mudarEstilo(inQuantidade);
         espacoMensagemErro[1].textContent = "Insira um valor numérico.";
     
-    } else if (!isNaN(inQuantidade.value) && inQuantidade.value != "") {
+    } else if (!isNaN(inQuantidade.value) && inQuantidade.value !== "") {
         espacoMensagemErro[1].textContent = "";
         voltarEstilo (inQuantidade);
     }
     
-    if (isNaN(inPreco.value)) {
-            
+    if (isNaN(inPreco.value) && inPreco.value !== "") {
         mudarEstilo(inPreco);
         espacoMensagemErro[3].textContent = "Insira um valor numérico.";
-    } else if (!isNaN(inPreco.value) && inPreco.value != "") {
+    } else if (!isNaN(inPreco.value) && inPreco.value !== "") {
         espacoMensagemErro[3].textContent = "";
         voltarEstilo (inPreco);
     }
+
     }
 
+
+function alerta () {
+     if (inNome.value !== "" && inQuantidade.value !== "" && !isNaN(inQuantidade.value) && inCodigoDeBarras.value !== "" && inPreco.value !== "" && !isNaN(inPreco.value) && (document.formAdd.tempo_entrega[0].checked == true 
+     || document.formAdd.tempo_entrega[1].checked == true || 
+     document.formAdd.tempo_entrega[2].checked == true)) {
+        window.alert("Produto adicionado com sucesso!")
+     }
+}
+
+
 verificacaoInteiro();
+
 oninput = executarOnInput;
+
+function açãoBotão (){
+    limparEstilo();
+    verificação();
+    alerta();
+    verificacaoInteiro()
+}

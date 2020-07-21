@@ -44,17 +44,19 @@ function dados(){
         document.getElementById("mensagemQuantidadeBaixa").style.display = "block";
         document.getElementById("mensagemQuantidadeBaixa").textContent = "Baixa quantidade em estoque";
     }
-    // document.getElementById("imagemDetalhe").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
     document.getElementById("passarNomeRemover").value = vDados[0];
+    document.getElementById("imagemDetalhe").src = "/static/images/produtos/"+vDados[0]+".png";
 }
 
 //Para o pop-up de retirada
 
 var botoesRetirada = document.getElementsByClassName('bt')
 
+if(botoesRetirada.length !==0){
 for (i=0; i < botoesRetirada.length; i++){
     document.getElementById(botoesRetirada[i].id).addEventListener('click', dadosRetirada);
  }
+};
 
 function dadosRetirada(){
     document.getElementById('quantidadeR').value = "";
@@ -71,7 +73,8 @@ function dadosRetirada(){
     preço = vDadosR[1];
     document.getElementById("passarNome").value = vDadosR[0];
     quantidadeDoProdutoPop = vDadosR[6];
-    // document.getElementById("imagemRetirada").setAttribute("src", "{{ url_for('static', filename= 'images/produtos/"+vDados[0]+".png') }}");
+    document.getElementById("imagemRetirada").src = "/static/images/produtos/"+vDadosR[0]+".png";
+    
 }
 
 let quantidadeDoProdutoPop = 0;
