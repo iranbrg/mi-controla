@@ -47,14 +47,15 @@ def retirar_produto(form):
         estoque_df.reset_index(inplace=True)
         estoque_df.to_csv(path_to_estoque, index_label=False, index=False)
     
-def novo_produto(form):
+def novo_produto(form, foto_produto_nome):
     dados_novo_produto = {"nome_produto": form.nome_produto.data.lower(),
                           "quantidade": form.quantidade.data,
                           "codigo_barras": form.codigo_barras.data,
                           "preco": form.preco.data,
                           "fornecedor": form.fornecedor.data,
                           "tempo_entrega": form.tempo_entrega.data,
-                          "descricao": form.descricao.data.lower()}
+                          "descricao": form.descricao.data.lower(),
+                          "imagem": foto_produto_nome}
 
     #Gravação do novo produto no histórico
     historico(dados_novo_produto, status="adicionado")

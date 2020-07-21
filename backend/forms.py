@@ -1,7 +1,12 @@
 from flask_wtf import FlaskForm
-from flask_wtf.file import FileField, FileAllowed, FileRequired
-from wtforms import StringField, IntegerField, DecimalField, SelectField, SubmitField, RadioField, TextAreaField, HiddenField
-from wtforms.validators import DataRequired, Optional, NumberRange
+from flask_wtf.file import FileField, FileAllowed
+from flask_uploads import UploadSet, IMAGES, configure_uploads
+from wtforms import StringField, IntegerField, DecimalField, SelectField, SubmitField, RadioField, HiddenField
+from wtforms.validators import DataRequired, NumberRange
+from backend import app
+
+images = UploadSet('images', IMAGES)
+configure_uploads(app, images)
 
 class NovoProduto(FlaskForm):
     nome_produto = StringField("Nome do Produto", validators=[DataRequired(message="Campo obrigatório")])
@@ -18,7 +23,7 @@ class NovoProduto(FlaskForm):
 
     descricao = StringField("Descrição", default=" ")
 
-    foto = FileField("foto", validators=[FileRequired(), FileAllowed(['png'], message='Somente imagens .png!!')])
+    imagem_produto = FileField("Imagem do produto", validators=[FileAllowed(images, message=f"Formatos de imagens permitidos: {IMAGES}")])
 
     inserir_produto = SubmitField("Inserir Produto")
     
