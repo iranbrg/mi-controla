@@ -27,7 +27,10 @@ def leitura_estoque():
         #Se o estoque.csv estiver vazio (sem produtos) a string é retornada
         return "estoque vazio"
     else:
-        return estoque_df.to_dict("list")
+        if not estoque_df.empty:
+            return estoque_df.to_dict("list")
+        else:
+            return "estoque vazio"
 
 def retirar_produto(form):
     estoque_df = pd.read_csv(path_to_estoque)
