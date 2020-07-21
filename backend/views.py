@@ -32,7 +32,7 @@ def adicionar():
         foto_produto = form.imagem_produto.data
         foto_produto_nome = secure_filename(foto_produto.filename)
         # foto_produto.save(os.path.join(path_to_foto_produto, foto_produto_nome))
-        foto_produto.save(path_to_foto_produto, foto_produto_nome)
+        foto_produto.save(os.path.join(path_to_foto_produto, foto_produto_nome))
         
         novo_produto(form, foto_produto_nome)
         
