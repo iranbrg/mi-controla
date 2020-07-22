@@ -2,10 +2,13 @@ import os, datetime
 import pandas as pd
 from pandas.errors import EmptyDataError
 from backend import app
+from backend.images import remover_imagem
 
 path_to_estoque = os.path.join(os.path.dirname(app.instance_path), "backend", "static", "pd", "estoque.csv")
 
 path_to_historico = os.path.join(os.path.dirname(app.instance_path), "backend", "static", "pd", "historico.csv")
+
+# TODO: função de pesquisa no estoque e no histório
 
 def remover(form_remover):
     estoque_df = pd.read_csv(path_to_estoque)
@@ -15,7 +18,7 @@ def remover(form_remover):
     dados_produto_removido = {"nome_produto": form_remover.hidden_nome_produto.data, **estoque_df.loc[form_remover.hidden_nome_produto.data].to_dict()}
     historico(dados_produto_removido, status="removido")
 
-    #TODO:Deleção da imagem do produto
+    remover_imagem(dados_produto_removido["imagem"])
     
     estoque_df.drop(index=form_remover.hidden_nome_produto.data, inplace=True)
     estoque_df.reset_index(inplace=True)
@@ -30,6 +33,7 @@ def leitura_estoque():
         return "estoque vazio"
     else:
         if not estoque_df.empty:
+            # TODO: a sequência de cards deve ser mostrada em ordem de adição dos produtos (inverter ordem da planinha talvez funcione)
             return estoque_df.to_dict("list")
         else:
             return "estoque vazio"

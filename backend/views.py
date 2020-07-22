@@ -1,9 +1,11 @@
 import os
 from flask import render_template, redirect, url_for, request
-from werkzeug.utils import secure_filename
 from backend import app
 from backend.forms import NovoProduto, RetirarProduto, RemoverProduto
 from backend.pd import novo_produto, leitura_estoque, retirar_produto, leitura_historico, remover
+from backend.images import nova_imagem
+
+# TODO: error pages
 
 @app.route('/estoque/', methods=['POST','GET'])
 def estoque():
@@ -23,23 +25,9 @@ def estoque():
 def adicionar():
     form = NovoProduto()
     
-    path_to_foto_produto = os.path.join(os.path.dirname(app.instance_path), "backend", "static", "images", "produtos")
-
     if form.validate_on_submit():
-        #TODO: Evitar o submit com a verificação do upload de 2 imagens com  mesmo nome
-        #TODO: Produto sem foto
-
-        foto_produto = form.imagem_produto.data
-        foto_produto_nome = secure_filename(foto_produto.filename)
-        # foto_produto.save(os.path.join(path_to_foto_produto, foto_produto_nome))
-        foto_produto.save(os.path.join(path_to_foto_produto, foto_produto_nome))
-        
+        foto_produto_nome = nova_imagem(form)
         novo_produto(form, foto_produto_nome)
-        
-        # if foto_produto_nome in os.listdir(path_to_foto_produto):
-        #     flash("Já há uma foto com esse nosse associada a um produto, renomei-a e repita o upload", "error")
-        # else:
-        #     foto_produto.save(os.path.join(path_to_foto_produto, foto_produto_nome))
             
         return redirect(url_for('estoque'))
 
