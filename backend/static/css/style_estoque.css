@@ -173,6 +173,7 @@ main {
   border-radius: 20px;
   width: 210px;
   height: 210px;
+  cursor: pointer;
 }
 
 .detalheItem {
