@@ -1,5 +1,6 @@
 body {
   background-color: #97a5b3;
+  background: linear-gradient(to right, #144bb8c7, #29bbb4);
   margin: 0;
 }
 
@@ -14,9 +15,7 @@ header {
   background-image: linear-gradient(to right, #144bb8c7, #29bbb4);
   justify-content: space-between;
   align-items: center;
-  border-bottom: oldlace solid;
-  border-bottom: white solid;
-  
+  border-bottom: solid white;
 }
 
 h1 {
@@ -138,10 +137,11 @@ main {
 	margin: 0 auto;
 	max-width: 80%;
   font-family: 'Roboto', sans-serif;
+  fill-opacity: unset;
 }
 
 .item {
-	background-color: #3358a12f;
+	background-color: #8a97b15e;
 	padding: 0;
 	margin-top: 10vh;
 	box-sizing: border-box;
@@ -152,7 +152,7 @@ main {
 	border-radius: 20px;
 	margin-left: 4vw;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .item:hover {
@@ -213,7 +213,7 @@ main {
   color: black;
   letter-spacing: 2px;
   font-weight: 600;
-  background-color: #25b1e0;
+  background-color: rgba(255, 255, 255, 0.651);
   border-radius: 4px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -225,7 +225,8 @@ main {
   cursor: pointer;
   font-family: "Source Sans Pro", sans-serif;
   box-shadow: 0 0 0 0;
-	outline: 0;
+  outline: 0;
+  
 }
 
 .bt:hover {
@@ -238,7 +239,7 @@ main {
   width: 45px;
   height: 22px;
   padding-top: 5px;
-  background-color: #25b1e0;
+  background-color: rgba(255, 255, 255, 0.651);
   border-style: solid;
   border-radius: 5px;
   box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.2);
@@ -310,7 +311,7 @@ main {
   display: none;
   grid-template-columns: 250px 450px;
   grid-template-rows: 250px 200px 50px;
-  background-color: #8c8c8c;
+  background-color: #97a5b3;
   font-family: "Roboto", sans-serif;
   border-radius: 20px;
   position: fixed;

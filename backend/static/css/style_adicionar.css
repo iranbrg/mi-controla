@@ -1,5 +1,6 @@
 body {
   background-color: #778899;
+  background: linear-gradient(to right, #144bb8c7, #29bbb4);
   margin: 0;
 }
 
@@ -213,20 +214,20 @@ label{
   color: white;
   margin-bottom: 20px;
   background-color: #25b1e0;
+  background: linear-gradient(to right, #29bbb4 , #144bb870);
   height: 50px;
   width: 300px;
   cursor: pointer;
   font-size: large;
   border-radius: 20px;
   border: none;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Poppins', sans-serif;
   justify-content: center;
   margin-left: 50px;
   letter-spacing: 1px;
 }
 
 .boton:hover {
-	background-color: #1cc6ff;
 	background-image: none;
 	border-color: none;
 	-webkit-transform: scale(1.1);
