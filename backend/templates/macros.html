@@ -1,12 +1,11 @@
 {% macro produto(estoque, nome, nome_index) -%}
     <!-- Uma lista com os atributos do produto referente ao seu respectivo card é atribuida à variável "info_produto", mas antes é usado um filtro "|join(",")" para transformar a lista numa string com atributos concatenados e separados por vírgulas -->
-    {% set info_produto = [nome, estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index], estoque["quantidade"][nome_index], estoque['imagem'][nome_index]]|join(",") %}
+    {% set info_produto = [nome, estoque["preco"][nome_index], estoque["codigo_barras"][nome_index], estoque["fornecedor"][nome_index], estoque["tempo_entrega"][nome_index], estoque["descricao"][nome_index], estoque["quantidade"][nome_index], estoque["imagem"][nome_index]]|join(",") %}
 
     <!-- A variável "info_produto" é passada por meio dos atributos "data-info" e "data-info2" para o JS -->
     <li><button class="detalheItem" data-info="{{ info_produto }}" id="{{ 'info_' + nome.replace(' ', '_') }}"><img
                 class="imagemProduto"
-                src="{{ url_for('static', filename= 'images/produtos/{}'.format(estoque['imagem'][nome_index])) }}"></button></li>
-                <li class="nome">{{ nome }}"></button></li>
+                src="{{ url_for('static', filename='images/produtos/{}'.format(estoque['imagem'][nome_index])) }}"></button></li>
     <li class="nome">{{ nome }}</li>
     <li class="dado"><b>Preço: </b>R$ {{ estoque["preco"][nome_index] }}</li>
     <li class="finalItem"><button class="bt" id="{{ 'retirar_' + nome.replace(' ', '_') }}"
@@ -21,9 +20,9 @@
 {% macro historico_adicionar(hist, nome, nome_index) -%}
     <div class="histAdd">
         <div id="faixaAdd"></div>
-        <span><img class='imagemProduto' src="{{ url_for('static', filename= 'images/produtos/{}.png'.format(nome)) }}"></span>
+        <span><img class='imagemProduto' src="{{ url_for('static', filename='images/produtos/{}'.format(hist['imagem'][nome_index])) }}"></span>
         <span id="nomeA">Nome do produto: {{ nome }}<br></span>
-        <span id="quantidadeA"><b>Quantidade: </b>{{ hist["quantidade"][nome_index] }}</span>
+        <span id="quantidadeA"><b>Quantidade adicionada: </b>{{ hist["quantidade"][nome_index] }}</span>
         <span id="vRecebido"><b>Preço: </b><br> R$ {{ hist["preco"][nome_index] }}</span>
         <div class="dataEHora">{{ hist["data_hora"][nome_index] }}</div>
     </div>
@@ -32,7 +31,7 @@
 {% macro historico_retirar(hist, nome, nome_index) -%}
     <div class="histRetirada">
         <div id="faixaRetirar"></div>
-        <span><img class='imagemProduto' src="{{ url_for('static', filename= 'images/produtos/{}.png'.format(nome)) }}"></span>
+        <span><img class='imagemProduto' src="{{ url_for('static', filename='images/produtos/{}'.format(hist['imagem'][nome_index])) }}"></span>
         <span id="nomeR">Nome do produto: {{ nome }}</span>
         <span><b>Quantidade retirada: </b>{{ hist["quantidade"][nome_index] }}</span>
         <span id="vRecebido"><b>Valor Recebido:</b><br> R$ {{ hist["quantidade"][nome_index] * hist["preco"][nome_index] }}</span>
@@ -43,7 +42,7 @@
 {% macro historico_remover(hist, nome, nome_index) -%}
     <div class="histRemover">
         <div id="faixaRemover"></div>
-        <span><img class='imagemProduto' src="{{ url_for('static', filename= 'images/produtos/{}.png'.format(nome)) }}"></span>
+        <span><img class='imagemProduto' src="{{ url_for('static', filename='images/produtos/{}'.format(hist['imagem'][nome_index])) }}"></span>
         <span id="nomeR">Nome do produto: {{ nome }}</span>
         <span><b>Quantidade removida: </b>{{ hist["quantidade"][nome_index] }}</span>
         <span id="vRecebido"><b>Preço:</b><br> R$ {{ hist["preco"][nome_index] }}</span>

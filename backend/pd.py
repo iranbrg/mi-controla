@@ -14,6 +14,8 @@ def remover(form_remover):
     #Gravação da remoção do produto no histórico
     dados_produto_removido = {"nome_produto": form_remover.hidden_nome_produto.data, **estoque_df.loc[form_remover.hidden_nome_produto.data].to_dict()}
     historico(dados_produto_removido, status="removido")
+
+    #TODO:Deleção da imagem do produto
     
     estoque_df.drop(index=form_remover.hidden_nome_produto.data, inplace=True)
     estoque_df.reset_index(inplace=True)

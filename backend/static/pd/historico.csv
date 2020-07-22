@@ -1,2 +1,6 @@
 nome_produto,quantidade,codigo_barras,preco,fornecedor,tempo_entrega,descricao,imagem,status,data_hora
 iphone1,25,shagdjgagh,1400.99,Americanas,14 dias,primeiro iphone,imagem_iphone1.png,adicionado,21/07/2020 20:02:04
+iphone1,5,shagdjgagh,1400.99,Americanas,14 dias,primeiro iphone,imagem_iphone1.png,retirado,21/07/2020 21:18:59
+iphone1,15,shagdjgagh,1400.99,Americanas,14 dias,primeiro iphone,imagem_iphone1.png,retirado,21/07/2020 21:19:28
+iphone1,5,shagdjgagh,1400.99,Americanas,14 dias,primeiro iphone,imagem_iphone1.png,removido,21/07/2020 21:19:45
+iphone2,35,hgsadjkagskj,2400.99,Amazon,14 dias, segundo iphone,Galaxy_S207.png,adicionado,21/07/2020 21:21:57
