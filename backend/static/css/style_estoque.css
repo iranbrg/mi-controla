@@ -311,7 +311,7 @@ main {
   display: none;
   grid-template-columns: 250px 450px;
   grid-template-rows: 250px 200px 50px;
-  background-color: #97a5b3;
+  background-color: #8a97b1e1;
   font-family: "Roboto", sans-serif;
   border-radius: 20px;
   position: fixed;
@@ -432,7 +432,7 @@ main {
   display: grid;
   grid-template-columns: 250px 410px 40px;
   grid-template-rows: 250px 200px 50px;
-  background-color: #8c8c8c;
+  background-color: #8a97b1e1;
   font-family: "Roboto", sans-serif;
   border-radius: 20px;
   position: fixed;
@@ -542,9 +542,9 @@ main {
 	margin-left: 2px;
 	box-shadow: 0 0 0 0;
 	  outline: 0;
-	background-color: #8c8c8c;
+	background-color: #222222;
 	font-size: inherit;
-	color: black;
+	color: rgb(255, 255, 255);
   }
 
   ::-webkit-input-placeholder{
