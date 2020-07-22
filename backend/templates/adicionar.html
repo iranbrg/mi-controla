@@ -13,6 +13,7 @@ conteudo %}
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
   <div>
     <a href="{{ url_for('estoque') }}"
       ><img
@@ -59,7 +60,7 @@ conteudo %}
   <div class="S+Pesquisa">
     <h5 class="textoInicio">
       Bem vindo(a) <a class="textoInicio" href="#">Sair</a
-      ><img
+      ><img class="sair"
         src="{{ url_for('static', filename= 'images/in-voltar.png') }}"
         height="15"
         width="15"
@@ -83,6 +84,7 @@ conteudo %}
 </header>
 
 <main>
+  
   <div>
     <form action="{{ url_for('adicionar') }}" method="POST" name="formAdd" id="formAddProduto" enctype="multipart/form-data">
       <h2>Adicionar Novo Produto</h2>

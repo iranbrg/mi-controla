@@ -12,16 +12,20 @@ header {
 	background-image: linear-gradient(to right, #144bb8c7, #29bbb4);
 	justify-content: space-between;
 	align-items: center;
+	border-bottom: white solid;
 }
 
 h1 {
 	font-family: 'Holtwood One SC', serif;
-	font-size: 30px;
+	font-size: 40px;
 	letter-spacing: 1px;
 	display: flex;
 	padding-right: 350px;
 	margin: 0 auto;
-	padding-right: 100px;	
+	padding-right: 100px;
+	font-family: 'Shadows Into Light', cursive;
+    color: white;
+
 }
 
 .logo {
@@ -128,7 +132,7 @@ input {
 	border-radius: 50px;	
 }
 .campo:hover{
-	box-shadow: 0 10px 20px 0 #25b1e0;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 #logintitulo {
 	padding-left: 30px;
@@ -193,7 +197,7 @@ input {
 	-webkit-transform: scale(1.1);
      -ms-transform: scale(1.1);
 	 transform: scale(1.1);
-	 box-shadow: 0 10px 20px 0 #25b1e0;
+	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -207,6 +211,7 @@ footer {
 
 .imagens2 {
 	padding-right: 10px;
+	filter: invert(100%);
 }
 .imagens2:hover{
 	-webkit-transform: rotateZ(-30deg);

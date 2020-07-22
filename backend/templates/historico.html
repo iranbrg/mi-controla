@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
   <div>
     <a href="{{ url_for('estoque') }}"><img id="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
   </div>
@@ -36,12 +37,17 @@
     </div>
 
   </div>
-  <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="{{ url_for('login') }}">Sair</a><img
+  <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="{{ url_for('login') }}">Sair</a><img class="sair"
       src="{{ url_for('static', filename= 'images/in-voltar.png') }}" height="15" width="15"></h5>
 
 </header>
 
 <main>
+  <div class="legenda">
+    <img id="legenda1" src="{{ url_for('static', filename= 'images/legenda1.png') }}" height="15" width="15"><h4>Retirar</h4>
+    <img id="legenda1" src="{{ url_for('static', filename= 'images/legenda2.png') }}" height="15" width="15"><h4>Adicionar</h4>
+    <img id="legenda1" src="{{ url_for('static', filename= 'images/legenda3.png') }}" height="15" width="15"><h4>Remover</h4>
+  </div>
   <div id="blocoHistórico">
     {% if hist == "historico vazio" %}
       <h1>HISTÓRCO VAZIO</h1>

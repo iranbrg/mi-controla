@@ -1,5 +1,5 @@
 body {
-  background-color: #778899;
+  background-color: #97a5b3;
   margin: 0;
 }
 
@@ -14,12 +14,17 @@ header {
   background-image: linear-gradient(to right, #144bb8c7, #29bbb4);
   justify-content: space-between;
   align-items: center;
+  border-bottom: oldlace solid;
+  border-bottom: white solid;
+  
 }
 
 h1 {
 	font-family: 'Holtwood One SC', serif;
-	font-size: 27px;
-	letter-spacing: 1px;
+	font-size: 40px;
+  letter-spacing: 1px;
+  font-family: 'Shadows Into Light', cursive;
+  color: white;
 }
 
 #logo {
@@ -42,11 +47,12 @@ h1 {
 
 .textoInicio {
   font-family: "Roboto", sans-serif;
+  color: white;
 }
 
 .textoInicio > a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .textoInicio > a:hover {
@@ -55,7 +61,8 @@ h1 {
 
 .imagens {
 	display: flex;
-	flex-direction: column;
+  flex-direction: column;
+  filter: invert(100%);
 }
 
 .imagens:hover{
@@ -67,11 +74,13 @@ h1 {
 .imagens > p {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
+  
 }
 
 .imagens > a {
   background-color: transparent;
   border-style: none;
+  color: white;
 }
 
 .imagens > a > img {
@@ -114,7 +123,9 @@ h1 {
   box-shadow: 0 0 0 0;
 	outline: 0;
 }
-
+.sair{
+  filter: invert(100%);
+}
 /* Personalização do main*/
 
 main ul {
@@ -126,7 +137,7 @@ main {
 	flex-wrap: wrap;
 	margin: 0 auto;
 	max-width: 80%;
-	font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .item {
@@ -245,6 +256,7 @@ main {
   box-shadow: 2px 1px 4px 0 rgba(0, 0, 0, 0.2);
   border-style: none;
   text-align: center;
+  color: white;
 }
 
 /*Personalização do footer*/
@@ -254,12 +266,13 @@ main {
   flex-wrap: wrap;
   margin: 0 auto;
   width: content;
-  border-bottom: 30px solid #144bb8c7;
+  border-bottom: 30px solid #2053b8a4;
   justify-content: center;
 }
 
 .imagensFooter {
   margin-top: 10vh;
+  filter: invert(100%);
 }
 .imagensFooter:hover{
 	-webkit-transform: rotateZ(-30deg);
@@ -362,6 +375,7 @@ main {
 	font-family: 'Source Sans Pro', sans-serif;
 	box-shadow: 0 0 0 0;
     outline: 0;
+  color: white;
 	
 }
 #botaoexcluir:hover{
