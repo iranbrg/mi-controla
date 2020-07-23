@@ -38,12 +38,6 @@ def nova_imagem(form):
             foto_produto.save(os.path.join(path_to_foto_produto, foto_produto_nome))
             return foto_produto_nome
 
-
-    # if foto_produto_nome in os.listdir(path_to_foto_produto):
-    #     flash("Já há uma foto com esse nosse associada a um produto, renomei-a e repita o upload", "error")
-    # else:
-    #     foto_produto.save(os.path.join(path_to_foto_produto, foto_produto_nome))
-
 def remover_imagem(nome_imagem):
     from backend.pd import leitura_estoque, leitura_historico
     
