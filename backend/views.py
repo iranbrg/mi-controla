@@ -3,7 +3,9 @@ from flask import render_template, redirect, url_for, request
 from backend import app
 from backend.forms import NovoProduto, RetirarProduto, RemoverProduto
 from backend.pd import novo_produto, leitura_estoque, retirar_produto, leitura_historico, remover
-from werkzeug.utils import secure_filename
+from backend.images import nova_imagem
+
+# TODO: error pages
 
 @app.route('/estoque/', methods=['POST','GET'])
 def estoque():
@@ -22,20 +24,13 @@ def estoque():
 @app.route('/adicionar/', methods=['POST','GET'])
 def adicionar():
     form = NovoProduto()
+    
     if form.validate_on_submit():
-        novo_produto(form)
-        f = form.foto.data
-        filename = secure_filename(f.filename)
-        if filename.endswith('.png'):
-            f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename))
-            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtos", "{}.png".format(form.nome_produto.data)))
-           
-        else:
-            f.save(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename))
-            os.rename(os.path.join(os.getcwd(), "backend", "static", "images", "produtos", filename), os.path.join(os.getcwd(), "backend", "static", "images", "produtos", "{}.jpg".format(form.nome_produto.data)))   
+        foto_produto_nome = nova_imagem(form)
+        novo_produto(form, foto_produto_nome)
             
-        print(form.errors)
         return redirect(url_for('estoque'))
+
     return render_template('adicionar.html', form=form)
 
 @app.route('/historico/')

@@ -2,10 +2,14 @@ import os, datetime
 import pandas as pd
 from pandas.errors import EmptyDataError
 from backend import app
+from backend.images import remover_imagem
 
 path_to_estoque = os.path.join(os.path.dirname(app.instance_path), "backend", "static", "pd", "estoque.csv")
 
 path_to_historico = os.path.join(os.path.dirname(app.instance_path), "backend", "static", "pd", "historico.csv")
+
+# TODO: função de pesquisa no estoque e no histório
+# TODO: deleção de um elemento do histório e opção de "limpar histórico"
 
 def remover(form_remover):
     estoque_df = pd.read_csv(path_to_estoque)
@@ -14,6 +18,8 @@ def remover(form_remover):
     #Gravação da remoção do produto no histórico
     dados_produto_removido = {"nome_produto": form_remover.hidden_nome_produto.data, **estoque_df.loc[form_remover.hidden_nome_produto.data].to_dict()}
     historico(dados_produto_removido, status="removido")
+
+    remover_imagem(dados_produto_removido["imagem"])
     
     estoque_df.drop(index=form_remover.hidden_nome_produto.data, inplace=True)
     estoque_df.reset_index(inplace=True)
@@ -28,6 +34,7 @@ def leitura_estoque():
         return "estoque vazio"
     else:
         if not estoque_df.empty:
+            # TODO: a sequência de cards deve ser mostrada em ordem de adição dos produtos (inverter ordem da planinha talvez funcione)
             return estoque_df.to_dict("list")
         else:
             return "estoque vazio"
@@ -47,14 +54,15 @@ def retirar_produto(form):
         estoque_df.reset_index(inplace=True)
         estoque_df.to_csv(path_to_estoque, index_label=False, index=False)
     
-def novo_produto(form):
+def novo_produto(form, foto_produto_nome):
     dados_novo_produto = {"nome_produto": form.nome_produto.data.lower(),
                           "quantidade": form.quantidade.data,
                           "codigo_barras": form.codigo_barras.data,
                           "preco": form.preco.data,
                           "fornecedor": form.fornecedor.data,
                           "tempo_entrega": form.tempo_entrega.data,
-                          "descricao": form.descricao.data.lower()}
+                          "descricao": form.descricao.data.lower(),
+                          "imagem": foto_produto_nome}
 
     #Gravação do novo produto no histórico
     historico(dados_novo_produto, status="adicionado")
