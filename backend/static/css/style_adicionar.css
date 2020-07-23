@@ -76,7 +76,7 @@ h1 {
 
 h2 {
   font-family: "Poppins", sans-serif;
-  color: aliceblue;
+  color: white;
   display: flex;
   justify-content: center;
 }
@@ -156,7 +156,7 @@ input:hover{
 input[type="file"]{
   box-shadow: none;
   color: white;
-  
+  padding-left: 0mm;
 }
 
 .descricao {
@@ -166,9 +166,8 @@ input[type="file"]{
 .fotogrande {
 	border: none;
 	color: white;
-	padding-left: 0%;
+  padding-left: 0%;
 }
-
 .tempoentrega {
 	height: 15px;
 	width: 15px;
