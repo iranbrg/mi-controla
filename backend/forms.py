@@ -28,7 +28,7 @@ class NovoProduto(FlaskForm):
     inserir_produto = SubmitField("Inserir Produto")
     
 class RetirarProduto(FlaskForm):
-    quantidadeR = IntegerField(validators=[DataRequired(message="Quantidade obrigatória"), NumberRange(min=0)])
+    quantidadeR = IntegerField(validators=[DataRequired(message="Quantidade obrigatória"), NumberRange(min=1)])
 
     hidden_nome_produto = HiddenField()
     

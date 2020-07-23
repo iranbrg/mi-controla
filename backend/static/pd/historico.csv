@@ -1,14 +1,2 @@
 nome_produto,quantidade,codigo_barras,preco,fornecedor,tempo_entrega,descricao,imagem,status,data_hora
-iphone1,25,shagdjgagh,1400.99,Americanas,14 dias,primeiro iphone,imagem_iphone1.png,adicionado,21/07/2020 20:02:04
-iphone1,5,shagdjgagh,1400.99,Americanas,14 dias,primeiro iphone,imagem_iphone1.png,retirado,21/07/2020 21:18:59
-iphone1,15,shagdjgagh,1400.99,Americanas,14 dias,primeiro iphone,imagem_iphone1.png,retirado,21/07/2020 21:19:28
-iphone1,5,shagdjgagh,1400.99,Americanas,14 dias,primeiro iphone,imagem_iphone1.png,removido,21/07/2020 21:19:45
-iphone2,35,hgsadjkagskj,2400.99,Amazon,14 dias, segundo iphone,Galaxy_S207.png,adicionado,21/07/2020 21:21:57
-iphone 3,45,sgdafshgdfsah,3800.99,Americanas,14 dias,mais um iphone,Galaxy_S207.png,adicionado,22/07/2020 11:22:43
-iphone2,30,hgsadjkagskj,2400.99,Amazon,14 dias, segundo iphone,Galaxy_S207.png,retirado,22/07/2020 11:24:27
-iphone2,5,hgsadjkagskj,2400.99,Amazon,14 dias, segundo iphone,Galaxy_S207.png,removido,22/07/2020 11:25:28
-iphone4,17,asdfgasfdj,4300.99,Americanas,30 dias,one more iphone,,adicionado,22/07/2020 12:08:21
-iphone5,49,sagdasjdghkgasha,5600.89,Amazon,30 dias, celularzão,,adicionado,22/07/2020 12:38:55
-iphone6,32,asjdhgashjdgkasjg,6300.99,Americanas,7 dias, ,produto-sem-imagem.png,adicionado,22/07/2020 13:04:57
-iphone7,34,sdasdsadas,7400.99,Americanas,30 dias, ,iphone3.png,adicionado,22/07/2020 13:06:56
-iphone8,24,kjsadgashfdkhagsf,6700.99,Mercado Livre,7 dias, ,produto-sem-imagem.png,adicionado,22/07/2020 13:09:22
+dashgdj,4527,sgdjasgd,5364,Americanas,30 dias, ,giphy.gif,adicionado,22/07/2020 22:59:18

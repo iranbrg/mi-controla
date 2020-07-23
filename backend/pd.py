@@ -9,6 +9,7 @@ path_to_estoque = os.path.join(os.path.dirname(app.instance_path), "backend", "s
 path_to_historico = os.path.join(os.path.dirname(app.instance_path), "backend", "static", "pd", "historico.csv")
 
 # TODO: função de pesquisa no estoque e no histório
+# TODO: deleção de um elemento do histório e opção de "limpar histórico"
 
 def remover(form_remover):
     estoque_df = pd.read_csv(path_to_estoque)
