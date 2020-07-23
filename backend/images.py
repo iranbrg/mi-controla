@@ -18,7 +18,7 @@ def nova_imagem(form):
 
         # Caso tenha, é verificado se já existe outra imagem salva com o mesmo nome
         if foto_produto_nome in os.listdir(path_to_foto_produto):
-            # Antes de tudo, é mudado o nome da foto já existente na pasta
+            # Antes de tudo, é mudado o nome da foto para que não seja igual ao da imagem já existente na pasta
             # Com ReGex, é extraído o nome da imagem sem a sua extensão (e.g. .png, .jpg, etc...)
             match = re.search(r".+(?=\.\w+)", foto_produto_nome)
             foto_produto_nome_sem_ext = match.group(0)
@@ -29,16 +29,15 @@ def nova_imagem(form):
                 if re.search(foto_produto_nome_sem_ext + r"(\(\d+\))?", foto) != None:
                     i += 1
 
-            # O novo nome da imagem existente na pasta será igual ao antigo acrescido de um número inteiro (e.g. nome_imagem(4).jpg)
+            # O novo nome da imagem será igual ao antigo acrescido de um número inteiro (e.g. nome_imagem(4).jpg)
             novo_foto_produto_nome = foto_produto_nome.replace(foto_produto_nome_sem_ext, f"{foto_produto_nome_sem_ext}({i})")
 
-            os.rename(os.path.join(path_to_foto_produto, foto_produto_nome), os.path.join(path_to_foto_produto, novo_foto_produto_nome))
-
-            foto_produto.save(os.path.join(path_to_foto_produto, foto_produto_nome))
+            foto_produto.save(os.path.join(path_to_foto_produto, novo_foto_produto_nome))
+            return novo_foto_produto_nome
         else:
             foto_produto.save(os.path.join(path_to_foto_produto, foto_produto_nome))
+            return foto_produto_nome
 
-        return foto_produto_nome
 
     # if foto_produto_nome in os.listdir(path_to_foto_produto):
     #     flash("Já há uma foto com esse nosse associada a um produto, renomei-a e repita o upload", "error")
