@@ -1,0 +1,174 @@
+@media only screen and (max-width: 450px) {
+
+    body {
+        background: linear-gradient(to right, #144bb8c7, #29bbb4);
+        margin: 0;
+        
+    }
+    
+    /* Personalização do Header*/
+    
+    header {
+        display: flex;
+        width: 100%;
+        height: 100px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        background-image: linear-gradient(to right, #144bb8c7, #29bbb4);
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid white;
+    }
+    
+    h1 {
+        margin-left: 10px;
+        letter-spacing: 1px;
+        font-family: 'Shadows Into Light', cursive;
+        color: white;
+        justify-content: center;
+        font-size: 20px;
+    }
+    #logo {
+        max-width: 60px;
+        padding-top: 4px;
+        margin-left: 1.5vw;
+    }
+    #logo:hover{
+        -webkit-transform: scale(1.2);
+         -ms-transform: scale(1.2);
+         transform: scale(1.2);
+      
+    }
+    .menuInteracao{
+        display:none;
+    }
+    .menuinteracao_small{ 
+        display:flex;
+        justify-content:center;
+        text-decoration: none;
+        border-bottom: solid white;
+    }
+    .menuinteracao_small>a{
+         color:white; 
+         padding-left: 50px;
+         text-decoration: none;
+    }
+    .textoInicio {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+    }
+    
+    .textoInicio>a {
+        text-decoration: none;
+        color: white;
+    
+    }
+    
+    .textoInicio>a:hover {
+        color: #666666;
+    }
+    
+    .textoInicio>img {
+        margin-right: 5vw;
+    }
+    .sair{
+        filter: invert(100%);
+    }
+    .legenda{
+        display:flex;
+        justify-content:center;
+    }
+    .legenda > h4{
+        color: white;
+        margin-top: 0px;
+        letter-spacing: 1px;
+        font-family: "Poppins", sans-serif;
+        margin-top: 9px;
+    }
+    #legenda1{
+        padding: 10px;
+    }
+ 
+    /* personalização do bloco hitórico*/
+    
+    #blocoHistórico {
+        margin: 0 auto;
+        list-style: none;
+        margin-left:10px;
+        margin-top: 30px;
+    }
+  
+    .dataEHora {
+        font-size: 14px;
+        margin-bottom: 70px;
+        padding-right: 10px;
+    }
+    
+    
+    #faixaAdd {
+        background-color: green;
+        color: green;
+        width: 20px;
+        height: 6em;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    /* bloco retirar*/
+    
+    #nomeR {
+        margin-left: -10px;
+
+    }
+    span{
+        font-size: 10px;
+    }
+    
+    #vRecebido {
+        margin-top: -2em;
+        margin-right: 5px;
+        padding: 0;
+        width: 150px;
+        height: 10px;
+        text-align: center;
+    }
+    
+    #faixaRetirar {
+        background-color: #ce1515;
+        color: #ce1515;
+        width: 20px;
+        height: 6em;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    .imagemProduto {
+        border-radius: 20px;
+        max-width:120px;
+        max-height: 80px;
+    }
+    
+    
+    .histAdd,
+    .histRetirada,
+    .histRemover {
+        width: 500px;
+        height: 96px;
+        background-color: #FFFAFA;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 1vh;
+    
+    }
+    #faixaRemover {
+        background-color: #4615ce;
+        width: 20px;
+        height: 6em;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+}

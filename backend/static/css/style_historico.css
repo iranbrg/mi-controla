@@ -46,7 +46,7 @@ h1 {
       transform: scale(0.8);
 }
 
-#menuInteracao {
+.menuInteracao {
     display: flex;
     font-size: 10px;
 }
@@ -208,4 +208,8 @@ h1 {
     height: 6em;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+/* coisas que nao é para aparecer*/
+.menuinteracao_small{
+    display:none;
 }

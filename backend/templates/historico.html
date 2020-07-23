@@ -2,7 +2,9 @@
 {% import "macros.html" as macros %}
 
 {% block stylesheet %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_historico.css') }}">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 10px)" href="{{ url_for('static', filename= 'css/style_historico_small.css') }}">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 450px)" href="{{ url_for('static', filename= 'css/style_historico_medium.css') }}">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 1000px)" href="{{ url_for('static', filename= 'css/style_historico.css') }}">
 {% endblock %}
 
 
@@ -18,7 +20,7 @@
 
   <h1>Sistema de Controle de Estoque</h1>
 
-  <div id="menuInteracao">
+  <div class="menuInteracao">
     <div class="imagens"><a href="{{ url_for('estoque') }}"><img
           src="{{ url_for('static', filename= 'images/in-estoque3.png') }}" height="50" width="50"></a>
       <p>Estoque</p>
@@ -39,6 +41,18 @@
 </header>
 
 <main>
+<div class="menuinteracao_small">
+    <a href="{{ url_for('adicionar') }}">
+      <p>Adicionar</p>
+    </a>
+    <a href="{{ url_for('static', filename= 'pd/estoque.csv') }}">
+      <p>Planilha</p>
+    </a>
+    <a href="{{ url_for('historico') }}">
+      <p>Histórico</p>
+    </a>
+  </div>
+
   <div class="legenda">
     <img id="legenda1" src="{{ url_for('static', filename= 'images/legenda1.png') }}" height="15" width="15"><h4>Retirar</h4>
     <img id="legenda1" src="{{ url_for('static', filename= 'images/legenda2.png') }}" height="15" width="15"><h4>Adicionar</h4>
