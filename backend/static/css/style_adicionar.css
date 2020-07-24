@@ -92,7 +92,9 @@ h2 {
 .textoInicio > a:hover {
   color: #666666;
 }
-
+.menuinteracao_small{
+  display:none;
+}
 #pesquisa {
 	display: flex;
 	align-items: center;

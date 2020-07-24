@@ -31,12 +31,6 @@
         padding-top: 4px;
         margin-left: 1.5vw;
     }
-    #logo:hover{
-        -webkit-transform: scale(1.2);
-         -ms-transform: scale(1.2);
-         transform: scale(1.2);
-      
-    }
     .menuInteracao{
         display:none;
     }
