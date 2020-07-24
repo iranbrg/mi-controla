@@ -2,7 +2,9 @@
 {% import "macros.html" as macros %}
 
 {% block stylesheet %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style_historico.css') }}">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 10px)" href="{{ url_for('static', filename= 'css/style_historico_small.css') }}">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 450px)" href="{{ url_for('static', filename= 'css/style_historico_medium.css') }}">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 1000px)" href="{{ url_for('static', filename= 'css/style_historico.css') }}">
 {% endblock %}
 
 
@@ -11,17 +13,14 @@
 
 {% block conteudo %}
 <header>
-  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Open+Sans:wght@600&family=Poppins:wght@700&family=Shadows+Into+Light&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
   <div>
     <a href="{{ url_for('estoque') }}"><img id="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
   </div>
 
   <h1>Sistema de Controle de Estoque</h1>
 
-  <div id="menuInteracao">
+  <div class="menuInteracao">
     <div class="imagens"><a href="{{ url_for('estoque') }}"><img
           src="{{ url_for('static', filename= 'images/in-estoque3.png') }}" height="50" width="50"></a>
       <p>Estoque</p>
@@ -36,12 +35,29 @@
     </div>
 
   </div>
-  <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="{{ url_for('login') }}">Sair</a><img
+  <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="{{ url_for('login') }}">Sair</a><img class="sair"
       src="{{ url_for('static', filename= 'images/in-voltar.png') }}" height="15" width="15"></h5>
 
 </header>
 
 <main>
+<div class="menuinteracao_small">
+    <a href="{{ url_for('adicionar') }}">
+      <p>Adicionar</p>
+    </a>
+    <a href="{{ url_for('static', filename= 'pd/estoque.csv') }}">
+      <p>Planilha</p>
+    </a>
+    <a href="{{ url_for('estoque') }}">
+      <p>Estoque</p>
+    </a>
+  </div>
+
+  <div class="legenda">
+    <img id="legenda1" src="{{ url_for('static', filename= 'images/legenda1.png') }}" height="15" width="15"><h4>Retirar</h4>
+    <img id="legenda1" src="{{ url_for('static', filename= 'images/legenda2.png') }}" height="15" width="15"><h4>Adicionar</h4>
+    <img id="legenda1" src="{{ url_for('static', filename= 'images/legenda3.png') }}" height="15" width="15"><h4>Remover</h4>
+  </div>
   <div id="blocoHistórico">
     {% if hist == "historico vazio" %}
       <h1>HISTÓRCO VAZIO</h1>

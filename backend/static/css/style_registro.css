@@ -1,5 +1,5 @@
 body {
-	background-color:#778899	;
+	background: linear-gradient(to right, #144bb8c7, #29bbb4);
 	margin: 0;
 }
 header {
@@ -13,12 +13,13 @@ header {
 	align-items: center;
 }
 h1{
-	font-family: 'Holtwood One SC', serif;
-	font-size: 30px;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 50px;
 	letter-spacing: 1px;
 	display: flex;
 	margin: 0 auto;
 	padding-right: 100px;
+	color:white;
 }
 .logo {
 	max-width: 110px;
@@ -64,9 +65,6 @@ input {
 }
 .campo{
     border-radius: 50px;
-}
-.campo:hover{
-	box-shadow: 0 10px 20px 0 #25b1e0;
 }
 #registrotitulo{
     padding-left: 80px;
@@ -132,7 +130,7 @@ label{
 	-webkit-transform: scale(1.1);
 	 -ms-transform: scale(1.1);
 	 transform: scale(1.1);
-	box-shadow: 0 10px 20px 0 #25b1e0;
+	
 }
 footer{
 	display: flex;
@@ -144,6 +142,7 @@ footer{
 }
 .imagens2 {
 	padding-right: 10px;
+	filter: invert(100%);
 }
 .imagens2:hover{
 	-webkit-transform: rotateZ(-30deg);

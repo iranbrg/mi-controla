@@ -2,8 +2,12 @@
 {% import "macros.html" as macros %}
 
 {% block stylesheet %}
-<link rel="stylesheet" type="text/css" 
-href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 10px)"
+  href="{{ url_for('static', filename= 'css/style_estoque_small.css') }}">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 400px)"
+  href="{{ url_for('static', filename= 'css/style_estoque_medium.css') }}">
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 1000px)"
+  href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
 {% endblock %}
 
 
@@ -18,51 +22,82 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-  <div>
-    <a href="{{ url_for('estoque') }}"><img id="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
-  </div>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <a href="{{ url_for('estoque') }}"><img id="logo" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
 
+  <div class="small">
+    <a href="{{ url_for('estoque') }}"><img id="logo2" src="{{ url_for('static', filename= 'images/logo.png') }}"></a>
+
+    <div>
+      <h5 class="textoInicio2">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img class="sair">
+    </div>
+  </div>
   <h1>Sistema de Controle de Estoque</h1>
 
-  
-
-  <div id="menuInteracao">
-    <div class="imagens"><a href="{{ url_for('adicionar') }}"><img src="{{ url_for('static', filename= 'images/in-adicionar.png') }}" height="50" width="50"></a>
+  <div class="menuInteracao">
+    <div class="imagens"><a href="{{ url_for('adicionar') }}"><img
+          src="{{ url_for('static', filename= 'images/in-adicionar.png') }}"></a>
       <p>Adicionar</p>
     </div>
-    <div class="imagens"><a href="{{ url_for('static', filename= 'pd/estoque.csv') }}"><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50"
-          width="50"></a>
+    <div class="imagens"><a href="{{ url_for('static', filename= 'pd/estoque.csv') }}"><img
+          src="{{ url_for('static', filename= 'images/in-planilha.png') }}"></a>
       <p>Planilha</p>
     </div>
-    <div class="imagens"><a href="{{ url_for('historico') }}"><img src="{{ url_for('static', filename= 'images/in-historico.png') }}" height="50" width="50"></a>
+    <div class="imagens"><a href="{{ url_for('historico') }}"><img
+          src="{{ url_for('static', filename= 'images/in-historico.png') }}"></a>
       <p>Histórico</p>
     </div>
 
   </div>
 
-  <div class="S+Pesquisa">
-    <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img src="{{ url_for('static', filename= 'images/in-voltar.png') }}"
-        height="15" width="15"></h5>
+  <div class="SPesquisa">
+    <h5 class="textoInicio">Bem vindo(a) <a class="textoInicio" href="#">Sair</a><img class="sair"
+        src="{{ url_for('static', filename= 'images/in-voltar.png') }}" height="15" width="15"></h5>
     <span id="pesquisa">
       <input id="inPesquisa" type="text" nome="pesquisar" placeholder="Pesquise itens aqui!">
-      <input id="botaoPesquisa" type=image src="{{ url_for('static', filename= 'images/in-buscar.png') }}" width="29" height="28">
+      <input id="botaoPesquisa" type=image src="{{ url_for('static', filename= 'images/in-buscar.png') }}" width="29"
+        height="28">
     </span>
     <!-- Este parágrafo serve apenas para alinhar melhor esse conjunto -->
     <p></p>
   </div>
+  <!--responsivo small-->
+  <div class="menuinteracao_small">
+    <a href="{{ url_for('adicionar') }}">
+      <p>Adicionar</p>
+    </a>
+    <a href="{{ url_for('static', filename= 'pd/estoque.csv') }}">
+      <p>Planilha</p>
+    </a>
+    <a href="{{ url_for('historico') }}">
+      <p>Histórico</p>
+    </a>
+  </div>
 </header>
 
 <main>
+  <!--responsivo medium -->
+  <div class="menuinteracao_medium">
+    <a href="{{ url_for('adicionar') }}">
+      <p>Adicionar</p>
+    </a>
+    <a href="{{ url_for('static', filename= 'pd/estoque.csv') }}">
+      <p>Planilha</p>
+    </a>
+    <a href="{{ url_for('historico') }}">
+      <p>Histórico</p>
+    </a>
+  </div>
   {% if estoque == "estoque vazio" %}
-    <h1>ESTOQUE VAZIO</h1>
+  <h1>ESTOQUE VAZIO</h1>
   {% else %}
-    {% for nome in estoque["nome_produto"] %}
-      <div class="item">
-        <ul>
-          {{ macros.produto(estoque, nome, estoque["nome_produto"].index(nome)) }}
-        </ul>
-      </div>
-    {% endfor %}
+  {% for nome in estoque["nome_produto"] %}
+  <div class="item">
+    <ul>
+      {{ macros.produto(estoque, nome, estoque["nome_produto"].index(nome)) }}
+    </ul>
+  </div>
+  {% endfor %}
   {% endif %}
 </main>
 
@@ -95,7 +130,8 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
   </ul>
 
   <div id="descriçãoInfo">
-    <p><b class="dadosT">Descrição: </b></p><span id="6"></span><div id="mensagemQuantidadeBaixa"></div>
+    <p><b class="dadosT">Descrição: </b></p><span id="6"></span>
+    <div id="mensagemQuantidadeBaixa"></div>
   </div>
   <form action="" method="POST">
     {{ form_remover.csrf_token }}
@@ -117,7 +153,7 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
     <li><b class="dadosT">Fornecedor: </b><span id="4.1">x</span></li>
     <li><b class="dadosT">Tempo de Entrega: </b><span id="5.1">x</span></li>
   </ul>
-  
+
   <div id="detalhes">
     <form action="" method="POST" id="form_retirar">
       {{ form.csrf_token }}
@@ -136,5 +172,3 @@ href="{{ url_for('static', filename= 'css/style_estoque.css') }}">
 
 <script type="text/javascript" src="{{ url_for('static', filename= 'js/script.js') }}"></script>
 {% endblock %}
-
-

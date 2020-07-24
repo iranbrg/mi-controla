@@ -1,18 +1,11 @@
 {% extends "layout.html" %} {% block stylesheet %}
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ url_for('static', filename= 'css/style_adicionar.css') }}"
-/>
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 10px)"href="{{ url_for('static', filename= 'css/style_adicionar_small.css') }}"/>
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 400px)" href="{{ url_for('static', filename= 'css/style_adicionar_medium.css') }}"/>
+<link rel="stylesheet"type="text/css" media="screen and (min-width: 1000px)"href="{{ url_for('static', filename= 'css/style_adicionar.css') }}"/>
 {% endblock %} {% block title %}Adicionar - Mi-Controla{% endblock %} {% block
 conteudo %}
 <header>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Open+Sans:wght@600&family=Poppins:wght@700&family=Shadows+Into+Light&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
   <div>
     <a href="{{ url_for('estoque') }}"
       ><img
@@ -34,13 +27,6 @@ conteudo %}
       <p>Estoque</p>
     </div>
 
-    <!-- <div class="imagens">
-      <a href=""
-        ><img
-          src="{{ url_for('static', filename= 'images/in-planilha.png') }}"
-          height="50"
-          width="50"
-      /></a> -->
     <div class="imagens"><a href="{{ url_for('static', filename= 'pd/estoque.csv') }}"><img src="{{ url_for('static', filename= 'images/in-planilha.png') }}" height="50"
           width="50"></a>
       <p>Planilha</p>
@@ -59,7 +45,7 @@ conteudo %}
   <div class="S+Pesquisa">
     <h5 class="textoInicio">
       Bem vindo(a) <a class="textoInicio" href="#">Sair</a
-      ><img
+      ><img class="sair"
         src="{{ url_for('static', filename= 'images/in-voltar.png') }}"
         height="15"
         width="15"
@@ -83,7 +69,20 @@ conteudo %}
 </header>
 
 <main>
-  <div>
+  
+  <div class="menuinteracao_small">
+    <a href="{{ url_for('adicionar') }}">
+      <p>Histórico</p>
+    </a>
+    <a href="{{ url_for('static', filename= 'pd/estoque.csv') }}">
+      <p>Planilha</p>
+    </a>
+    <a href="{{ url_for('estoque') }}">
+      <p>Estoque</p>
+    </a>
+  </div>
+
+  <div >
     <form action="{{ url_for('adicionar') }}" method="POST" name="formAdd" id="formAddProduto" enctype="multipart/form-data">
       <h2>Adicionar Novo Produto</h2>
       {{ form.hidden_tag() }}
@@ -118,6 +117,7 @@ conteudo %}
         {% endfor %}
       </div>
       <span class="erro"></span>
+      <br/>
       <br />
       {{ form.descricao(class="descricao", placeholder="Descrição do produto")
       }}

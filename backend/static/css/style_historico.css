@@ -1,5 +1,6 @@
 body {
     background-color: #778899;
+    background: linear-gradient(to right, #144bb8c7, #29bbb4);
     margin: 0;
 }
 
@@ -14,16 +15,16 @@ header {
     background-image: linear-gradient(to right, #144bb8c7, #29bbb4);
     justify-content: space-between;
     align-items: center;
-
+    border-bottom: solid white;
 }
 
 h1 {
     font-family: 'Holtwood One SC', serif;
-    font-size: 27px;
+    font-size: 40px;
     margin-left: 70px;
     letter-spacing: 1px;
-
-
+    font-family: 'Shadows Into Light', cursive;
+    color: white;
 }
 
 #logo {
@@ -43,9 +44,9 @@ h1 {
     -webkit-transform: scale(0.8);
       -ms-transform: scale(0.8);
       transform: scale(0.8);
-  }
+}
 
-#menuInteracao {
+.menuInteracao {
     display: flex;
     font-size: 10px;
 }
@@ -53,6 +54,7 @@ h1 {
 .imagens {
     display: flex;
     flex-direction: column;
+    filter: invert(100%);
 
 }
 
@@ -65,7 +67,6 @@ h1 {
 
 .imagens>a {
     background-color: transparent;
-
     border-style: none;
 }
 
@@ -80,11 +81,12 @@ h1 {
 
 .textoInicio {
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 .textoInicio>a {
     text-decoration: none;
-    color: black;
+    color: white;
 
 }
 
@@ -95,6 +97,23 @@ h1 {
 .textoInicio>img {
     margin-right: 5vw;
 }
+.sair{
+    filter: invert(100%);
+}
+.legenda{
+    display: flex;
+    justify-content: center;
+}
+.legenda > h4{
+    color: white;
+    margin-top: 0px;
+    letter-spacing: 1px;
+    font-family: "Poppins", sans-serif;
+    margin-top: 9px;
+}
+#legenda1{
+    padding: 10px;
+}
 
 /* personalização do bloco hitórico*/
 
@@ -102,7 +121,7 @@ h1 {
     margin: 0 auto;
     list-style: none;
     max-width: 1000px;
-    margin-top: 10vh;
+    margin-top: 30px;
 }
 
 
@@ -123,7 +142,8 @@ h1 {
 
 .dataEHora {
     font-size: 14px;
-    margin-bottom: 70px
+    margin-bottom: 70px;
+    padding-right: 10px;
 }
 
 
@@ -188,4 +208,8 @@ h1 {
     height: 6em;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+/* coisas que nao é para aparecer*/
+.menuinteracao_small{
+    display:none;
 }

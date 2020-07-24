@@ -1,0 +1,161 @@
+@media only screen and (max-width: 1000px) {
+
+    body {
+        background-color: #778899;
+        background: linear-gradient(to right, #144bb8c7, #29bbb4);
+        margin: 0;
+    }	
+    
+    header {
+        display: flex;
+        width: 100%;
+        height: 100px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        background-image: linear-gradient(to right, #144bb8c7, #29bbb4);
+        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    h1 {
+    font-family: 'Holtwood One SC', serif;
+	font-size: 40px;
+	letter-spacing: 1px;
+	display: flex;
+	padding-right: 350px;
+	margin: 0 auto;
+	padding-right: 100px;
+	font-family: 'Shadows Into Light', cursive;
+    color: white;
+    }
+    
+    .logo {
+        max-width: 100px;
+        padding-top: 10px;
+        display: flex;
+    }
+    
+    
+    /*  formulario */
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        font-family: 'Open Sans', sans-serif;
+        justify-content: center;
+        align-items: center;
+        margin:100px;
+    
+    }
+    input {
+        display: block;
+        font-size: 15px;
+        border-radius: 25px;
+        margin-bottom: 20px;
+        height: 40px;
+        width: 90px;
+        border: none;
+        box-shadow: 0 0 0 0;
+        outline: 0;
+        padding: 0 30px 0 60px;
+        border-radius: 50px;
+    
+    }
+    .login {
+        width:300px;
+        height:300px;
+        background: #3358a12f;
+        margin: 100px;
+        border-radius: 40px;
+       
+    }
+    
+    
+#logintitulo {
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 25%;
+    padding-top: 20px;
+    }
+    
+.login > a{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+    .login > a:hover{
+        color: #25b1e0;
+    
+    }
+    .checkbox{
+        display: none;
+    }
+    .icon_user > i {
+      position: absolute;
+      padding: 5px;
+      padding-left: 11%;
+      opacity: 80%;
+      color:#778899;
+    }
+    .icon_lock > i {
+        position: absolute;
+        padding: 5px;
+        padding-left: 11%;
+        opacity: 80%;
+        color:#778899;
+    }
+    .campo {
+        border-radius: 50px;
+        margin-left: 22%;		
+    }
+    /*  botão */
+    
+    .boton {
+        display: flex;
+        color: #25b1e0;
+        background-color: white;
+        height: 40px;
+        width: 150px;
+        font-size: large;
+        border-radius: 20px;
+        border: none;
+        justify-content: center;
+        margin-left: 27%;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .boton:hover {
+        background-color: #1cc6ff;
+        background-image: none;
+        border-color: none;
+        -webkit-transform: scale(1.1);
+         -ms-transform: scale(1.1);
+         transform: scale(1.1);
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        color: black;
+        font-family: 'Poppins', sans-serif;
+    
+    }
+    
+    footer {
+        bottom:0;
+        border-bottom: 30px solid #144bb8c7;
+        position:fixed;
+        width:100%;
+        display:flex;
+        justify-content: center;
+    }
+    
+    .imagens2 {
+        padding-right: 10px;
+        filter: invert(100%);
+    }
+    }
